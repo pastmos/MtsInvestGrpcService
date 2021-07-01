@@ -10,7 +10,6 @@
 		4E73702C8E7ED8A13F2B7DD34B6D3C70 /* MtsInvestGrpcService-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 558E19DAFFB7B541AC94841C0819260E /* MtsInvestGrpcService-dummy.m */; };
 		5AA98C2F55FEE65B558CD132E39C7EFD /* Pods-MtsInvestGrpcService_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E7221EC3CBC0EDF2A54F7D0057705966 /* Pods-MtsInvestGrpcService_Tests-dummy.m */; };
 		71074BF957EBBC89E7F978258E2277E5 /* MtsInvestGrpcService-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9561D0D303C7AC3EB01918B689CD6E41 /* MtsInvestGrpcService-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8DC4587844994A2AF576F8BA28D37861 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE8B83AC00581BA567283D72B8ED09F /* ReplaceMe.swift */; };
 		B9A4AD8A4B662620012C882DA09161A2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		BD7871F32CF8AC0241F65B2C4316C258 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		F0F97492BF8E23E1157DF1F4B7161A1C /* Pods-MtsInvestGrpcService_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F709B3BFBB067D1E34684A86FE0BC19A /* Pods-MtsInvestGrpcService_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -43,7 +42,6 @@
 		953D938A15D51DFC7CDC08027C742A4D /* Pods-MtsInvestGrpcService_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MtsInvestGrpcService_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		9561D0D303C7AC3EB01918B689CD6E41 /* MtsInvestGrpcService-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MtsInvestGrpcService-umbrella.h"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		ADE8B83AC00581BA567283D72B8ED09F /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaceMe.swift; path = MtsInvestGrpcService/Classes/ReplaceMe.swift; sourceTree = "<group>"; };
 		B23048014671882C184A939A871D260A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BBDCBE0FDAC9038769E25AF6FD3157A0 /* MtsInvestGrpcService-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MtsInvestGrpcService-Info.plist"; sourceTree = "<group>"; };
 		C08D7E597EA6751CD965D9A7BD9E23F0 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -121,7 +119,6 @@
 			isa = PBXGroup;
 			children = (
 				FE0B8BC2268DD097005E6FBB /* Classes */,
-				ADE8B83AC00581BA567283D72B8ED09F /* ReplaceMe.swift */,
 				54CFB91F72C9202B389C27742075837C /* Pod */,
 				0D9810297A2F453F8ECAEE1E8B4AA549 /* Support Files */,
 			);
@@ -315,7 +312,6 @@
 			files = (
 				FE0B8BC0268DCE67005E6FBB /* GRPCClass.swift in Sources */,
 				4E73702C8E7ED8A13F2B7DD34B6D3C70 /* MtsInvestGrpcService-dummy.m in Sources */,
-				8DC4587844994A2AF576F8BA28D37861 /* ReplaceMe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +344,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 0.1.3;
 				MODULEMAP_FILE = "Target Support Files/MtsInvestGrpcService/MtsInvestGrpcService.modulemap";
 				PRODUCT_MODULE_NAME = MtsInvestGrpcService;
 				PRODUCT_NAME = MtsInvestGrpcService;
@@ -541,6 +538,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 0.1.3;
 				MODULEMAP_FILE = "Target Support Files/MtsInvestGrpcService/MtsInvestGrpcService.modulemap";
 				PRODUCT_MODULE_NAME = MtsInvestGrpcService;
 				PRODUCT_NAME = MtsInvestGrpcService;

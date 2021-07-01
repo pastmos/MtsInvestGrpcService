@@ -1,0 +1,4 @@
+Target dependency graph (2 targets)
+MtsInvestGrpcService in Pods
+Pods-MtsInvestGrpcService_Tests in Pods, depends on:
+MtsInvestGrpcService in Pods (explicit)
