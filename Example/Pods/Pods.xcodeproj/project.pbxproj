@@ -120,10 +120,10 @@
 		3BAA3D34FBB0F31DD9E8B9BF51D1A113 /* MtsInvestGrpcService */ = {
 			isa = PBXGroup;
 			children = (
+				FE0B8BC2268DD097005E6FBB /* Classes */,
 				ADE8B83AC00581BA567283D72B8ED09F /* ReplaceMe.swift */,
 				54CFB91F72C9202B389C27742075837C /* Pod */,
 				0D9810297A2F453F8ECAEE1E8B4AA549 /* Support Files */,
-				FE0B8BBF268DCE67005E6FBB /* GRPCClass.swift */,
 			);
 			name = MtsInvestGrpcService;
 			path = ../..;
@@ -180,6 +180,14 @@
 				094B198FF36E87F45AE9604AAACE163A /* Pods-MtsInvestGrpcService_Tests */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		FE0B8BC2268DD097005E6FBB /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				FE0B8BBF268DCE67005E6FBB /* GRPCClass.swift */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
