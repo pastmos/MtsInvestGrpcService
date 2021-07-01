@@ -10,6 +10,7 @@
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
+Description is coming soon, now it's possible to test public simple class.
 
 ## Installation
 
@@ -20,9 +21,12 @@ it, simply add the following line to your Podfile:
 pod 'MtsInvestGrpcService'
 ```
 
+It's test GRPC layer, you can easily integrate in your app. 
+Use it only within MTS environment, other use is restricted by law. 
+
 ## Author
 
-pastmos, pastspam@yandex.ru
+Panov Sergey, passt@yandex.ru
 
 ## License
 
