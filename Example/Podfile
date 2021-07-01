@@ -1,0 +1,6 @@
+use_frameworks!
+target 'MtsInvestGrpcService_Tests' do
+  pod 'MtsInvestGrpcService', :path => '../'
+  
+  
+end

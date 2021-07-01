@@ -1,0 +1,16 @@
+PODS:
+  - MtsInvestGrpcService (0.1.0)
+
+DEPENDENCIES:
+  - MtsInvestGrpcService (from `../`)
+
+EXTERNAL SOURCES:
+  MtsInvestGrpcService:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  MtsInvestGrpcService: 66875536ea7dfc53dcb14725a379efad63770ede
+
+PODFILE CHECKSUM: bff0a269799985595db5338e5583ae9345945691
+
+COCOAPODS: 1.10.1

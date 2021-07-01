@@ -1,0 +1,6 @@
+framework module MtsInvestGrpcService {
+  umbrella header "MtsInvestGrpcService-umbrella.h"
+
+  export *
+  module * { export * }
+}
