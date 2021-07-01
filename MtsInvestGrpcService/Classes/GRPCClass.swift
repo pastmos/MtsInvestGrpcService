@@ -10,7 +10,7 @@ import Foundation
 open class MtsGRPCClass {
     var testVariable: Int
     
-    init(testVariable: Int) {
+    public init(testVariable: Int) {
         self.testVariable = testVariable
     }
 }
