@@ -9,4 +9,8 @@ import Foundation
 
 open class MtsGRPCClass {
     var testVariable: Int
+    
+    init(testVariable: Int) {
+        self.testVariable = testVariable
+    }
 }

@@ -13,8 +13,8 @@
 		B9A4AD8A4B662620012C882DA09161A2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		BD7871F32CF8AC0241F65B2C4316C258 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		F0F97492BF8E23E1157DF1F4B7161A1C /* Pods-MtsInvestGrpcService_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F709B3BFBB067D1E34684A86FE0BC19A /* Pods-MtsInvestGrpcService_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FE0B8BC0268DCE67005E6FBB /* GRPCClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0B8BBF268DCE67005E6FBB /* GRPCClass.swift */; };
-		FE0B8BC1268DCE67005E6FBB /* GRPCClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0B8BBF268DCE67005E6FBB /* GRPCClass.swift */; };
+		FE0B8BC4268DE8FB005E6FBB /* GRPCClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0B8BC3268DE8FB005E6FBB /* GRPCClass.swift */; };
+		FE0B8BC5268DE8FB005E6FBB /* GRPCClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0B8BC3268DE8FB005E6FBB /* GRPCClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +51,7 @@
 		E7221EC3CBC0EDF2A54F7D0057705966 /* Pods-MtsInvestGrpcService_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MtsInvestGrpcService_Tests-dummy.m"; sourceTree = "<group>"; };
 		E7F8EB2B9BE4624871ECA0CE46430394 /* MtsInvestGrpcService.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = MtsInvestGrpcService.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F709B3BFBB067D1E34684A86FE0BC19A /* Pods-MtsInvestGrpcService_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MtsInvestGrpcService_Tests-umbrella.h"; sourceTree = "<group>"; };
-		FE0B8BBF268DCE67005E6FBB /* GRPCClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GRPCClass.swift; sourceTree = "<group>"; };
+		FE0B8BC3268DE8FB005E6FBB /* GRPCClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GRPCClass.swift; path = MtsInvestGrpcService/Classes/GRPCClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,7 +182,7 @@
 		FE0B8BC2268DD097005E6FBB /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				FE0B8BBF268DCE67005E6FBB /* GRPCClass.swift */,
+				FE0B8BC3268DE8FB005E6FBB /* GRPCClass.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -255,6 +255,9 @@
 				LastSwiftUpdateCheck = 1100;
 				LastUpgradeCheck = 1100;
 				TargetAttributes = {
+					2E4CA71AF14528607E47AF93BD5B7BE8 = {
+						LastSwiftMigration = 1250;
+					};
 					493F75794203F9EAD5A9ABC6F3D13890 = {
 						LastSwiftMigration = 1250;
 					};
@@ -301,7 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE0B8BC1268DCE67005E6FBB /* GRPCClass.swift in Sources */,
+				FE0B8BC5268DE8FB005E6FBB /* GRPCClass.swift in Sources */,
 				5AA98C2F55FEE65B558CD132E39C7EFD /* Pods-MtsInvestGrpcService_Tests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -310,7 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE0B8BC0268DCE67005E6FBB /* GRPCClass.swift in Sources */,
+				FE0B8BC4268DE8FB005E6FBB /* GRPCClass.swift in Sources */,
 				4E73702C8E7ED8A13F2B7DD34B6D3C70 /* MtsInvestGrpcService-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,6 +334,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D604F40B616C8D5434270AE533C34F79 /* MtsInvestGrpcService.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -344,7 +348,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 0.1.3;
+				MARKETING_VERSION = 0.1.4;
 				MODULEMAP_FILE = "Target Support Files/MtsInvestGrpcService/MtsInvestGrpcService.modulemap";
 				PRODUCT_MODULE_NAME = MtsInvestGrpcService;
 				PRODUCT_NAME = MtsInvestGrpcService;
@@ -525,6 +529,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2ABD6DE52A5EAC966D079A0070ECA97E /* MtsInvestGrpcService.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -538,13 +543,14 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 0.1.3;
+				MARKETING_VERSION = 0.1.4;
 				MODULEMAP_FILE = "Target Support Files/MtsInvestGrpcService/MtsInvestGrpcService.modulemap";
 				PRODUCT_MODULE_NAME = MtsInvestGrpcService;
 				PRODUCT_NAME = MtsInvestGrpcService;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
