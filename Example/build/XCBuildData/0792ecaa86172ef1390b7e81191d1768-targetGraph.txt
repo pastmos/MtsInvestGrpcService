@@ -1,0 +1,16 @@
+Target dependency graph (6 targets)
+BoringSSL-GRPC in Pods
+SwiftProtobuf in Pods
+gRPC-Core in Pods, depends on:
+BoringSSL-GRPC in Pods (explicit)
+SwiftGRPC in Pods, depends on:
+SwiftProtobuf in Pods (explicit)
+gRPC-Core in Pods (explicit)
+MtsInvestGrpcService in Pods, depends on:
+SwiftGRPC in Pods (explicit)
+Pods-MtsInvestGrpcService_Tests in Pods, depends on:
+BoringSSL-GRPC in Pods (explicit)
+MtsInvestGrpcService in Pods (explicit)
+SwiftGRPC in Pods (explicit)
+SwiftProtobuf in Pods (explicit)
+gRPC-Core in Pods (explicit)

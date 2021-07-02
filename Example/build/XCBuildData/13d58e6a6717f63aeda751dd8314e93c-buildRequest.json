@@ -1,0 +1,54 @@
+{
+  "buildCommand" : "prepareForIndexing",
+  "configuredTargets" : [
+    {
+      "guid" : "305aa754a2a492fff04e480c25bfbd1ec184ad8b3c49a0c098ef639132f1afe4"
+    },
+    {
+      "guid" : "305aa754a2a492fff04e480c25bfbd1e23fc39d19f89d761fb38e0e0222454ac"
+    },
+    {
+      "guid" : "305aa754a2a492fff04e480c25bfbd1e4301b450b323303f4d983e56d742f0cc"
+    },
+    {
+      "guid" : "305aa754a2a492fff04e480c25bfbd1e32557c5242dae25c4ac7845f32ee90ae"
+    },
+    {
+      "guid" : "305aa754a2a492fff04e480c25bfbd1e40fa72b1389229bc82a786c7bb54bc7b"
+    },
+    {
+      "guid" : "305aa754a2a492fff04e480c25bfbd1e6836e78755c7a49cbac94d6710bb39cc"
+    }
+  ],
+  "continueBuildingAfterErrors" : true,
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "build",
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "",
+      "buildProductsPath" : "",
+      "derivedDataPath" : "/Users/sergeypanov/Library/Developer/Xcode/DerivedData",
+      "indexDataStoreFolderPath" : "/Users/sergeypanov/Library/Developer/Xcode/DerivedData/Pods-bknhzcabyyjwclgzludkvfwnokcc/Index/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/sergeypanov/Library/Developer/Xcode/DerivedData/Pods-bknhzcabyyjwclgzludkvfwnokcc/Index/PrecompiledHeaders",
+      "pchPath" : ""
+    },
+    "configurationName" : "Release",
+    "overrides" : {
+      "synthesized" : {
+        "table" : {
+          "ENABLE_PREVIEWS" : "NO"
+        }
+      }
+    }
+  },
+  "qos" : "default",
+  "schemeCommand" : "launch",
+  "shouldCollectMetrics" : false,
+  "showNonLoggedProgress" : true,
+  "useDryRun" : true,
+  "useImplicitDependencies" : false,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : false
+}

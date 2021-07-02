@@ -2,5 +2,6 @@ use_frameworks!
 target 'MtsInvestGrpcService_Tests' do
   pod 'MtsInvestGrpcService', :path => '../'
   
+  pod 'gRPC-Swift'
   
 end
