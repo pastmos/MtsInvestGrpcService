@@ -1,6 +1,6 @@
 {
   "name": "MtsInvestGrpcService",
-  "version": "0.1.6",
+  "version": "0.1.9",
   "summary": "MTS Investments GRPC Core library",
   "description": "This is the local pod for using in MTS workspace",
   "homepage": "https://github.com/pastmos/MtsInvestGrpcService",
@@ -13,10 +13,10 @@
   },
   "source": {
     "git": "https://github.com/pastmos/MtsInvestGrpcService.git",
-    "tag": "0.1.6"
+    "tag": "0.1.9"
   },
   "platforms": {
-    "ios": "12.0"
+    "ios": "11.0"
   },
   "source_files": "MtsInvestGrpcService/Classes/**/*",
   "swift_versions": "5.0",

@@ -1130,10 +1130,10 @@
 		FD387CD40F36F622307C14D00385C5F7 /* SwiftNIOTransportServices-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FEC9A2380C62B699F12A39376BF48E16 /* SwiftNIOTransportServices-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FE6A8351B9A55CE80C65A5A9A7C6603A /* CGRPCZlib-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EBD6CA4B2EB83580DFF10432954CB968 /* CGRPCZlib-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FE6B42C8C89844B02746CCF5BF225852 /* NIOAny.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953F5862953C70B425CD2192D1917C75 /* NIOAny.swift */; };
-		FE6E31A4268F428B005B002D /* MtsTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6E31A3268F428B005B002D /* MtsTestView.swift */; };
 		FE9D5EC5D9ED14C0DAFC69CF6A95BF81 /* NIOTSBootstraps.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF881CDCAFA5C884E1ADA51E980A9502 /* NIOTSBootstraps.swift */; };
 		FE9D9F8010D2D7EDA962034033363019 /* p_x25519_asn1.c in Sources */ = {isa = PBXBuildFile; fileRef = 49D77DF19AD950DE628EA206A3BF3144 /* p_x25519_asn1.c */; };
 		FE9F114A51C4197E799C708E223AC8DA /* CNIOLinux-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 680C203EA8C1D07E501767781EFEF082 /* CNIOLinux-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FEB8976A268F580000FD6A0D /* MtsTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB89769268F580000FD6A0D /* MtsTestView.swift */; };
 		FF2068CBCECC006E4027D961B2363AD4 /* internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 6435861E4828580CC9876EE6FFE5307D /* internal.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		FF550B1A3E59BB6D1E8499BD8423C947 /* DispatchQueue+WithFuture.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D331E280938EC504A920DF592D9B1D /* DispatchQueue+WithFuture.swift */; };
 		FF5E4FA7CBE4B6DF9471AF269821D513 /* err.c in Sources */ = {isa = PBXBuildFile; fileRef = 2E1CB60BD7491CA4EA5E404EF5C47942 /* err.c */; };
@@ -2824,8 +2824,8 @@
 		FE0CE9D9149CC9319DFFA119E99627A9 /* CNIOHTTPParser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CNIOHTTPParser.release.xcconfig; sourceTree = "<group>"; };
 		FE15C33244683D18856FD565B6010CB7 /* CNIOBoringSSL_boringssl_prefix_symbols_asm.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CNIOBoringSSL_boringssl_prefix_symbols_asm.h; path = Sources/CNIOBoringSSL/include/CNIOBoringSSL_boringssl_prefix_symbols_asm.h; sourceTree = "<group>"; };
 		FE3F7E6F99C03DECA0CDF3BB8FCDE417 /* pcy_node.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = pcy_node.c; path = Sources/CNIOBoringSSL/crypto/x509v3/pcy_node.c; sourceTree = "<group>"; };
-		FE6E31A3268F428B005B002D /* MtsTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MtsTestView.swift; sourceTree = "<group>"; };
 		FE9754D2129A7DA3E3A9DDE8BA9F98FF /* ssl_key_share.cc */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = ssl_key_share.cc; path = Sources/CNIOBoringSSL/ssl/ssl_key_share.cc; sourceTree = "<group>"; };
+		FEB89769268F580000FD6A0D /* MtsTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MtsTestView.swift; path = ../MtsInvestGrpcService/Classes/UI/MtsTestView.swift; sourceTree = "<group>"; };
 		FEC9A2380C62B699F12A39376BF48E16 /* SwiftNIOTransportServices-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftNIOTransportServices-umbrella.h"; sourceTree = "<group>"; };
 		FEF7023DDDC3CDFC7598CCBFF58EEA4E /* internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = internal.h; path = Sources/CNIOBoringSSL/crypto/fipsmodule/des/internal.h; sourceTree = "<group>"; };
 		FF0B229B55EDF78F24797CA1C359F3F4 /* Pods-MtsInvestGrpcService_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MtsInvestGrpcService_Example-umbrella.h"; sourceTree = "<group>"; };
@@ -3177,7 +3177,7 @@
 		146607440D42A5C45D307A4926A188CA /* MtsInvestGrpcService */ = {
 			isa = PBXGroup;
 			children = (
-				FE6E31A2268F41F1005B002D /* UI */,
+				FEB89768268F57EC00FD6A0D /* UI */,
 				57C05F7D03C23AD08220B48372970103 /* GRPCClass.swift */,
 				4FAE6376D7DC0B57DA0064032A8AE098 /* Pod */,
 				B86FD2EF9ED2782332589749A3EDE90C /* Support Files */,
@@ -4787,10 +4787,10 @@
 			path = CNIOAtomics;
 			sourceTree = "<group>";
 		};
-		FE6E31A2268F41F1005B002D /* UI */ = {
+		FEB89768268F57EC00FD6A0D /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				FE6E31A3268F428B005B002D /* MtsTestView.swift */,
+				FEB89769268F580000FD6A0D /* MtsTestView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -5981,7 +5981,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE6E31A4268F428B005B002D /* MtsTestView.swift in Sources */,
+				FEB8976A268F580000FD6A0D /* MtsTestView.swift in Sources */,
 				6E7833F1C2F15B117A2D3B4F3A40BB0B /* GRPCClass.swift in Sources */,
 				FBDFF9FDBB38D7E6549D42A6E1DD2B25 /* MtsInvestGrpcService-dummy.m in Sources */,
 			);
@@ -7490,6 +7490,38 @@
 			};
 			name = Debug;
 		};
+		11FD5948560B15D5AC0E66B51863BCFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9E24D8CD97DAFAAA70002DFA0CEB7F9 /* MtsInvestGrpcService.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MtsInvestGrpcService/MtsInvestGrpcService-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MtsInvestGrpcService/MtsInvestGrpcService-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MtsInvestGrpcService/MtsInvestGrpcService.modulemap";
+				PRODUCT_MODULE_NAME = MtsInvestGrpcService;
+				PRODUCT_NAME = MtsInvestGrpcService;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		1A7B6D8AE2E298F51D199D216D8D04AE /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D89554E542D5ECF5EAADCFF1777925C9 /* SnapKit.release.xcconfig */;
@@ -7980,39 +8012,6 @@
 			};
 			name = Debug;
 		};
-		53F27EE104B427DEC975A1DA61B0FA54 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F9E24D8CD97DAFAAA70002DFA0CEB7F9 /* MtsInvestGrpcService.debug.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/MtsInvestGrpcService/MtsInvestGrpcService-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/MtsInvestGrpcService/MtsInvestGrpcService-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 0.1.9;
-				MODULEMAP_FILE = "Target Support Files/MtsInvestGrpcService/MtsInvestGrpcService.modulemap";
-				PRODUCT_MODULE_NAME = MtsInvestGrpcService;
-				PRODUCT_NAME = MtsInvestGrpcService;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		54B5EBE91D565F0781D5D91099A81579 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7D25EB80D6FCBEF53206F93B52F26B96 /* SwiftNIOFoundationCompat.release.xcconfig */;
@@ -8400,6 +8399,39 @@
 			};
 			name = Debug;
 		};
+		95DC4289597B7EC6FC1A1E62EC794474 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DBF18A1563A546F91B7F521A633F7843 /* MtsInvestGrpcService.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MtsInvestGrpcService/MtsInvestGrpcService-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MtsInvestGrpcService/MtsInvestGrpcService-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MtsInvestGrpcService/MtsInvestGrpcService.modulemap";
+				PRODUCT_MODULE_NAME = MtsInvestGrpcService;
+				PRODUCT_NAME = MtsInvestGrpcService;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		965E5B8ADAB4EBE970F0F192EC56567D /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 942D88C3B1ACD40D95B473E6AED2C96E /* CNIOBoringSSL.release.xcconfig */;
@@ -8659,40 +8691,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		C31B3D9D357083834DEFE074D9BDFDA3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DBF18A1563A546F91B7F521A633F7843 /* MtsInvestGrpcService.release.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/MtsInvestGrpcService/MtsInvestGrpcService-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/MtsInvestGrpcService/MtsInvestGrpcService-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 0.1.9;
-				MODULEMAP_FILE = "Target Support Files/MtsInvestGrpcService/MtsInvestGrpcService.modulemap";
-				PRODUCT_MODULE_NAME = MtsInvestGrpcService;
-				PRODUCT_NAME = MtsInvestGrpcService;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 		C3D8D087D1458642324C39B55B2C05C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -9180,8 +9178,8 @@
 		44154864D996B4C4D9B7988AE0D140AD /* Build configuration list for PBXNativeTarget "MtsInvestGrpcService" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				53F27EE104B427DEC975A1DA61B0FA54 /* Debug */,
-				C31B3D9D357083834DEFE074D9BDFDA3 /* Release */,
+				11FD5948560B15D5AC0E66B51863BCFC /* Debug */,
+				95DC4289597B7EC6FC1A1E62EC794474 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
