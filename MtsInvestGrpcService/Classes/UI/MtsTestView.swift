@@ -12,11 +12,11 @@ open class MtsTestView: UIView {
     
     public struct ViewData {
         let title: String
-        let color: UIColor
+        let backgroundColor: UIColor
         
-        public init(title: String, color: UIColor) {
+        public init(title: String, backgroundColor: UIColor) {
             self.title = title
-            self.color = color
+            self.backgroundColor = backgroundColor
         }
     }
     
@@ -40,7 +40,7 @@ open class MtsTestView: UIView {
     
     private func configure(data: ViewData) {
         titleLabel.text = data.title
-        titleLabel.textColor = data.color
+        titleLabel.backgroundColor = data.backgroundColor
     }
     
     private func setupView() {
