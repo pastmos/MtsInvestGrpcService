@@ -22,18 +22,18 @@ open class MtsTestView: UIView {
         return label
     }()
     
-    required public init(data: ViewData) {
+    public required init(data: ViewData) {
         super.init(frame: .zero)
         setupView()
         configure(data: data)
     }
     
-    required public init?(coder: NSCoder) {
+    public required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupView()
     }
     
-    func configure(data: ViewData) {
+    private func configure(data: ViewData) {
         titleLabel.text = data.title
         titleLabel.textColor = data.color
     }
