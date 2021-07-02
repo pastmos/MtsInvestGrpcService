@@ -1,0 +1,84 @@
+Target dependency graph (23 targets)
+CGRPCZlib in Pods
+CNIOAtomics in Pods
+CNIOBoringSSL in Pods
+CNIOBoringSSLShims in Pods, depends on:
+CNIOBoringSSL in Pods (explicit)
+CNIODarwin in Pods
+CNIOHTTPParser in Pods
+CNIOLinux in Pods
+CNIOWindows in Pods
+Logging in Pods
+SwiftNIOConcurrencyHelpers in Pods, depends on:
+CNIOAtomics in Pods (explicit)
+SwiftNIO in Pods, depends on:
+CNIODarwin in Pods (explicit)
+CNIOLinux in Pods (explicit)
+CNIOWindows in Pods (explicit)
+SwiftNIOConcurrencyHelpers in Pods (explicit)
+SwiftNIOExtras in Pods, depends on:
+SwiftNIO in Pods (explicit)
+SwiftNIOHTTP1 in Pods, depends on:
+CNIOHTTPParser in Pods (explicit)
+SwiftNIO in Pods (explicit)
+SwiftNIOConcurrencyHelpers in Pods (explicit)
+SwiftNIOHPACK in Pods, depends on:
+SwiftNIO in Pods (explicit)
+SwiftNIOConcurrencyHelpers in Pods (explicit)
+SwiftNIOHTTP1 in Pods (explicit)
+SwiftNIOTLS in Pods, depends on:
+SwiftNIO in Pods (explicit)
+SwiftNIOHTTP2 in Pods, depends on:
+SwiftNIO in Pods (explicit)
+SwiftNIOConcurrencyHelpers in Pods (explicit)
+SwiftNIOHPACK in Pods (explicit)
+SwiftNIOHTTP1 in Pods (explicit)
+SwiftNIOTLS in Pods (explicit)
+SwiftNIOSSL in Pods, depends on:
+CNIOBoringSSL in Pods (explicit)
+CNIOBoringSSLShims in Pods (explicit)
+SwiftNIO in Pods (explicit)
+SwiftNIOConcurrencyHelpers in Pods (explicit)
+SwiftNIOTLS in Pods (explicit)
+SwiftNIOFoundationCompat in Pods, depends on:
+SwiftNIO in Pods (explicit)
+SwiftNIOTransportServices in Pods, depends on:
+SwiftNIO in Pods (explicit)
+SwiftNIOConcurrencyHelpers in Pods (explicit)
+SwiftNIOFoundationCompat in Pods (explicit)
+SwiftNIOTLS in Pods (explicit)
+SwiftProtobuf in Pods
+gRPC-Swift in Pods, depends on:
+CGRPCZlib in Pods (explicit)
+Logging in Pods (explicit)
+SwiftNIO in Pods (explicit)
+SwiftNIOExtras in Pods (explicit)
+SwiftNIOHTTP2 in Pods (explicit)
+SwiftNIOSSL in Pods (explicit)
+SwiftNIOTransportServices in Pods (explicit)
+SwiftProtobuf in Pods (explicit)
+MtsInvestGrpcService in Pods, depends on:
+gRPC-Swift in Pods (explicit)
+Pods-MtsInvestGrpcService_Tests in Pods, depends on:
+CGRPCZlib in Pods (explicit)
+CNIOAtomics in Pods (explicit)
+CNIOBoringSSL in Pods (explicit)
+CNIOBoringSSLShims in Pods (explicit)
+CNIODarwin in Pods (explicit)
+CNIOHTTPParser in Pods (explicit)
+CNIOLinux in Pods (explicit)
+CNIOWindows in Pods (explicit)
+Logging in Pods (explicit)
+MtsInvestGrpcService in Pods (explicit)
+SwiftNIO in Pods (explicit)
+SwiftNIOConcurrencyHelpers in Pods (explicit)
+SwiftNIOExtras in Pods (explicit)
+SwiftNIOFoundationCompat in Pods (explicit)
+SwiftNIOHPACK in Pods (explicit)
+SwiftNIOHTTP1 in Pods (explicit)
+SwiftNIOHTTP2 in Pods (explicit)
+SwiftNIOSSL in Pods (explicit)
+SwiftNIOTLS in Pods (explicit)
+SwiftNIOTransportServices in Pods (explicit)
+SwiftProtobuf in Pods (explicit)
+gRPC-Swift in Pods (explicit)

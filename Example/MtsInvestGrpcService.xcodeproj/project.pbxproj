@@ -9,18 +9,38 @@
 /* Begin PBXBuildFile section */
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		AF17BECD46B8F709451C3FC1 /* Pods_MtsInvestGrpcService_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8539385A4BD2B74EEBFC69 /* Pods_MtsInvestGrpcService_Tests.framework */; };
+		FC959D6443729E24F992FB3D /* Pods_MtsInvestGrpcService_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ECF53DC2943456FA17D3755 /* Pods_MtsInvestGrpcService_Example.framework */; };
+		FE6E3191268F3BEC005B002D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6E3190268F3BEC005B002D /* AppDelegate.swift */; };
+		FE6E3193268F3BEC005B002D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6E3192268F3BEC005B002D /* SceneDelegate.swift */; };
+		FE6E3195268F3BEC005B002D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6E3194268F3BEC005B002D /* ViewController.swift */; };
+		FE6E3198268F3BEC005B002D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE6E3196268F3BEC005B002D /* Main.storyboard */; };
+		FE6E319A268F3BED005B002D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE6E3199268F3BED005B002D /* Assets.xcassets */; };
+		FE6E319D268F3BED005B002D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE6E319B268F3BED005B002D /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0BCA3A444B438755B45F0230 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		2F3F46E730067E9E6E7363EF /* Pods-MtsInvestGrpcService_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MtsInvestGrpcService_Example.release.xcconfig"; path = "Target Support Files/Pods-MtsInvestGrpcService_Example/Pods-MtsInvestGrpcService_Example.release.xcconfig"; sourceTree = "<group>"; };
 		301E022B2FCAEA1F7F870893 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		3C14973F0FFE449DE088CEFB /* Pods-MtsInvestGrpcService_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MtsInvestGrpcService_Example.debug.xcconfig"; path = "Target Support Files/Pods-MtsInvestGrpcService_Example/Pods-MtsInvestGrpcService_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		3DEAE748D9EC321BEF3E6AA2 /* Pods-MtsInvestGrpcService_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MtsInvestGrpcService_Tests.debug.xcconfig"; path = "Target Support Files/Pods-MtsInvestGrpcService_Tests/Pods-MtsInvestGrpcService_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* MtsInvestGrpcService_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MtsInvestGrpcService_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		6520A115FB01E0357D1C7580 /* Pods-MtsInvestGrpcService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MtsInvestGrpcService.release.xcconfig"; path = "Target Support Files/Pods-MtsInvestGrpcService/Pods-MtsInvestGrpcService.release.xcconfig"; sourceTree = "<group>"; };
+		7265A1200B87586A7DD4FF90 /* Pods-MtsInvestGrpcService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MtsInvestGrpcService.debug.xcconfig"; path = "Target Support Files/Pods-MtsInvestGrpcService/Pods-MtsInvestGrpcService.debug.xcconfig"; sourceTree = "<group>"; };
 		9AE354249EE27719555C35AE /* Pods-MtsInvestGrpcService_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MtsInvestGrpcService_Tests.release.xcconfig"; path = "Target Support Files/Pods-MtsInvestGrpcService_Tests/Pods-MtsInvestGrpcService_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		9B8539385A4BD2B74EEBFC69 /* Pods_MtsInvestGrpcService_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MtsInvestGrpcService_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B9BA855D0126456A7A7D57D7 /* MtsInvestGrpcService.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MtsInvestGrpcService.podspec; path = ../MtsInvestGrpcService.podspec; sourceTree = "<group>"; };
+		9ECF53DC2943456FA17D3755 /* Pods_MtsInvestGrpcService_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MtsInvestGrpcService_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9BA855D0126456A7A7D57D7 /* MtsInvestGrpcService.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MtsInvestGrpcService.podspec; path = ../MtsInvestGrpcService.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		FE6E318E268F3BEC005B002D /* MtsInvestGrpcService_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MtsInvestGrpcService_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE6E3190268F3BEC005B002D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FE6E3192268F3BEC005B002D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FE6E3194268F3BEC005B002D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FE6E3197268F3BEC005B002D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FE6E3199268F3BED005B002D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FE6E319C268F3BED005B002D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FE6E319E268F3BED005B002D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +52,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FE6E318B268F3BEC005B002D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC959D6443729E24F992FB3D /* Pods_MtsInvestGrpcService_Example.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -39,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
+				FE6E318F268F3BEC005B002D /* MtsInvestGrpcService */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
 				90A077434DB866976BB405F6 /* Pods */,
@@ -50,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACE51AFB9204008FA782 /* MtsInvestGrpcService_Tests.xctest */,
+				FE6E318E268F3BEC005B002D /* MtsInvestGrpcService_Example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -85,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				9B8539385A4BD2B74EEBFC69 /* Pods_MtsInvestGrpcService_Tests.framework */,
+				9ECF53DC2943456FA17D3755 /* Pods_MtsInvestGrpcService_Example.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -94,8 +125,26 @@
 			children = (
 				3DEAE748D9EC321BEF3E6AA2 /* Pods-MtsInvestGrpcService_Tests.debug.xcconfig */,
 				9AE354249EE27719555C35AE /* Pods-MtsInvestGrpcService_Tests.release.xcconfig */,
+				7265A1200B87586A7DD4FF90 /* Pods-MtsInvestGrpcService.debug.xcconfig */,
+				6520A115FB01E0357D1C7580 /* Pods-MtsInvestGrpcService.release.xcconfig */,
+				3C14973F0FFE449DE088CEFB /* Pods-MtsInvestGrpcService_Example.debug.xcconfig */,
+				2F3F46E730067E9E6E7363EF /* Pods-MtsInvestGrpcService_Example.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		FE6E318F268F3BEC005B002D /* MtsInvestGrpcService */ = {
+			isa = PBXGroup;
+			children = (
+				FE6E3190268F3BEC005B002D /* AppDelegate.swift */,
+				FE6E3192268F3BEC005B002D /* SceneDelegate.swift */,
+				FE6E3194268F3BEC005B002D /* ViewController.swift */,
+				FE6E3196268F3BEC005B002D /* Main.storyboard */,
+				FE6E3199268F3BED005B002D /* Assets.xcassets */,
+				FE6E319B268F3BED005B002D /* LaunchScreen.storyboard */,
+				FE6E319E268F3BED005B002D /* Info.plist */,
+			);
+			path = MtsInvestGrpcService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -109,7 +158,6 @@
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
-				E5DEDEA494B28E101FAFBE61 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -120,13 +168,32 @@
 			productReference = 607FACE51AFB9204008FA782 /* MtsInvestGrpcService_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		FE6E318D268F3BEC005B002D /* MtsInvestGrpcService_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE6E319F268F3BED005B002D /* Build configuration list for PBXNativeTarget "MtsInvestGrpcService_Example" */;
+			buildPhases = (
+				1EF0280E91F4EA5A0684FB23 /* [CP] Check Pods Manifest.lock */,
+				FE6E318A268F3BEC005B002D /* Sources */,
+				FE6E318B268F3BEC005B002D /* Frameworks */,
+				FE6E318C268F3BEC005B002D /* Resources */,
+				C6FA0674A1704328B52AD7A0 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MtsInvestGrpcService_Example;
+			productName = MtsInvestGrpcService;
+			productReference = FE6E318E268F3BEC005B002D /* MtsInvestGrpcService_Example.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		607FACC81AFB9204008FA782 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
+				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
@@ -135,6 +202,11 @@
 						DevelopmentTeam = 8644MY34M6;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
+					};
+					FE6E318D268F3BEC005B002D = {
+						CreatedOnToolsVersion = 12.5;
+						DevelopmentTeam = ZX3SQL43UT;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -153,6 +225,7 @@
 			projectRoot = "";
 			targets = (
 				607FACE41AFB9204008FA782 /* MtsInvestGrpcService_Tests */,
+				FE6E318D268F3BEC005B002D /* MtsInvestGrpcService_Example */,
 			);
 		};
 /* End PBXProject section */
@@ -165,9 +238,103 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FE6E318C268F3BEC005B002D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE6E319D268F3BED005B002D /* LaunchScreen.storyboard in Resources */,
+				FE6E319A268F3BED005B002D /* Assets.xcassets in Resources */,
+				FE6E3198268F3BEC005B002D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1EF0280E91F4EA5A0684FB23 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MtsInvestGrpcService_Example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6FA0674A1704328B52AD7A0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MtsInvestGrpcService_Example/Pods-MtsInvestGrpcService_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CGRPCZlib/CGRPCZlib.framework",
+				"${BUILT_PRODUCTS_DIR}/CNIOAtomics/CNIOAtomics.framework",
+				"${BUILT_PRODUCTS_DIR}/CNIOBoringSSL/CNIOBoringSSL.framework",
+				"${BUILT_PRODUCTS_DIR}/CNIOBoringSSLShims/CNIOBoringSSLShims.framework",
+				"${BUILT_PRODUCTS_DIR}/CNIODarwin/CNIODarwin.framework",
+				"${BUILT_PRODUCTS_DIR}/CNIOHTTPParser/CNIOHTTPParser.framework",
+				"${BUILT_PRODUCTS_DIR}/CNIOLinux/CNIOLinux.framework",
+				"${BUILT_PRODUCTS_DIR}/CNIOWindows/CNIOWindows.framework",
+				"${BUILT_PRODUCTS_DIR}/Logging/Logging.framework",
+				"${BUILT_PRODUCTS_DIR}/MtsInvestGrpcService/MtsInvestGrpcService.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftNIO/NIO.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftNIOConcurrencyHelpers/NIOConcurrencyHelpers.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftNIOExtras/NIOExtras.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftNIOFoundationCompat/NIOFoundationCompat.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftNIOHPACK/NIOHPACK.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftNIOHTTP1/NIOHTTP1.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftNIOHTTP2/NIOHTTP2.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftNIOSSL/NIOSSL.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftNIOTLS/NIOTLS.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftNIOTransportServices/NIOTransportServices.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftProtobuf/SwiftProtobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Swift/GRPC.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CGRPCZlib.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CNIOAtomics.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CNIOBoringSSL.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CNIOBoringSSLShims.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CNIODarwin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CNIOHTTPParser.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CNIOLinux.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CNIOWindows.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Logging.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MtsInvestGrpcService.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NIO.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NIOConcurrencyHelpers.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NIOExtras.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NIOFoundationCompat.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NIOHPACK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NIOHTTP1.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NIOHTTP2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NIOSSL.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NIOTLS.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NIOTransportServices.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftProtobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPC.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MtsInvestGrpcService_Example/Pods-MtsInvestGrpcService_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D092608271EF095D3DDB73BE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -190,32 +357,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E5DEDEA494B28E101FAFBE61 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MtsInvestGrpcService_Tests/Pods-MtsInvestGrpcService_Tests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
-				"${BUILT_PRODUCTS_DIR}/MtsInvestGrpcService/MtsInvestGrpcService.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftGRPC/SwiftGRPC.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftProtobuf/SwiftProtobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MtsInvestGrpcService.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftGRPC.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftProtobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MtsInvestGrpcService_Tests/Pods-MtsInvestGrpcService_Tests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -227,7 +368,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FE6E318A268F3BEC005B002D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE6E3195268F3BEC005B002D /* ViewController.swift in Sources */,
+				FE6E3191268F3BEC005B002D /* AppDelegate.swift in Sources */,
+				FE6E3193268F3BEC005B002D /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FE6E3196268F3BEC005B002D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE6E3197268F3BEC005B002D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FE6E319B268F3BED005B002D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE6E319C268F3BED005B002D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		607FACED1AFB9204008FA782 /* Debug */ = {
@@ -275,7 +445,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -321,7 +491,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -371,6 +541,67 @@
 			};
 			name = Release;
 		};
+		FE6E31A0268F3BED005B002D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C14973F0FFE449DE088CEFB /* Pods-MtsInvestGrpcService_Example.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = ZX3SQL43UT;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = MtsInvestGrpcService/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.finservice.bondPlacement.BondPlacement.MtsInvestGrpcService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FE6E31A1268F3BED005B002D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F3F46E730067E9E6E7363EF /* Pods-MtsInvestGrpcService_Example.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZX3SQL43UT;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = MtsInvestGrpcService/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.finservice.bondPlacement.BondPlacement.MtsInvestGrpcService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -388,6 +619,15 @@
 			buildConfigurations = (
 				607FACF31AFB9204008FA782 /* Debug */,
 				607FACF41AFB9204008FA782 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE6E319F268F3BED005B002D /* Build configuration list for PBXNativeTarget "MtsInvestGrpcService_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE6E31A0268F3BED005B002D /* Debug */,
+				FE6E31A1268F3BED005B002D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -16,12 +16,15 @@
     "tag": "0.1.6"
   },
   "platforms": {
-    "ios": "14.0"
+    "ios": "12.0"
   },
   "source_files": "MtsInvestGrpcService/Classes/**/*",
   "swift_versions": "5.0",
   "dependencies": {
     "gRPC-Swift": [
+
+    ],
+    "SnapKit": [
 
     ]
   },

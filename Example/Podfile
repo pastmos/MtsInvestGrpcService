@@ -1,7 +1,14 @@
 use_frameworks!
-target 'MtsInvestGrpcService_Tests' do
-  pod 'MtsInvestGrpcService', :path => '../'
-  
+platform :ios, '12.0'
+
+target 'MtsInvestGrpcService_Example' do
+
   pod 'gRPC-Swift'
-  
+  pod 'SnapKit'
+  pod 'MtsInvestGrpcService', :path => '../'
+
+  target 'MtsInvestGrpcService_Tests' do
+    inherit! :search_paths
+
+  end
 end

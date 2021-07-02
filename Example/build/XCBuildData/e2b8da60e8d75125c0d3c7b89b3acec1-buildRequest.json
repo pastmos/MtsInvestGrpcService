@@ -1,0 +1,108 @@
+{
+  "buildCommand" : "prepareForIndexing",
+  "configuredTargets" : [
+    {
+      "guid" : "305aa754a2a492fff04e480c25bfbd1e4db95d41ad04fb9439171d36362f816d"
+    },
+    {
+      "guid" : "305aa754a2a492fff04e480c25bfbd1e14bce60a7d68fc62dbe46afc3a33bd28"
+    },
+    {
+      "guid" : "305aa754a2a492fff04e480c25bfbd1e08d10e819b8475106cc6f451adea14c0"
+    },
+    {
+      "guid" : "305aa754a2a492fff04e480c25bfbd1e5235561d46300e50a128e5f86be6e6dc"
+    },
+    {
+      "guid" : "305aa754a2a492fff04e480c25bfbd1eedbfbc8d7510a5f6ea3505040e696b57"
+    },
+    {
+      "guid" : "305aa754a2a492fff04e480c25bfbd1ed238f9fbc60366a96fe0eb34f9dc8897"
+    },
+    {
+      "guid" : "305aa754a2a492fff04e480c25bfbd1eddac5f06e6b63ee7b022f7ff6caa5508"
+    },
+    {
+      "guid" : "305aa754a2a492fff04e480c25bfbd1e0dd3c29eadaebaa38d148bfaed60b1b1"
+    },
+    {
+      "guid" : "305aa754a2a492fff04e480c25bfbd1e9b62aa429163b5aa3d9e561af3c10d05"
+    },
+    {
+      "guid" : "305aa754a2a492fff04e480c25bfbd1e23fc39d19f89d761fb38e0e0222454ac"
+    },
+    {
+      "guid" : "305aa754a2a492fff04e480c25bfbd1e4301b450b323303f4d983e56d742f0cc"
+    },
+    {
+      "guid" : "305aa754a2a492fff04e480c25bfbd1e1130daa4894db4a9220537a0c61d4fd9"
+    },
+    {
+      "guid" : "305aa754a2a492fff04e480c25bfbd1ec05e1f1b80218f56565ece0264c5ec31"
+    },
+    {
+      "guid" : "305aa754a2a492fff04e480c25bfbd1ee674c976cfec27f246777f761031e292"
+    },
+    {
+      "guid" : "305aa754a2a492fff04e480c25bfbd1e42b1c7c2ce283f09afb562e9d4713a97"
+    },
+    {
+      "guid" : "305aa754a2a492fff04e480c25bfbd1e1c4342b79662983ec0b62752b562fe7f"
+    },
+    {
+      "guid" : "305aa754a2a492fff04e480c25bfbd1e429bf26a4b6bf497cbcbe03c1fb3a0e6"
+    },
+    {
+      "guid" : "305aa754a2a492fff04e480c25bfbd1e7e12cf7d3931c001d4164e20794d333f"
+    },
+    {
+      "guid" : "305aa754a2a492fff04e480c25bfbd1e0caf134af9d67d185539287e0c72f3d8"
+    },
+    {
+      "guid" : "305aa754a2a492fff04e480c25bfbd1eb578a9da62ba19220549ca0590848b1f"
+    },
+    {
+      "guid" : "305aa754a2a492fff04e480c25bfbd1e4668bf1fd28328389da9a8f01e1b9582"
+    },
+    {
+      "guid" : "305aa754a2a492fff04e480c25bfbd1e6f9a86f5fe7f568f8fa7c8f22f30c837"
+    },
+    {
+      "guid" : "305aa754a2a492fff04e480c25bfbd1e40fa72b1389229bc82a786c7bb54bc7b"
+    },
+    {
+      "guid" : "305aa754a2a492fff04e480c25bfbd1e52dcf1ff2b785110949174cb5adb9e3c"
+    }
+  ],
+  "continueBuildingAfterErrors" : true,
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "build",
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "",
+      "buildProductsPath" : "",
+      "derivedDataPath" : "/Users/sergeypanov/Library/Developer/Xcode/DerivedData",
+      "indexDataStoreFolderPath" : "/Users/sergeypanov/Library/Developer/Xcode/DerivedData/Pods-bknhzcabyyjwclgzludkvfwnokcc/Index/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/sergeypanov/Library/Developer/Xcode/DerivedData/Pods-bknhzcabyyjwclgzludkvfwnokcc/Index/PrecompiledHeaders",
+      "pchPath" : ""
+    },
+    "configurationName" : "Release",
+    "overrides" : {
+      "synthesized" : {
+        "table" : {
+          "ENABLE_PREVIEWS" : "NO"
+        }
+      }
+    }
+  },
+  "qos" : "default",
+  "schemeCommand" : "launch",
+  "shouldCollectMetrics" : false,
+  "showNonLoggedProgress" : true,
+  "useDryRun" : true,
+  "useImplicitDependencies" : false,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : false
+}
