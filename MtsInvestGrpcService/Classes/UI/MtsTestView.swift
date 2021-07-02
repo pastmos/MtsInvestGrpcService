@@ -13,6 +13,11 @@ open class MtsTestView: UIView {
     public struct ViewData {
         let title: String
         let color: UIColor
+        
+        public init(title: String, color: UIColor) {
+            self.title = title
+            self.color = color
+        }
     }
     
     private let titleLabel: UILabel = {
