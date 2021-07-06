@@ -1134,6 +1134,11 @@
 		FE9D9F8010D2D7EDA962034033363019 /* p_x25519_asn1.c in Sources */ = {isa = PBXBuildFile; fileRef = 49D77DF19AD950DE628EA206A3BF3144 /* p_x25519_asn1.c */; };
 		FE9F114A51C4197E799C708E223AC8DA /* CNIOLinux-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 680C203EA8C1D07E501767781EFEF082 /* CNIOLinux-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FEB8976A268F580000FD6A0D /* MtsTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB89769268F580000FD6A0D /* MtsTestView.swift */; };
+		FEB8978F2694889E00FD6A0D /* number.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB8978A2694889E00FD6A0D /* number.pb.swift */; };
+		FEB897902694889E00FD6A0D /* mts_common.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB8978B2694889E00FD6A0D /* mts_common.pb.swift */; };
+		FEB897912694889E00FD6A0D /* date.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB8978C2694889E00FD6A0D /* date.pb.swift */; };
+		FEB897922694889E00FD6A0D /* broker-portfolio-commons.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB8978D2694889E00FD6A0D /* broker-portfolio-commons.pb.swift */; };
+		FEB897932694889E00FD6A0D /* broker-portfolio-public.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB8978E2694889E00FD6A0D /* broker-portfolio-public.pb.swift */; };
 		FF2068CBCECC006E4027D961B2363AD4 /* internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 6435861E4828580CC9876EE6FFE5307D /* internal.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		FF550B1A3E59BB6D1E8499BD8423C947 /* DispatchQueue+WithFuture.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D331E280938EC504A920DF592D9B1D /* DispatchQueue+WithFuture.swift */; };
 		FF5E4FA7CBE4B6DF9471AF269821D513 /* err.c in Sources */ = {isa = PBXBuildFile; fileRef = 2E1CB60BD7491CA4EA5E404EF5C47942 /* err.c */; };
@@ -2826,6 +2831,11 @@
 		FE3F7E6F99C03DECA0CDF3BB8FCDE417 /* pcy_node.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = pcy_node.c; path = Sources/CNIOBoringSSL/crypto/x509v3/pcy_node.c; sourceTree = "<group>"; };
 		FE9754D2129A7DA3E3A9DDE8BA9F98FF /* ssl_key_share.cc */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = ssl_key_share.cc; path = Sources/CNIOBoringSSL/ssl/ssl_key_share.cc; sourceTree = "<group>"; };
 		FEB89769268F580000FD6A0D /* MtsTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MtsTestView.swift; path = ../MtsInvestGrpcService/Classes/UI/MtsTestView.swift; sourceTree = "<group>"; };
+		FEB8978A2694889E00FD6A0D /* number.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = number.pb.swift; sourceTree = "<group>"; };
+		FEB8978B2694889E00FD6A0D /* mts_common.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mts_common.pb.swift; sourceTree = "<group>"; };
+		FEB8978C2694889E00FD6A0D /* date.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = date.pb.swift; sourceTree = "<group>"; };
+		FEB8978D2694889E00FD6A0D /* broker-portfolio-commons.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "broker-portfolio-commons.pb.swift"; sourceTree = "<group>"; };
+		FEB8978E2694889E00FD6A0D /* broker-portfolio-public.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "broker-portfolio-public.pb.swift"; sourceTree = "<group>"; };
 		FEC9A2380C62B699F12A39376BF48E16 /* SwiftNIOTransportServices-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftNIOTransportServices-umbrella.h"; sourceTree = "<group>"; };
 		FEF7023DDDC3CDFC7598CCBFF58EEA4E /* internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = internal.h; path = Sources/CNIOBoringSSL/crypto/fipsmodule/des/internal.h; sourceTree = "<group>"; };
 		FF0B229B55EDF78F24797CA1C359F3F4 /* Pods-MtsInvestGrpcService_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MtsInvestGrpcService_Example-umbrella.h"; sourceTree = "<group>"; };
@@ -3177,6 +3187,7 @@
 		146607440D42A5C45D307A4926A188CA /* MtsInvestGrpcService */ = {
 			isa = PBXGroup;
 			children = (
+				FEB897882694889E00FD6A0D /* GRPC */,
 				FEB89768268F57EC00FD6A0D /* UI */,
 				57C05F7D03C23AD08220B48372970103 /* GRPCClass.swift */,
 				4FAE6376D7DC0B57DA0064032A8AE098 /* Pod */,
@@ -4795,6 +4806,27 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		FEB897882694889E00FD6A0D /* GRPC */ = {
+			isa = PBXGroup;
+			children = (
+				FEB897892694889E00FD6A0D /* Common */,
+				FEB8978D2694889E00FD6A0D /* broker-portfolio-commons.pb.swift */,
+				FEB8978E2694889E00FD6A0D /* broker-portfolio-public.pb.swift */,
+			);
+			name = GRPC;
+			path = MtsInvestGrpcService/Classes/GRPC;
+			sourceTree = "<group>";
+		};
+		FEB897892694889E00FD6A0D /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				FEB8978A2694889E00FD6A0D /* number.pb.swift */,
+				FEB8978B2694889E00FD6A0D /* mts_common.pb.swift */,
+				FEB8978C2694889E00FD6A0D /* date.pb.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		FF736893E2021D52FF5953FE839E5079 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -5984,6 +6016,11 @@
 				FEB8976A268F580000FD6A0D /* MtsTestView.swift in Sources */,
 				6E7833F1C2F15B117A2D3B4F3A40BB0B /* GRPCClass.swift in Sources */,
 				FBDFF9FDBB38D7E6549D42A6E1DD2B25 /* MtsInvestGrpcService-dummy.m in Sources */,
+				FEB897922694889E00FD6A0D /* broker-portfolio-commons.pb.swift in Sources */,
+				FEB897902694889E00FD6A0D /* mts_common.pb.swift in Sources */,
+				FEB897912694889E00FD6A0D /* date.pb.swift in Sources */,
+				FEB897932694889E00FD6A0D /* broker-portfolio-public.pb.swift in Sources */,
+				FEB8978F2694889E00FD6A0D /* number.pb.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
