@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MtsInvestGrpcService'
-  s.version          = '0.1.13'
+  s.version          = '0.1.14'
   s.summary          = 'MTS Investments GRPC Core library'
 
 # This description is used to generate tags and improve search results.
