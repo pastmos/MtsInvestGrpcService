@@ -58,7 +58,7 @@ final class GRPCServerPipelineConfigurator: ChannelInboundHandler, RemovableChan
   }
 
   init(configuration: Server.Configuration) {
-    if let tls = configuration.tls {
+    if let tls = configuration.tlsConfiguration {
       self.state = .notConfigured(alpn: .expected(required: tls.requireALPN))
     } else {
       self.state = .notConfigured(alpn: .notExpected)
@@ -116,6 +116,7 @@ final class GRPCServerPipelineConfigurator: ChannelInboundHandler, RemovableChan
       encoding: self.configuration.messageEncoding,
       errorDelegate: self.configuration.errorDelegate,
       normalizeHeaders: normalizeHeaders,
+      maximumReceiveMessageLength: self.configuration.maximumReceiveMessageLength,
       logger: logger
     )
   }
@@ -166,7 +167,7 @@ final class GRPCServerPipelineConfigurator: ChannelInboundHandler, RemovableChan
       let sync = context.pipeline.syncOperations
       try sync.configureHTTPServerPipeline(withErrorHandling: true)
       try sync.addHandler(WebCORSHandler())
-      let scheme = self.configuration.tls == nil ? "http" : "https"
+      let scheme = self.configuration.tlsConfiguration == nil ? "http" : "https"
       try sync.addHandler(GRPCWebToHTTP2ServerCodec(scheme: scheme))
       // There's no need to normalize headers for HTTP/1.
       try sync.addHandler(

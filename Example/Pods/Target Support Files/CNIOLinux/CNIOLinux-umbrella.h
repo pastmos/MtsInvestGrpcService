@@ -11,6 +11,7 @@
 #endif
 
 #import "CNIOLinux.h"
+#import "liburing_nio.h"
 
 FOUNDATION_EXPORT double CNIOLinuxVersionNumber;
 FOUNDATION_EXPORT const unsigned char CNIOLinuxVersionString[];

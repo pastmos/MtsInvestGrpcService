@@ -111,8 +111,14 @@ private func alpnCallback(ssl: OpaquePointer?,
 
 /// A wrapper class that encapsulates BoringSSL's `SSL_CTX *` object.
 ///
-/// This class represents configuration for a collection of TLS connections, all of
-/// which are expected to be broadly the same.
+/// This object is thread-safe and can be shared across TLS connections in your application. Even if the connections
+/// are associated with `Channel`s from different `EventLoop`s.
+///
+/// - Note: Creating a `NIOSSLContext` is a very expensive operation because BoringSSL will usually need to load and
+///         parse large number of certificates from the system trust store. Therefore, creating a
+///         `NIOSSLContext` will likely allocate many thousand times and will also _perform blocking disk I/O_.
+///
+/// - Warning: Avoid creating `NIOSSLContext`s on any `EventLoop` because it does _blocking disk I/O_.
 public final class NIOSSLContext {
     private let sslContext: OpaquePointer
     private let callbackManager: CallbackManagerProtocol?
@@ -266,6 +272,12 @@ public final class NIOSSLContext {
 
     /// Initialize a context that will create multiple connections, all with the same
     /// configuration.
+    ///
+    /// - Note: Creating a `NIOSSLContext` is a very expensive operation because BoringSSL will usually need to load and
+    ///         parse large number of certificates from the system trust store. Therefore, creating a
+    ///         `NIOSSLContext` will likely allocate many thousand times and will also _perform blocking disk I/O_.
+    ///
+    /// - Warning: Avoid creating `NIOSSLContext`s on any `EventLoop` because it does _blocking disk I/O_.
     public convenience init(configuration: TLSConfiguration) throws {
         try self.init(configuration: configuration, callbackManager: nil)
     }
@@ -273,6 +285,12 @@ public final class NIOSSLContext {
     /// Initialize a context that will create multiple connections, all with the same
     /// configuration, along with a callback that will be called when needed to decrypt any
     /// encrypted private keys.
+    ///
+    /// - Note: Creating a `NIOSSLContext` is a very expensive operation because BoringSSL will usually need to load and
+    ///         parse large number of certificates from the system trust store. Therefore, creating a
+    ///         `NIOSSLContext` will likely allocate many thousand times and will also _perform blocking disk I/O_.
+    ///
+    /// - Warning: Avoid creating `NIOSSLContext`s on any `EventLoop` because it does _blocking disk I/O_.
     ///
     /// - parameters:
     ///     - configuration: The `TLSConfiguration` to use for all the connections with this
@@ -499,6 +517,90 @@ extension NIOSSLContext {
             // either.
             parentSwiftContext.keyLogManager!.log(linePointer)
         }
+    }
+}
+
+// For accessing STACK_OF(SSL_CIPHER) from a SSLContext
+extension NIOSSLContext {
+    /// A collection of buffers representing a STACK_OF(SSL_CIPHER)
+    struct NIOTLSCipherBuffers {
+        private let basePointer: OpaquePointer
+
+        fileprivate init(basePointer: OpaquePointer) {
+            self.basePointer = basePointer
+        }
+    }
+
+    /// Invokes a block with a collection of pointers to STACK_OF(SSL_CIPHER).
+    ///
+    /// The pointers are only guaranteed to be valid for the duration of this call.  This method aligns with the RandomAccessCollection protocol
+    /// to access UInt16 pointers at a specific index.  This pointer is used to safely access id values of the cipher to create a new NIOTLSCipher.
+    fileprivate func withStackOfCipherSuiteBuffers<Result>(_ body: (NIOTLSCipherBuffers?) throws -> Result) rethrows -> Result {
+        guard let stackPointer = CNIOBoringSSL_SSL_CTX_get_ciphers(self.sslContext) else {
+            return try body(nil)
+        }
+        return try body(NIOTLSCipherBuffers(basePointer: stackPointer))
+    }
+
+    /// Access cipher suites applied to the context
+    internal var cipherSuites: [NIOTLSCipher] {
+        return self.withStackOfCipherSuiteBuffers { buffers in
+            guard let buffers = buffers else {
+                return []
+            }
+            return Array(buffers)
+        }
+    }
+}
+
+extension NIOSSLContext.NIOTLSCipherBuffers: RandomAccessCollection {
+    
+    struct Index: Hashable, Comparable, Strideable {
+        typealias Stride = Int
+
+        fileprivate var index: Int
+
+        fileprivate init(_ index: Int) {
+            self.index = index
+        }
+
+        static func < (lhs: Index, rhs: Index) -> Bool {
+            return lhs.index < rhs.index
+        }
+
+        func advanced(by n: NIOSSLContext.NIOTLSCipherBuffers.Index.Stride) -> NIOSSLContext.NIOTLSCipherBuffers.Index {
+            var result = self
+            result.index += n
+            return result
+        }
+
+        func distance(to other: NIOSSLContext.NIOTLSCipherBuffers.Index) -> NIOSSLContext.NIOTLSCipherBuffers.Index.Stride {
+            return other.index - self.index
+        }
+    }
+
+    typealias Element = NIOTLSCipher
+
+    var startIndex: Index {
+        return Index(0)
+    }
+
+    var endIndex: Index {
+        return Index(self.count)
+    }
+
+    var count: Int {
+        return CNIOBoringSSL_sk_SSL_CIPHER_num(self.basePointer)
+    }
+    
+    subscript(position: Index) -> NIOTLSCipher {
+        precondition(position < self.endIndex)
+        precondition(position >= self.startIndex)
+        guard let ptr = CNIOBoringSSL_sk_SSL_CIPHER_value(self.basePointer, position.index) else {
+            preconditionFailure("Unable to locate backing pointer.")
+        }
+        let cipherID = CNIOBoringSSL_SSL_CIPHER_get_protocol_id(ptr)
+        return NIOTLSCipher(cipherID)
     }
 }
 
