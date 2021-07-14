@@ -20,8 +20,7 @@ final class ViewController: UIViewController {
     @IBAction private func refresh() {
         guard let token = tokenTextField.text else { return }
         self.token = token
-//        let grpcService = MtsGRPCClass(token: token)
-        makeStream(to: "broker.sistema-capital.com", port: 9010)
+        createStub()
     }
     
     private var token = ""
@@ -31,6 +30,41 @@ final class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
+    
+    
+    private func createStub() {
+//        DispatchQueue.global().async {
+            let group = PlatformSupport.makeEventLoopGroup(loopCount: 1)
+            defer {
+                try? group.syncShutdownGracefully()
+            }
+            
+            let channel = ClientConnection
+                .usingPlatformAppropriateTLS(for: group)
+//                .secure(group: group)
+//                .connect(host: "broker.sistema-capital.com", port: 9010)
+            channel.withConnectivityStateDelegate(self)
+            let channel0 = channel.connect(host: "broker.sistema-capital.com", port: 9010)
+            
+            let client = Ru_Mts_Trading_Pub_User_UserPublicServiceClient(channel: channel0)
+            var callOption = CallOptions()
+            callOption.customMetadata.add(
+                name: "authorization",
+                value: self.token)
+            let call = client.getUser(Google_Protobuf_Empty(), callOptions: callOption)
+            call.status.whenSuccess { status in
+                print(status)
+            }
+            call.status.whenFailure { error in
+                print(error)
+            }
+            // Block on the response future.
+            let feature = try? call.response.wait()
+            
+            print(feature)
+//        }
     }
     
     public func makeStream(
@@ -39,7 +73,7 @@ final class ViewController: UIViewController {
         let configuration = ClientConnection.Configuration.default(
             target: .hostAndPort(host, port),
             eventLoopGroup: group)
-        let channel = ClientConnection(configuration: configuration)
+        channel = ClientConnection(configuration: configuration)
 //            .insecure(group: group)
 //            .connect(
 //                host: host,
@@ -51,14 +85,24 @@ final class ViewController: UIViewController {
             value: token)
         
         let service = ServiceClient(
-            channel: channel,
+            channel: channel!,
             defaultCallOptions: callOptions)
         DispatchQueue.global().async {
             let some = try? service
                 .getMtsbDialog(Google_Protobuf_Empty())
-                .response
-                .wait()
-            print(some)
+//                .response
+//                .wait()
+            some?.status.whenSuccess { status in
+                print(status)
+            }
+            some?.response.always { result in
+                switch result {
+                case .success(let model):
+                    print(model)
+                case .failure(let error):
+                    print(error)
+                }
+            }
 //                .whenCompleteBlocking(onto: .main) { result in
 //                    switch result {
 //                    case .success(let model):
@@ -79,3 +123,8 @@ final class ViewController: UIViewController {
     }
 }
 
+extension ViewController: ConnectivityStateDelegate {
+    func connectivityStateDidChange(from oldState: ConnectivityState, to newState: ConnectivityState) {
+        print(oldState , newState)
+    }
+}
