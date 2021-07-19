@@ -27,98 +27,98 @@ import SwiftProtobuf
 
 /// Usage: instantiate `Ru_Mts_Trading_Broker_BrokerPortfolioServiceClient`, then call methods of this protocol to make API calls.
 internal protocol Ru_Mts_Trading_Broker_BrokerPortfolioServiceClientProtocol: GRPCClient {
-  var serviceName: String { get }
-  var interceptors: Ru_Mts_Trading_Broker_BrokerPortfolioServiceClientInterceptorFactoryProtocol? { get }
-
-  func getStream(
-    _ request: Ru_Mts_Trading_Broker_PortfolioRequest,
-    callOptions: CallOptions?,
-    handler: @escaping (Ru_Mts_Trading_Broker_Commons_PortfolioResponse) -> Void
-  ) -> ServerStreamingCall<Ru_Mts_Trading_Broker_PortfolioRequest, Ru_Mts_Trading_Broker_Commons_PortfolioResponse>
-
-  func getStreamV2(
-    _ request: Ru_Mts_Trading_Broker_PortfolioRequest,
-    callOptions: CallOptions?,
-    handler: @escaping (Ru_Mts_Trading_Broker_Commons_PortfolioResponse) -> Void
-  ) -> ServerStreamingCall<Ru_Mts_Trading_Broker_PortfolioRequest, Ru_Mts_Trading_Broker_Commons_PortfolioResponse>
+    var serviceName: String { get }
+    var interceptors: Ru_Mts_Trading_Broker_BrokerPortfolioServiceClientInterceptorFactoryProtocol? { get }
+    
+    func getStream(
+        _ request: Ru_Mts_Trading_Broker_PortfolioRequest,
+        callOptions: CallOptions?,
+        handler: @escaping (Ru_Mts_Trading_Broker_Commons_PortfolioResponse) -> Void
+    ) -> ServerStreamingCall<Ru_Mts_Trading_Broker_PortfolioRequest, Ru_Mts_Trading_Broker_Commons_PortfolioResponse>
+    
+    func getStreamV2(
+        _ request: Ru_Mts_Trading_Broker_PortfolioRequest,
+        callOptions: CallOptions?,
+        handler: @escaping (Ru_Mts_Trading_Broker_Commons_PortfolioResponse) -> Void
+    ) -> ServerStreamingCall<Ru_Mts_Trading_Broker_PortfolioRequest, Ru_Mts_Trading_Broker_Commons_PortfolioResponse>
 }
 
 extension Ru_Mts_Trading_Broker_BrokerPortfolioServiceClientProtocol {
-  internal var serviceName: String {
-    return "ru.mts.trading.broker.BrokerPortfolioService"
-  }
-
-  /// Подписка на портфели
-  ///
-  /// - Parameters:
-  ///   - request: Request to send to getStream.
-  ///   - callOptions: Call options.
-  ///   - handler: A closure called when each response is received from the server.
-  /// - Returns: A `ServerStreamingCall` with futures for the metadata and status.
-  internal func getStream(
-    _ request: Ru_Mts_Trading_Broker_PortfolioRequest,
-    callOptions: CallOptions? = nil,
-    handler: @escaping (Ru_Mts_Trading_Broker_Commons_PortfolioResponse) -> Void
-  ) -> ServerStreamingCall<Ru_Mts_Trading_Broker_PortfolioRequest, Ru_Mts_Trading_Broker_Commons_PortfolioResponse> {
-    return self.makeServerStreamingCall(
-      path: "/ru.mts.trading.broker.BrokerPortfolioService/getStream",
-      request: request,
-      callOptions: callOptions ?? self.defaultCallOptions,
-      interceptors: self.interceptors?.makegetStreamInterceptors() ?? [],
-      handler: handler
-    )
-  }
-
-  /// Подписка на портфели V2: добавлены позиции для валют
-  ///
-  /// - Parameters:
-  ///   - request: Request to send to getStreamV2.
-  ///   - callOptions: Call options.
-  ///   - handler: A closure called when each response is received from the server.
-  /// - Returns: A `ServerStreamingCall` with futures for the metadata and status.
-  internal func getStreamV2(
-    _ request: Ru_Mts_Trading_Broker_PortfolioRequest,
-    callOptions: CallOptions? = nil,
-    handler: @escaping (Ru_Mts_Trading_Broker_Commons_PortfolioResponse) -> Void
-  ) -> ServerStreamingCall<Ru_Mts_Trading_Broker_PortfolioRequest, Ru_Mts_Trading_Broker_Commons_PortfolioResponse> {
-    return self.makeServerStreamingCall(
-      path: "/ru.mts.trading.broker.BrokerPortfolioService/getStreamV2",
-      request: request,
-      callOptions: callOptions ?? self.defaultCallOptions,
-      interceptors: self.interceptors?.makegetStreamV2Interceptors() ?? [],
-      handler: handler
-    )
-  }
+    internal var serviceName: String {
+        return "ru.mts.trading.broker.BrokerPortfolioService"
+    }
+    
+    /// Подписка на портфели
+    ///
+    /// - Parameters:
+    ///   - request: Request to send to getStream.
+    ///   - callOptions: Call options.
+    ///   - handler: A closure called when each response is received from the server.
+    /// - Returns: A `ServerStreamingCall` with futures for the metadata and status.
+    internal func getStream(
+        _ request: Ru_Mts_Trading_Broker_PortfolioRequest,
+        callOptions: CallOptions? = nil,
+        handler: @escaping (Ru_Mts_Trading_Broker_Commons_PortfolioResponse) -> Void
+    ) -> ServerStreamingCall<Ru_Mts_Trading_Broker_PortfolioRequest, Ru_Mts_Trading_Broker_Commons_PortfolioResponse> {
+        return self.makeServerStreamingCall(
+            path: "/ru.mts.trading.broker.BrokerPortfolioService/getStream",
+            request: request,
+            callOptions: callOptions ?? self.defaultCallOptions,
+            interceptors: self.interceptors?.makegetStreamInterceptors() ?? [],
+            handler: handler
+        )
+    }
+    
+    /// Подписка на портфели V2: добавлены позиции для валют
+    ///
+    /// - Parameters:
+    ///   - request: Request to send to getStreamV2.
+    ///   - callOptions: Call options.
+    ///   - handler: A closure called when each response is received from the server.
+    /// - Returns: A `ServerStreamingCall` with futures for the metadata and status.
+    internal func getStreamV2(
+        _ request: Ru_Mts_Trading_Broker_PortfolioRequest,
+        callOptions: CallOptions? = nil,
+        handler: @escaping (Ru_Mts_Trading_Broker_Commons_PortfolioResponse) -> Void
+    ) -> ServerStreamingCall<Ru_Mts_Trading_Broker_PortfolioRequest, Ru_Mts_Trading_Broker_Commons_PortfolioResponse> {
+        return self.makeServerStreamingCall(
+            path: "/ru.mts.trading.broker.BrokerPortfolioService/getStreamV2",
+            request: request,
+            callOptions: callOptions ?? self.defaultCallOptions,
+            interceptors: self.interceptors?.makegetStreamV2Interceptors() ?? [],
+            handler: handler
+        )
+    }
 }
 
 internal protocol Ru_Mts_Trading_Broker_BrokerPortfolioServiceClientInterceptorFactoryProtocol {
-
-  /// - Returns: Interceptors to use when invoking 'getStream'.
-  func makegetStreamInterceptors() -> [ClientInterceptor<Ru_Mts_Trading_Broker_PortfolioRequest, Ru_Mts_Trading_Broker_Commons_PortfolioResponse>]
-
-  /// - Returns: Interceptors to use when invoking 'getStreamV2'.
-  func makegetStreamV2Interceptors() -> [ClientInterceptor<Ru_Mts_Trading_Broker_PortfolioRequest, Ru_Mts_Trading_Broker_Commons_PortfolioResponse>]
+    
+    /// - Returns: Interceptors to use when invoking 'getStream'.
+    func makegetStreamInterceptors() -> [ClientInterceptor<Ru_Mts_Trading_Broker_PortfolioRequest, Ru_Mts_Trading_Broker_Commons_PortfolioResponse>]
+    
+    /// - Returns: Interceptors to use when invoking 'getStreamV2'.
+    func makegetStreamV2Interceptors() -> [ClientInterceptor<Ru_Mts_Trading_Broker_PortfolioRequest, Ru_Mts_Trading_Broker_Commons_PortfolioResponse>]
 }
 
 internal final class Ru_Mts_Trading_Broker_BrokerPortfolioServiceClient: Ru_Mts_Trading_Broker_BrokerPortfolioServiceClientProtocol {
-  internal let channel: GRPCChannel
-  internal var defaultCallOptions: CallOptions
-  internal var interceptors: Ru_Mts_Trading_Broker_BrokerPortfolioServiceClientInterceptorFactoryProtocol?
-
-  /// Creates a client for the ru.mts.trading.broker.BrokerPortfolioService service.
-  ///
-  /// - Parameters:
-  ///   - channel: `GRPCChannel` to the service host.
-  ///   - defaultCallOptions: Options to use for each service call if the user doesn't provide them.
-  ///   - interceptors: A factory providing interceptors for each RPC.
-  internal init(
-    channel: GRPCChannel,
-    defaultCallOptions: CallOptions = CallOptions(),
-    interceptors: Ru_Mts_Trading_Broker_BrokerPortfolioServiceClientInterceptorFactoryProtocol? = nil
-  ) {
-    self.channel = channel
-    self.defaultCallOptions = defaultCallOptions
-    self.interceptors = interceptors
-  }
+    internal let channel: GRPCChannel
+    internal var defaultCallOptions: CallOptions
+    internal var interceptors: Ru_Mts_Trading_Broker_BrokerPortfolioServiceClientInterceptorFactoryProtocol?
+    
+    /// Creates a client for the ru.mts.trading.broker.BrokerPortfolioService service.
+    ///
+    /// - Parameters:
+    ///   - channel: `GRPCChannel` to the service host.
+    ///   - defaultCallOptions: Options to use for each service call if the user doesn't provide them.
+    ///   - interceptors: A factory providing interceptors for each RPC.
+    internal init(
+        channel: GRPCChannel,
+        defaultCallOptions: CallOptions = CallOptions(),
+        interceptors: Ru_Mts_Trading_Broker_BrokerPortfolioServiceClientInterceptorFactoryProtocol? = nil
+    ) {
+        self.channel = channel
+        self.defaultCallOptions = defaultCallOptions
+        self.interceptors = interceptors
+    }
 }
 

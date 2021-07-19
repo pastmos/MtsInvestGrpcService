@@ -5,4 +5,33 @@
 //  Created by Юрий Султанов on 19.07.2021.
 //
 
-import Foundation
+public enum InstrumentCommonType {
+    case other
+    case stock
+    case bond
+    case etf
+    case currency
+    case foreignStock
+    case foreginBond
+    
+    init(with instrumentType: GrpcInstrumentCommonType) {
+        switch instrumentType {
+        case .other:
+            self = .other
+        case .stock:
+            self = .stock
+        case .bond:
+            self = .bond
+        case .etf:
+            self = .etf
+        case .currency:
+            self = .currency
+        case .foreignStock:
+            self = .foreignStock
+        case .foreignBond:
+            self = .foreginBond
+        default:
+            self = .other
+        }
+    }
+}

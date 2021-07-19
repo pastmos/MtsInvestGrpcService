@@ -15,21 +15,21 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+    struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+    typealias Version = _2
 }
 
 struct Ru_Mts_Trading_Broker_PortfolioRequest {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  /// период за который нужно расчитать доходность
-  var period: Ru_Mts_Trading_Broker_Commons_Period = .oneDay
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+    
+    /// период за который нужно расчитать доходность
+    var period: Ru_Mts_Trading_Broker_Commons_Period = .oneDay
+    
+    var unknownFields = SwiftProtobuf.UnknownStorage()
+    
+    init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -37,30 +37,30 @@ struct Ru_Mts_Trading_Broker_PortfolioRequest {
 fileprivate let _protobuf_package = "ru.mts.trading.broker"
 
 extension Ru_Mts_Trading_Broker_PortfolioRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".PortfolioRequest"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "period"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 1: try decoder.decodeSingularEnumField(value: &self.period)
-      default: break
-      }
+    static let protoMessageName: String = _protobuf_package + ".PortfolioRequest"
+    static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+        1: .same(proto: "period"),
+    ]
+    
+    mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+        while let fieldNumber = try decoder.nextFieldNumber() {
+            switch fieldNumber {
+            case 1: try decoder.decodeSingularEnumField(value: &self.period)
+            default: break
+            }
+        }
     }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.period != .oneDay {
-      try visitor.visitSingularEnumField(value: self.period, fieldNumber: 1)
+    
+    func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+        if self.period != .oneDay {
+            try visitor.visitSingularEnumField(value: self.period, fieldNumber: 1)
+        }
+        try unknownFields.traverse(visitor: &visitor)
     }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: Ru_Mts_Trading_Broker_PortfolioRequest, rhs: Ru_Mts_Trading_Broker_PortfolioRequest) -> Bool {
-    if lhs.period != rhs.period {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
+    
+    static func ==(lhs: Ru_Mts_Trading_Broker_PortfolioRequest, rhs: Ru_Mts_Trading_Broker_PortfolioRequest) -> Bool {
+        if lhs.period != rhs.period {return false}
+        if lhs.unknownFields != rhs.unknownFields {return false}
+        return true
+    }
 }
