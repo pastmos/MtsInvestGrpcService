@@ -9,14 +9,6 @@
 /* Begin PBXBuildFile section */
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		AF17BECD46B8F709451C3FC1 /* Pods_MtsInvestGrpcService_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8539385A4BD2B74EEBFC69 /* Pods_MtsInvestGrpcService_Tests.framework */; };
-		D2FE077B269F27A20093BED4 /* mts_common.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FE0775269F279F0093BED4 /* mts_common.pb.swift */; };
-		D2FE077C269F27A20093BED4 /* broker-portfolio-public.grpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FE0776269F27A00093BED4 /* broker-portfolio-public.grpc.swift */; };
-		D2FE077D269F27A20093BED4 /* number.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FE0777269F27A00093BED4 /* number.pb.swift */; };
-		D2FE077E269F27A20093BED4 /* broker-portfolio-commons.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FE0778269F27A10093BED4 /* broker-portfolio-commons.pb.swift */; };
-		D2FE077F269F27A20093BED4 /* broker-portfolio-public.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FE0779269F27A10093BED4 /* broker-portfolio-public.pb.swift */; };
-		D2FE0780269F27A20093BED4 /* date.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FE077A269F27A20093BED4 /* date.pb.swift */; };
-		D2FE0783269F31E60093BED4 /* user_public.grpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FE0781269F31E60093BED4 /* user_public.grpc.swift */; };
-		D2FE0784269F31E60093BED4 /* user_public.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FE0782269F31E60093BED4 /* user_public.pb.swift */; };
 		FC959D6443729E24F992FB3D /* Pods_MtsInvestGrpcService_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ECF53DC2943456FA17D3755 /* Pods_MtsInvestGrpcService_Example.framework */; };
 		FE6E3191268F3BEC005B002D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6E3190268F3BEC005B002D /* AppDelegate.swift */; };
 		FE6E3195268F3BEC005B002D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6E3194268F3BEC005B002D /* ViewController.swift */; };
@@ -40,14 +32,6 @@
 		9B8539385A4BD2B74EEBFC69 /* Pods_MtsInvestGrpcService_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MtsInvestGrpcService_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ECF53DC2943456FA17D3755 /* Pods_MtsInvestGrpcService_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MtsInvestGrpcService_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9BA855D0126456A7A7D57D7 /* MtsInvestGrpcService.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MtsInvestGrpcService.podspec; path = ../MtsInvestGrpcService.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		D2FE0775269F279F0093BED4 /* mts_common.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mts_common.pb.swift; sourceTree = "<group>"; };
-		D2FE0776269F27A00093BED4 /* broker-portfolio-public.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "broker-portfolio-public.grpc.swift"; sourceTree = "<group>"; };
-		D2FE0777269F27A00093BED4 /* number.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = number.pb.swift; sourceTree = "<group>"; };
-		D2FE0778269F27A10093BED4 /* broker-portfolio-commons.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "broker-portfolio-commons.pb.swift"; sourceTree = "<group>"; };
-		D2FE0779269F27A10093BED4 /* broker-portfolio-public.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "broker-portfolio-public.pb.swift"; sourceTree = "<group>"; };
-		D2FE077A269F27A20093BED4 /* date.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = date.pb.swift; sourceTree = "<group>"; };
-		D2FE0781269F31E60093BED4 /* user_public.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = user_public.grpc.swift; sourceTree = "<group>"; };
-		D2FE0782269F31E60093BED4 /* user_public.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = user_public.pb.swift; sourceTree = "<group>"; };
 		FE6E318E268F3BEC005B002D /* MtsInvestGrpcService_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MtsInvestGrpcService_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE6E3190268F3BEC005B002D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE6E3194268F3BEC005B002D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -147,25 +131,9 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		D2FE0756269F1B980093BED4 /* Proto */ = {
-			isa = PBXGroup;
-			children = (
-				D2FE0781269F31E60093BED4 /* user_public.grpc.swift */,
-				D2FE0782269F31E60093BED4 /* user_public.pb.swift */,
-				D2FE0778269F27A10093BED4 /* broker-portfolio-commons.pb.swift */,
-				D2FE0776269F27A00093BED4 /* broker-portfolio-public.grpc.swift */,
-				D2FE0779269F27A10093BED4 /* broker-portfolio-public.pb.swift */,
-				D2FE077A269F27A20093BED4 /* date.pb.swift */,
-				D2FE0775269F279F0093BED4 /* mts_common.pb.swift */,
-				D2FE0777269F27A00093BED4 /* number.pb.swift */,
-			);
-			path = Proto;
-			sourceTree = "<group>";
-		};
 		FE6E318F268F3BEC005B002D /* MtsInvestGrpcService */ = {
 			isa = PBXGroup;
 			children = (
-				D2FE0756269F1B980093BED4 /* Proto */,
 				FE6E3190268F3BEC005B002D /* AppDelegate.swift */,
 				FE6E3199268F3BED005B002D /* Assets.xcassets */,
 				FE6E319E268F3BED005B002D /* Info.plist */,
@@ -401,16 +369,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2FE077D269F27A20093BED4 /* number.pb.swift in Sources */,
-				D2FE077B269F27A20093BED4 /* mts_common.pb.swift in Sources */,
-				D2FE0784269F31E60093BED4 /* user_public.pb.swift in Sources */,
 				FE6E3195268F3BEC005B002D /* ViewController.swift in Sources */,
-				D2FE077F269F27A20093BED4 /* broker-portfolio-public.pb.swift in Sources */,
 				FE6E3191268F3BEC005B002D /* AppDelegate.swift in Sources */,
-				D2FE0783269F31E60093BED4 /* user_public.grpc.swift in Sources */,
-				D2FE077C269F27A20093BED4 /* broker-portfolio-public.grpc.swift in Sources */,
-				D2FE0780269F27A20093BED4 /* date.pb.swift in Sources */,
-				D2FE077E269F27A20093BED4 /* broker-portfolio-commons.pb.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
