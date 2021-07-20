@@ -8,13 +8,16 @@
 import GRPC
 import NIO
 
-final class BrokerPorfolioService {
+final class BrokerPorfolioService/*<Service, Response>*/ {
     typealias ServiceClient = Ru_Mts_Trading_Broker_BrokerPortfolioServiceClient
     
     // MARK: Private properties
     private let eventLoopGroup = PlatformSupport.makeEventLoopGroup(loopCount: 1)
     private var service: ServiceClient?
     private var channel: ClientConnection?
+    private var stream: ServerStreamingCall<Ru_Mts_Trading_Broker_PortfolioRequest,
+                                            Ru_Mts_Trading_Broker_Commons_PortfolioResponse>?
+//    private var some: GRPCClient?
     
     // MARK: Lifecycle
     init(
@@ -40,6 +43,7 @@ final class BrokerPorfolioService {
                 host: host,
                 port: port)
         guard let channel = channel else { return }
+//        some = ServiceClient(channel: channel)
         service = ServiceClient(channel: channel)
     }
     
@@ -52,15 +56,17 @@ final class BrokerPorfolioService {
     public func getBrokerPorfolio(
         for period: Ru_Mts_Trading_Broker_Commons_Period = .oneDay,
         callOptions: CallOptions,
-        completion: @escaping (Result<BrokerPortfolioResponse, Error>) -> Void) {
+        completion: @escaping (Result<BrokerPortfolioResponse, INVError>) -> Void) {
         guard let service = service else { return }
         DispatchQueue.global().async {
-            let stream = service
-                .getStreamV2(.with { $0.period = period }, callOptions: callOptions) { response in
+            self.stream = service
+                .getStreamV2(
+                    .with { $0.period = period },
+                    callOptions: callOptions) { response in
                     completion(.success(BrokerPortfolioResponse(from: response)))
                 }
             
-            stream.status.whenSuccess { status in
+            self.stream?.status.whenSuccess { status in
                 switch status.code {
                 case .ok,
                      .cancelled,
@@ -68,18 +74,14 @@ final class BrokerPorfolioService {
                      .deadlineExceeded,
                      .unavailable:
                     break
-                case .unauthenticated:
-                    print("‼️‼️ Authorization error ‼️‼️")
-                    completion(.failure(status.makeGRPCStatus()))
                 default:
-                    print("‼️‼️ Something wrong ‼️‼️")
-                    completion(.failure(status.makeGRPCStatus()))
+                    completion(.failure(INVError(from: status.code)))
                 }
             }
             
-            stream.status.whenFailure {
+            self.stream?.status.whenFailure {
                 print("‼️‼️ \($0.localizedDescription) ‼️‼️")
-                completion(.failure($0))
+                completion(.failure(INVError(from: $0.localizedDescription)))
             }
         }
     }

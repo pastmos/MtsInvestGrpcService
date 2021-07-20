@@ -35,7 +35,7 @@ open class MtsGRPCClass {
         return self
     }
     
-    public func getBrokerPortfolio(completion: @escaping (Result<BrokerPortfolioResponse, Error>) -> Void) {
+    public func getBrokerPortfolio(completion: @escaping (Result<BrokerPortfolioResponse, INVError>) -> Void) {
         brokerService = BrokerPorfolioService(
             host: host,
             port: port,
