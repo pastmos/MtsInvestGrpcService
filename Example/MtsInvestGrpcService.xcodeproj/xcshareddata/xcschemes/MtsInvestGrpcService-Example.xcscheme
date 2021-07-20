@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACCF1AFB9204008FA782"
+               BlueprintIdentifier = "FE6E318D268F3BEC005B002D"
                BuildableName = "MtsInvestGrpcService_Example.app"
                BlueprintName = "MtsInvestGrpcService_Example"
                ReferencedContainer = "container:MtsInvestGrpcService.xcodeproj">
@@ -44,7 +44,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
+            BlueprintIdentifier = "FE6E318D268F3BEC005B002D"
             BuildableName = "MtsInvestGrpcService_Example.app"
             BlueprintName = "MtsInvestGrpcService_Example"
             ReferencedContainer = "container:MtsInvestGrpcService.xcodeproj">
@@ -77,7 +77,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
+            BlueprintIdentifier = "FE6E318D268F3BEC005B002D"
             BuildableName = "MtsInvestGrpcService_Example.app"
             BlueprintName = "MtsInvestGrpcService_Example"
             ReferencedContainer = "container:MtsInvestGrpcService.xcodeproj">
@@ -94,7 +94,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
+            BlueprintIdentifier = "FE6E318D268F3BEC005B002D"
             BuildableName = "MtsInvestGrpcService_Example.app"
             BlueprintName = "MtsInvestGrpcService_Example"
             ReferencedContainer = "container:MtsInvestGrpcService.xcodeproj">

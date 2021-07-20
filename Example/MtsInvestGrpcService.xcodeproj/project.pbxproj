@@ -135,11 +135,11 @@
 			isa = PBXGroup;
 			children = (
 				FE6E3190268F3BEC005B002D /* AppDelegate.swift */,
-				FE6E3194268F3BEC005B002D /* ViewController.swift */,
-				FE6E3196268F3BEC005B002D /* Main.storyboard */,
 				FE6E3199268F3BED005B002D /* Assets.xcassets */,
-				FE6E319B268F3BED005B002D /* LaunchScreen.storyboard */,
 				FE6E319E268F3BED005B002D /* Info.plist */,
+				FE6E319B268F3BED005B002D /* LaunchScreen.storyboard */,
+				FE6E3196268F3BEC005B002D /* Main.storyboard */,
+				FE6E3194268F3BEC005B002D /* ViewController.swift */,
 			);
 			path = MtsInvestGrpcService;
 			sourceTree = "<group>";
@@ -196,13 +196,13 @@
 				TargetAttributes = {
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = 8644MY34M6;
+						DevelopmentTeam = ZC7TA6323U;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
 					FE6E318D268F3BEC005B002D = {
 						CreatedOnToolsVersion = 12.5;
-						DevelopmentTeam = ZX3SQL43UT;
+						DevelopmentTeam = ZC7TA6323U;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -499,7 +499,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3DEAE748D9EC321BEF3E6AA2 /* Pods-MtsInvestGrpcService_Tests.debug.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = 8644MY34M6;
+				DEVELOPMENT_TEAM = ZC7TA6323U;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -522,7 +522,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9AE354249EE27719555C35AE /* Pods-MtsInvestGrpcService_Tests.release.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = 8644MY34M6;
+				DEVELOPMENT_TEAM = ZC7TA6323U;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -554,7 +554,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = ZX3SQL43UT;
+				DEVELOPMENT_TEAM = ZC7TA6323U;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = MtsInvestGrpcService/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
@@ -585,7 +585,7 @@
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZX3SQL43UT;
+				DEVELOPMENT_TEAM = ZC7TA6323U;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = MtsInvestGrpcService/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;

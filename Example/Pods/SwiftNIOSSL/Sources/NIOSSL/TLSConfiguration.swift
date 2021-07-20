@@ -28,20 +28,20 @@ public enum TLSVersion {
 }
 
 /// Places NIOSSL can obtain certificates from.
-public enum NIOSSLCertificateSource {
+public enum NIOSSLCertificateSource: Hashable {
     @available(*, deprecated, message: "Use 'NIOSSLCertificate.fromPEMFile(_:)' to load the certificate(s) and use the '.certificate(NIOSSLCertificate)' case to provide them as a source")
     case file(String)
     case certificate(NIOSSLCertificate)
 }
 
 /// Places NIOSSL can obtain private keys from.
-public enum NIOSSLPrivateKeySource {
+public enum NIOSSLPrivateKeySource: Hashable {
     case file(String)
     case privateKey(NIOSSLPrivateKey)
 }
 
 /// Places NIOSSL can obtain a trust store from.
-public enum NIOSSLTrustRoots {
+public enum NIOSSLTrustRoots: Hashable {
     /// Path to either a file of CA certificates in PEM format, or a directory containing CA certificates in PEM format.
     ///
     /// If a path to a file is provided, the file can contain several CA certificates identified by
@@ -73,12 +73,49 @@ public enum NIOSSLTrustRoots {
 }
 
 /// Places NIOSSL can obtain additional trust roots from.
-public enum NIOSSLAdditionalTrustRoots {
+public enum NIOSSLAdditionalTrustRoots: Hashable {
     /// See `NIOSSLTrustRoots.file`
     case file(String)
 
     /// See `NIOSSLTrustRoots.certificates`
     case certificates([NIOSSLCertificate])
+}
+
+/// Available ciphers to use for TLS instead of a string based representation.
+public struct NIOTLSCipher: RawRepresentable, Hashable {
+    public init(rawValue: UInt16) {
+        self.rawValue = rawValue
+    }
+    
+    public init(_ rawValue: RawValue) {
+        self.rawValue = rawValue
+    }
+    
+    public var rawValue: UInt16
+    public typealias RawValue = UInt16
+    
+    public static let TLS_RSA_WITH_AES_128_CBC_SHA                    = NIOTLSCipher(rawValue: 0x2F)
+    public static let TLS_RSA_WITH_AES_256_CBC_SHA                    = NIOTLSCipher(rawValue: 0x35)
+    public static let TLS_RSA_WITH_AES_128_GCM_SHA256                 = NIOTLSCipher(rawValue: 0x9C)
+    public static let TLS_RSA_WITH_AES_256_GCM_SHA384                 = NIOTLSCipher(rawValue: 0x9D)
+    public static let TLS_AES_128_GCM_SHA256                          = NIOTLSCipher(rawValue: 0x1301)
+    public static let TLS_AES_256_GCM_SHA384                          = NIOTLSCipher(rawValue: 0x1302)
+    public static let TLS_CHACHA20_POLY1305_SHA256                    = NIOTLSCipher(rawValue: 0x1303)
+    public static let TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA            = NIOTLSCipher(rawValue: 0xC009)
+    public static let TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA            = NIOTLSCipher(rawValue: 0xC00A)
+    public static let TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA              = NIOTLSCipher(rawValue: 0xC013)
+    public static let TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA              = NIOTLSCipher(rawValue: 0xC014)
+    public static let TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256         = NIOTLSCipher(rawValue: 0xC02B)
+    public static let TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384         = NIOTLSCipher(rawValue: 0xC02C)
+    public static let TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256           = NIOTLSCipher(rawValue: 0xC02F)
+    public static let TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384           = NIOTLSCipher(rawValue: 0xC030)
+    public static let TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256     = NIOTLSCipher(rawValue: 0xCCA8)
+    public static let TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256   = NIOTLSCipher(rawValue: 0xCCA9)
+    
+    var standardName: String {
+        let boringSSLCipher = CNIOBoringSSL_SSL_get_cipher_by_value(self.rawValue)
+        return String(cString: CNIOBoringSSL_SSL_CIPHER_standard_name(boringSSLCipher))
+    }
 }
 
 /// Formats NIOSSL supports for serializing keys and certificates.
@@ -190,7 +227,7 @@ internal func decodeALPNIdentifier(identifier: [UInt8]) -> String {
 /// Manages configuration of TLS for SwiftNIO programs.
 public struct TLSConfiguration {
     /// A default TLS configuration for client use.
-    public static let clientDefault = TLSConfiguration.forClient()
+    public static let clientDefault = TLSConfiguration.makeClientConfiguration()
 
     /// The minimum TLS version to allow in negotiation. Defaults to tlsv1.
     public var minimumTLSVersion: TLSVersion
@@ -200,7 +237,21 @@ public struct TLSConfiguration {
 
     /// The pre-TLS1.3 cipher suites supported by this handler. This uses the OpenSSL cipher string format.
     /// TLS 1.3 cipher suites cannot be configured.
-    public var cipherSuites: String
+    public var cipherSuites: String = defaultCipherSuites
+    
+    /// Public property used to set the internal cipherSuites from NIOTLSCipher.
+    public var cipherSuiteValues: [NIOTLSCipher] {
+        get {
+            guard let sslContext = try? NIOSSLContext(configuration: self) else {
+                return []
+            }
+            return sslContext.cipherSuites
+        }
+        set {
+            let assignedCiphers = newValue.map { $0.standardName }
+            self.cipherSuites = assignedCiphers.joined(separator: ":")
+        }
+    }
 
     /// Allowed algorithms to verify signatures. Passing nil means, that a built-in set of algorithms will be used.
     public var verifySignatureAlgorithms : [SignatureAlgorithm]?
@@ -252,7 +303,8 @@ public struct TLSConfiguration {
     /// Whether renegotiation is supported.
     public var renegotiationSupport: NIORenegotiationSupport
 
-    private init(cipherSuites: String,
+    private init(cipherSuiteValues: [NIOTLSCipher] = [],
+                 cipherSuites: String = defaultCipherSuites,
                  verifySignatureAlgorithms: [SignatureAlgorithm]?,
                  signingSignatureAlgorithms: [SignatureAlgorithm]?,
                  minimumTLSVersion: TLSVersion,
@@ -281,12 +333,158 @@ public struct TLSConfiguration {
         self.renegotiationSupport = renegotiationSupport
         self.applicationProtocols = applicationProtocols
         self.keyLogCallback = keyLogCallback
+        if !cipherSuiteValues.isEmpty {
+            self.cipherSuiteValues = cipherSuiteValues
+        }
+    }
+}
+
+// MARK: BestEffortHashable
+extension TLSConfiguration {
+    /// Returns a best effort result of whether two `TLSConfiguration` objects are equal.
+    ///
+    /// The "best effort" stems from the fact that we are checking the pointer to the `keyLogCallback` closure.
+    ///
+    /// - warning: You should probably not use this function. This function can return false-negatives, but not false-positives.
+    public func bestEffortEquals(_ comparing: TLSConfiguration) -> Bool {
+        let isKeyLoggerCallbacksEqual = withUnsafeBytes(of: self.keyLogCallback) { callbackPointer1 in
+            return withUnsafeBytes(of: comparing.keyLogCallback) { callbackPointer2 in
+                return callbackPointer1.elementsEqual(callbackPointer2)
+            }
+        }
+        
+        return self.minimumTLSVersion == comparing.minimumTLSVersion &&
+            self.maximumTLSVersion == comparing.maximumTLSVersion &&
+            self.cipherSuites == comparing.cipherSuites &&
+            self.verifySignatureAlgorithms == comparing.verifySignatureAlgorithms &&
+            self.signingSignatureAlgorithms == comparing.signingSignatureAlgorithms &&
+            self.certificateVerification == comparing.certificateVerification &&
+            self.trustRoots == comparing.trustRoots &&
+            self.additionalTrustRoots == comparing.additionalTrustRoots &&
+            self.certificateChain == comparing.certificateChain &&
+            self.privateKey == comparing.privateKey &&
+            self.encodedApplicationProtocols == comparing.encodedApplicationProtocols &&
+            self.shutdownTimeout == comparing.shutdownTimeout &&
+            isKeyLoggerCallbacksEqual &&
+            self.renegotiationSupport == comparing.renegotiationSupport
+    }
+    
+    /// Returns a best effort hash of this TLS configuration.
+    ///
+    /// The "best effort" stems from the fact that we are hashing the pointer bytes of the `keyLogCallback` closure.
+    ///
+    /// - warning: You should probably not use this function. This function can return false-negatives, but not false-positives.
+    public func bestEffortHash(into hasher: inout Hasher) {
+        hasher.combine(minimumTLSVersion)
+        hasher.combine(maximumTLSVersion)
+        hasher.combine(cipherSuites)
+        hasher.combine(verifySignatureAlgorithms)
+        hasher.combine(signingSignatureAlgorithms)
+        hasher.combine(certificateVerification)
+        hasher.combine(trustRoots)
+        hasher.combine(additionalTrustRoots)
+        hasher.combine(certificateChain)
+        hasher.combine(privateKey)
+        hasher.combine(encodedApplicationProtocols)
+        hasher.combine(shutdownTimeout)
+        withUnsafeBytes(of: keyLogCallback) { closureBits in
+            hasher.combine(bytes: closureBits)
+        }
+        hasher.combine(renegotiationSupport)
+    }
+
+    /// Creates a TLS configuration for use with client-side contexts.
+    ///
+    /// This provides sensible defaults, and can be used without customisation. For server-side
+    /// contexts, you should use `makeServerConfiguration` instead.
+    ///
+    /// For customising fields, modify the returned TLSConfiguration object.
+    public static func makeClientConfiguration() -> TLSConfiguration {
+        return TLSConfiguration(cipherSuites: defaultCipherSuites,
+                                verifySignatureAlgorithms: nil,
+                                signingSignatureAlgorithms: nil,
+                                minimumTLSVersion: .tlsv1,
+                                maximumTLSVersion: nil,
+                                certificateVerification: .fullVerification,
+                                trustRoots: .default,
+                                certificateChain: [],
+                                privateKey: nil,
+                                applicationProtocols: [],
+                                shutdownTimeout: .seconds(5),
+                                keyLogCallback: nil,
+                                renegotiationSupport: .none,
+                                additionalTrustRoots: [])
     }
 
     /// Create a TLS configuration for use with server-side contexts.
     ///
     /// This provides sensible defaults while requiring that you provide any data that is necessary
-    /// for server-side function. For client use, try `forClient` instead.
+    /// for server-side function. For client use, try `makeClientConfiguration` instead.
+    ///
+    /// For customising fields, modify the returned TLSConfiguration object.
+    public static func makeServerConfiguration(
+        certificateChain: [NIOSSLCertificateSource],
+        privateKey: NIOSSLPrivateKeySource
+    ) -> TLSConfiguration {
+        return TLSConfiguration(cipherSuites: defaultCipherSuites,
+                                verifySignatureAlgorithms: nil,
+                                signingSignatureAlgorithms: nil,
+                                minimumTLSVersion: .tlsv1,
+                                maximumTLSVersion: nil,
+                                certificateVerification: .none,
+                                trustRoots: .default,
+                                certificateChain: certificateChain,
+                                privateKey: privateKey,
+                                applicationProtocols: [],
+                                shutdownTimeout: .seconds(5),
+                                keyLogCallback: nil,
+                                renegotiationSupport: .none,
+                                additionalTrustRoots: [])
+    }
+}
+
+// MARK: Deprecated constructors.
+
+extension TLSConfiguration {
+    /// Create a TLS configuration for use with server-side contexts. This allows setting the `NIOTLSCipher` property specifically.
+    ///
+    /// This provides sensible defaults while requiring that you provide any data that is necessary
+    /// for server-side function. For client use, try `makeClientConfiguration` instead.
+    @available(*, deprecated, renamed: "makeServerConfiguration(certificateChain:privateKey:)")
+    public static func forServer(certificateChain: [NIOSSLCertificateSource],
+                                 privateKey: NIOSSLPrivateKeySource,
+                                 cipherSuites: [NIOTLSCipher],
+                                 verifySignatureAlgorithms: [SignatureAlgorithm]? = nil,
+                                 signingSignatureAlgorithms: [SignatureAlgorithm]? = nil,
+                                 minimumTLSVersion: TLSVersion = .tlsv1,
+                                 maximumTLSVersion: TLSVersion? = nil,
+                                 certificateVerification: CertificateVerification = .none,
+                                 trustRoots: NIOSSLTrustRoots = .default,
+                                 applicationProtocols: [String] = [],
+                                 shutdownTimeout: TimeAmount = .seconds(5),
+                                 keyLogCallback: NIOSSLKeyLogCallback? = nil,
+                                 additionalTrustRoots: [NIOSSLAdditionalTrustRoots] = []) -> TLSConfiguration {
+        return TLSConfiguration(cipherSuiteValues: cipherSuites,
+                                verifySignatureAlgorithms: verifySignatureAlgorithms,
+                                signingSignatureAlgorithms: signingSignatureAlgorithms,
+                                minimumTLSVersion: minimumTLSVersion,
+                                maximumTLSVersion: maximumTLSVersion,
+                                certificateVerification: certificateVerification,
+                                trustRoots: trustRoots,
+                                certificateChain: certificateChain,
+                                privateKey: privateKey,
+                                applicationProtocols: applicationProtocols,
+                                shutdownTimeout: shutdownTimeout,
+                                keyLogCallback: keyLogCallback,
+                                renegotiationSupport: .none,  // Servers never support renegotiation: there's no point.
+                                additionalTrustRoots: additionalTrustRoots)
+    }
+
+    /// Create a TLS configuration for use with server-side contexts.
+    ///
+    /// This provides sensible defaults while requiring that you provide any data that is necessary
+    /// for server-side function. For client use, try `makeClientConfiguration` instead.
+    @available(*, deprecated, renamed: "makeServerConfiguration(certificateChain:privateKey:)")
     public static func forServer(certificateChain: [NIOSSLCertificateSource],
                                  privateKey: NIOSSLPrivateKeySource,
                                  cipherSuites: String = defaultCipherSuites,
@@ -316,7 +514,8 @@ public struct TLSConfiguration {
     /// Create a TLS configuration for use with server-side contexts.
     ///
     /// This provides sensible defaults while requiring that you provide any data that is necessary
-    /// for server-side function. For client use, try `forClient` instead.
+    /// for server-side function. For client use, try `makeClientConfiguration` instead.
+    @available(*, deprecated, renamed: "makeServerConfiguration(certificateChain:privateKey:)")
     public static func forServer(certificateChain: [NIOSSLCertificateSource],
                                  privateKey: NIOSSLPrivateKeySource,
                                  cipherSuites: String = defaultCipherSuites,
@@ -348,7 +547,8 @@ public struct TLSConfiguration {
     /// Create a TLS configuration for use with server-side contexts.
     ///
     /// This provides sensible defaults while requiring that you provide any data that is necessary
-    /// for server-side function. For client use, try `forClient` instead.
+    /// for server-side function. For client use, try `makeClientConfiguration` instead.
+    @available(*, deprecated, renamed: "makeServerConfiguration(certificateChain:privateKey:)")
     public static func forServer(certificateChain: [NIOSSLCertificateSource],
                                  privateKey: NIOSSLPrivateKeySource,
                                  cipherSuites: String = defaultCipherSuites,
@@ -378,10 +578,46 @@ public struct TLSConfiguration {
                                 additionalTrustRoots: additionalTrustRoots)
     }
 
+    /// Creates a TLS configuration for use with client-side contexts. This allows setting the `NIOTLSCipher` property specifically.
+    ///
+    /// This provides sensible defaults, and can be used without customisation. For server-side
+    /// contexts, you should use `makeServerConfiguration` instead.
+    @available(*, deprecated, renamed: "makeClientConfiguration()")
+    public static func forClient(cipherSuites: [NIOTLSCipher],
+                                 verifySignatureAlgorithms: [SignatureAlgorithm]? = nil,
+                                 signingSignatureAlgorithms: [SignatureAlgorithm]? = nil,
+                                 minimumTLSVersion: TLSVersion = .tlsv1,
+                                 maximumTLSVersion: TLSVersion? = nil,
+                                 certificateVerification: CertificateVerification = .fullVerification,
+                                 trustRoots: NIOSSLTrustRoots = .default,
+                                 certificateChain: [NIOSSLCertificateSource] = [],
+                                 privateKey: NIOSSLPrivateKeySource? = nil,
+                                 applicationProtocols: [String] = [],
+                                 shutdownTimeout: TimeAmount = .seconds(5),
+                                 keyLogCallback: NIOSSLKeyLogCallback? = nil,
+                                 renegotiationSupport: NIORenegotiationSupport = .none,
+                                 additionalTrustRoots: [NIOSSLAdditionalTrustRoots] = []) -> TLSConfiguration {
+        return TLSConfiguration(cipherSuiteValues: cipherSuites,
+                                verifySignatureAlgorithms: verifySignatureAlgorithms,
+                                signingSignatureAlgorithms: signingSignatureAlgorithms,
+                                minimumTLSVersion: minimumTLSVersion,
+                                maximumTLSVersion: maximumTLSVersion,
+                                certificateVerification: certificateVerification,
+                                trustRoots: trustRoots,
+                                certificateChain: certificateChain,
+                                privateKey: privateKey,
+                                applicationProtocols: applicationProtocols,
+                                shutdownTimeout: shutdownTimeout,
+                                keyLogCallback: keyLogCallback,
+                                renegotiationSupport: renegotiationSupport,
+                                additionalTrustRoots: additionalTrustRoots)
+    }
+
     /// Creates a TLS configuration for use with client-side contexts.
     ///
     /// This provides sensible defaults, and can be used without customisation. For server-side
-    /// contexts, you should use `forServer` instead.
+    /// contexts, you should use `makeServerConfiguration` instead.
+    @available(*, deprecated, renamed: "makeClientConfiguration()")
     public static func forClient(cipherSuites: String = defaultCipherSuites,
                                  minimumTLSVersion: TLSVersion = .tlsv1,
                                  maximumTLSVersion: TLSVersion? = nil,
@@ -412,7 +648,8 @@ public struct TLSConfiguration {
     /// Creates a TLS configuration for use with client-side contexts.
     ///
     /// This provides sensible defaults, and can be used without customisation. For server-side
-    /// contexts, you should use `forServer` instead.
+    /// contexts, you should use `makeServerConfiguration` instead.
+    @available(*, deprecated, renamed: "makeClientConfiguration()")
     public static func forClient(cipherSuites: String = defaultCipherSuites,
                                  minimumTLSVersion: TLSVersion = .tlsv1,
                                  maximumTLSVersion: TLSVersion? = nil,
@@ -439,11 +676,12 @@ public struct TLSConfiguration {
                                 renegotiationSupport: renegotiationSupport,
                                 additionalTrustRoots: [])
     }
-    
+
     /// Creates a TLS configuration for use with client-side contexts.
     ///
     /// This provides sensible defaults, and can be used without customisation. For server-side
-    /// contexts, you should use `forServer` instead.
+    /// contexts, you should use `makeServerConfiguration` instead.
+    @available(*, deprecated, renamed: "makeClientConfiguration()")
     public static func forClient(cipherSuites: String = defaultCipherSuites,
                                  verifySignatureAlgorithms: [SignatureAlgorithm]? = nil,
                                  signingSignatureAlgorithms: [SignatureAlgorithm]? = nil,
@@ -476,7 +714,8 @@ public struct TLSConfiguration {
     /// Creates a TLS configuration for use with client-side contexts.
     ///
     /// This provides sensible defaults, and can be used without customisation. For server-side
-    /// contexts, you should use `forServer` instead.
+    /// contexts, you should use `makeServerConfiguration` instead.
+    @available(*, deprecated, renamed: "makeClientConfiguration()")
     public static func forClient(cipherSuites: String = defaultCipherSuites,
                                  verifySignatureAlgorithms: [SignatureAlgorithm]? = nil,
                                  signingSignatureAlgorithms: [SignatureAlgorithm]? = nil,
