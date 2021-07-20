@@ -36,7 +36,10 @@ final class ViewController: UIViewController {
             case .success(let response):
                 print(response)
             case .failure(let error):
-                print(error)
+                if case .unauthenticated = error {
+                    // stashed token -> set new
+//                    grpcClass.setToken("")
+                }
             }
         }
     }

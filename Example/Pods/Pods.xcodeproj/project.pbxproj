@@ -967,6 +967,7 @@
 		D2FE079B26A55FC20093BED4 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FE079A26A55FC20093BED4 /* Currency.swift */; };
 		D2FE079D26A561310093BED4 /* InstrumentCommonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FE079C26A561310093BED4 /* InstrumentCommonType.swift */; };
 		D2FE079F26A5626B0093BED4 /* BrokerPositionLifecycleStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FE079E26A5626B0093BED4 /* BrokerPositionLifecycleStage.swift */; };
+		D2FE07A426A5D4310093BED4 /* INVError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FE07A326A5D4310093BED4 /* INVError.swift */; };
 		D352A789A0441BA02AAAE4859B6A0EAF /* Ref.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF655C72ABA65B1D8A1A44E6D4161EC /* Ref.swift */; };
 		D35709591044235A154BDE2D77B2673B /* ChannelOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFECE7C9A4711095772A010191A8716 /* ChannelOption.swift */; };
 		D36D83C26AF32556F80824A4765AA691 /* x_x509.c in Sources */ = {isa = PBXBuildFile; fileRef = 3CC21D81B3BAE618B64933FE87B235C9 /* x_x509.c */; };
@@ -2666,6 +2667,7 @@
 		D2FE079A26A55FC20093BED4 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		D2FE079C26A561310093BED4 /* InstrumentCommonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstrumentCommonType.swift; sourceTree = "<group>"; };
 		D2FE079E26A5626B0093BED4 /* BrokerPositionLifecycleStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrokerPositionLifecycleStage.swift; sourceTree = "<group>"; };
+		D2FE07A326A5D4310093BED4 /* INVError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INVError.swift; sourceTree = "<group>"; };
 		D344A49837C629B9C7F4F848513BD7BE /* SwiftNIOExtras.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftNIOExtras.release.xcconfig; sourceTree = "<group>"; };
 		D34D2A558219EB21C8B5E8DF5780DB29 /* GRPCWebToHTTP2ServerCodec.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GRPCWebToHTTP2ServerCodec.swift; path = Sources/GRPC/GRPCWebToHTTP2ServerCodec.swift; sourceTree = "<group>"; };
 		D37E3E8908A05D1084ED731C4A31A751 /* hexdump.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = hexdump.c; path = Sources/CNIOBoringSSL/crypto/bio/hexdump.c; sourceTree = "<group>"; };
@@ -4062,6 +4064,7 @@
 			children = (
 				D2FE079926A55F1F0093BED4 /* Commons */,
 				D2FE079026A1DC180093BED4 /* BrokerPorfolio */,
+				D2FE07A326A5D4310093BED4 /* INVError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -5820,6 +5823,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
 				LastUpgradeCheck = 1100;
+				TargetAttributes = {
+					642945244208FC5F107EE5F43551DCA5 = {
+						LastSwiftMigration = 1250;
+					};
+				};
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -7122,6 +7130,7 @@
 				5F032FE0F22B5847F075C3B45DD252EB /* GRPCClass.swift in Sources */,
 				DF00214AD6FC3A450FD5C888C568211B /* mts_common.pb.swift in Sources */,
 				EC1620B6E52B05BF4F9D268FC41AB75C /* MtsInvestGrpcService-dummy.m in Sources */,
+				D2FE07A426A5D4310093BED4 /* INVError.swift in Sources */,
 				2AEE34B8B86E3A9653FCD6AD45D41148 /* MtsTestView.swift in Sources */,
 				D2FE078F26A1A2FC0093BED4 /* GRPCDate + Ext.swift in Sources */,
 				C44ED2B1DFB580B74467923FC4D8944E /* number.pb.swift in Sources */,
@@ -9023,6 +9032,7 @@
 			baseConfigurationReference = E46B02D66A432229138E71C6DFCEE9EC /* CGRPCZlib.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -9043,6 +9053,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -9087,6 +9098,7 @@
 			baseConfigurationReference = 7720963CF6BE008D64C0939034606383 /* CGRPCZlib.release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
