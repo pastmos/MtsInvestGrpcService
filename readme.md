@@ -27,6 +27,7 @@ Use it only within MTS environment, other use is restricted by law.
 ## Author
 
 Panov Sergey, passt@yandex.ru
+Yuriy Sultanov, heduxar@mail.ru
 
 ## License
 
