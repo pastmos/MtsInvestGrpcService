@@ -5,7 +5,6 @@
 //  Created by Юрий Султанов on 16.07.2021.
 //
 
-
 public struct BrokerPortfolioResponse {
     let portfolio: BrokerPortfolio
     let positions: [BrokerPosition]
@@ -17,5 +16,11 @@ extension BrokerPortfolioResponse {
         self.portfolio = BrokerPortfolio(from: grpcModel.portfolio)
         self.positions = grpcModel.positions.map { BrokerPosition(from: $0) }
         self.status = BrokerPortfolioStatus(rawValue: grpcModel.status.rawValue)
+    }
+}
+
+extension BrokerPortfolioResponse: Equatable {
+    public static func == (lhs: BrokerPortfolioResponse, rhs: BrokerPortfolioResponse) -> Bool {
+        lhs.portfolio.contractID == rhs.portfolio.contractID
     }
 }

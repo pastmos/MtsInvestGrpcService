@@ -10,23 +10,53 @@ import SnapKit
 import GRPC
 
 open class MtsGRPCClass {
-    // MARK: Private properties
+    // MARK: - Private properties
     private let host: String
     private let port: Int
     private var callOptions = CallOptions()
     private var brokerService: BrokerPorfolioService?
     
-    // MARK: Lifecycle
+    // MARK: BrokerPorfolio
+    private var brokerPortfolioObservers: Observable<BrokerPortfolioResponse>
+    
+    // MARK: - Lifecycle
     public init(
         host: String,
         port: Int) {
         self.host = host
         self.port = port
+        
+        brokerPortfolioObservers = .init(streamType: .brokerPorfolio)
     }
     
-    // MARK: Private methods
+    // MARK: - Private methods
+    // MARK: BrokerPorfolio
+    private func startBrokerPortfolioStream() {
+        if brokerService == nil {
+            brokerService = BrokerPorfolioService(
+                host: host,
+                port: port)
+        }
+        
+        brokerService?.restartStream(
+            for: .allTime,
+            callOptions: callOptions) { [weak self] result in
+            switch result {
+            case .success(let brokerPortfolio):
+                self?.brokerPortfolioObservers.onNext(brokerPortfolio)
+            case .failure(let error):
+                self?.brokerPortfolioObservers.onError(error)
+            }
+        }
+    }
     
-    // MARK: Public methods
+    private func closeBrokerPortfolioStream() {
+        brokerService?.stopStream()
+        brokerService = nil
+    }
+    
+    // MARK: - Public methods
+    // MARK: Token
     @discardableResult
     public func setToken(_ token: String) -> Self {
         callOptions.customMetadata.replaceOrAdd(
@@ -35,18 +65,42 @@ open class MtsGRPCClass {
         return self
     }
     
-    public func getBrokerPortfolio(completion: @escaping (Result<BrokerPortfolioResponse, INVError>) -> Void) {
-        brokerService = BrokerPorfolioService(
-            host: host,
-            port: port,
-            callOptions: callOptions)
-        brokerService?.getBrokerPorfolio(
-            for: .allTime,
-            callOptions: callOptions,
-            completion: completion)
+    // MARK: Subscribe
+    public func subscribeBrokerPorfolio(
+        _ object: AnyObject,
+        event: @escaping (Result<BrokerPortfolioResponse?, INVError>) -> Void) {
+        brokerPortfolioObservers.delegate = self
+        brokerPortfolioObservers.subscribe(
+            object,
+            event: event)
     }
     
-    public func closeSteam() {
-        brokerService?.stopStream()
+    public func unsubscribe(
+        _ object: AnyObject,
+        from streamType: StreamType) {
+        switch streamType {
+        case .brokerPorfolio:
+            brokerPortfolioObservers.unSubscribe(object)
+        }
+    }
+}
+
+
+extension MtsGRPCClass: ObservableDelegate {
+    func subscriptonsDidChange(
+        at streamType: StreamType,
+        hasSubscribers: Bool) {
+        switch streamType {
+        case .brokerPorfolio:
+            hasSubscribers ? startBrokerPortfolioStream() : closeBrokerPortfolioStream()
+        
+        }
+    }
+    
+    func shouldRefresh(streamType: StreamType) {
+        switch streamType {
+        case .brokerPorfolio:
+            startBrokerPortfolioStream()
+        }
     }
 }

@@ -1,31 +1,19 @@
 //
-//  ViewController.swift
-//  MtsInvestGrpcService
+//  ViewController0.swift
+//  MtsInvestGrpcService_Example
 //
-//  Created by Sergey Panov on 02.07.2021.
+//  Created by Юрий Султанов on 20.07.2021.
 //  Copyright © 2021 CocoaPods. All rights reserved.
 //
 
 import UIKit
-import MtsInvestGrpcService
 
-final class ViewController: UIViewController {
-    @IBOutlet private var tokenTextField: UITextField!
-    @IBAction private func refresh() {
-        guard let token = tokenTextField.text else { return }
-        grpcClass
-            .setToken(token)
-        fetchPortfolio()
-    }
-    
-    @IBAction private func stop() {
-        grpcClass.unsubscribe(self, from: .brokerPorfolio)
-    }
-    
+class ViewController0: UIViewController {
     private lazy var grpcClass = NetworkService.instance.grpc
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchPortfolio()
     }
     
     private func fetchPortfolio() {
@@ -41,5 +29,14 @@ final class ViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+    }
+    
+    deinit {
+        grpcClass.unsubscribe(self, from: .brokerPorfolio)
     }
 }

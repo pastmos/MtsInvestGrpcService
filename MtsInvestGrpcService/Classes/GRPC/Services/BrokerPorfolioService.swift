@@ -8,22 +8,19 @@
 import GRPC
 import NIO
 
-final class BrokerPorfolioService/*<Service, Response>*/ {
+final class BrokerPorfolioService {
     typealias ServiceClient = Ru_Mts_Trading_Broker_BrokerPortfolioServiceClient
     
     // MARK: Private properties
     private let eventLoopGroup = PlatformSupport.makeEventLoopGroup(loopCount: 1)
     private var service: ServiceClient?
     private var channel: ClientConnection?
-    private var stream: ServerStreamingCall<Ru_Mts_Trading_Broker_PortfolioRequest,
-                                            Ru_Mts_Trading_Broker_Commons_PortfolioResponse>?
-//    private var some: GRPCClient?
+    private var callOptions: CallOptions?
     
     // MARK: Lifecycle
     init(
         host: String,
-        port: Int,
-        callOptions: CallOptions) {
+        port: Int) {
         configureService(
             host: host,
             port: port)
@@ -43,30 +40,22 @@ final class BrokerPorfolioService/*<Service, Response>*/ {
                 host: host,
                 port: port)
         guard let channel = channel else { return }
-//        some = ServiceClient(channel: channel)
         service = ServiceClient(channel: channel)
     }
     
-    // MARK: Public methods
-    public func stopStream() {
-        _ = channel?.close()
-        try? eventLoopGroup.syncShutdownGracefully()
-        print("🛑🛑 \(ServiceClient.self) stopped 🛑🛑")
-    }
-    public func getBrokerPorfolio(
-        for period: Ru_Mts_Trading_Broker_Commons_Period = .oneDay,
-        callOptions: CallOptions,
+    private func getBrokerPorfolio(
+        for period: Ru_Mts_Trading_Broker_Commons_Period = .allTime,
         completion: @escaping (Result<BrokerPortfolioResponse, INVError>) -> Void) {
         guard let service = service else { return }
         DispatchQueue.global().async {
-            self.stream = service
+            let stream = service
                 .getStreamV2(
                     .with { $0.period = period },
-                    callOptions: callOptions) { response in
+                    callOptions: self.callOptions) { response in
                     completion(.success(BrokerPortfolioResponse(from: response)))
                 }
             
-            self.stream?.status.whenSuccess { status in
+            stream.status.whenSuccess { status in
                 switch status.code {
                 case .ok,
                      .cancelled,
@@ -79,10 +68,29 @@ final class BrokerPorfolioService/*<Service, Response>*/ {
                 }
             }
             
-            self.stream?.status.whenFailure {
+            stream.status.whenFailure {
                 print("‼️‼️ \($0.localizedDescription) ‼️‼️")
                 completion(.failure(INVError(from: $0.localizedDescription)))
             }
         }
     }
+    
+    // MARK: Public methods
+    public func restartStream(
+        for period: Ru_Mts_Trading_Broker_Commons_Period = .allTime,
+        callOptions: CallOptions,
+        completion: @escaping (Result<BrokerPortfolioResponse, INVError>) -> Void) {
+        self.callOptions = callOptions
+        getBrokerPorfolio(
+            for: period,
+            completion: completion)
+    }
+    
+    public func stopStream() {
+        _ = channel?.close()
+        try? eventLoopGroup.syncShutdownGracefully()
+        print("🛑🛑 \(ServiceClient.self) stopped 🛑🛑")
+    }
+    
+    
 }
