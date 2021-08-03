@@ -186,7 +186,6 @@
 		2A024D90575FFECA07558828BD075DFA /* UniversalBootstrapSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4176744692621733CD0F86B8FAF0E8E0 /* UniversalBootstrapSupport.swift */; };
 		2A65C4B6FADF4C4102C6528B00232404 /* md4.c in Sources */ = {isa = PBXBuildFile; fileRef = E0C1AE0FF5C361A33855941D3A6F7A9A /* md4.c */; };
 		2A6FF5FE7BA91B6B3D15AC5AFFCEA1C4 /* Logging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F361ACE9E1BB1AAC1F36C422CFD23A1E /* Logging.framework */; };
-		2AEE34B8B86E3A9653FCD6AD45D41148 /* MtsTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6346963AAC929CC583707CAF7FC378 /* MtsTestView.swift */; };
 		2BD52259EF570CBE62B9822E1BBB16BD /* sha512-armv4.ios.arm.S in Sources */ = {isa = PBXBuildFile; fileRef = 2C33B4389D1EFCA4C336402696E43206 /* sha512-armv4.ios.arm.S */; };
 		2BD8CE080AB3C5C224D0210708BC3CC6 /* TLSVerificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBDA945F49F4E128828017970B460BA /* TLSVerificationHandler.swift */; };
 		2BEF04A4BA5E626EDFC8952B27C987BD /* x86_64-mont5.linux.x86_64.S in Sources */ = {isa = PBXBuildFile; fileRef = 09E074374AB7C41F32DA834BAC86A2D9 /* x86_64-mont5.linux.x86_64.S */; };
@@ -1722,7 +1721,6 @@
 		0BE4BC39F7F0B5D554BA14A5016553E7 /* pmbtoken.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = pmbtoken.c; path = Sources/CNIOBoringSSL/crypto/trust_token/pmbtoken.c; sourceTree = "<group>"; };
 		0C1A8CB9BEE9A47A6B3BF20EFDF63660 /* v3_lib.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = v3_lib.c; path = Sources/CNIOBoringSSL/crypto/x509v3/v3_lib.c; sourceTree = "<group>"; };
 		0C46CC53A1FD2F4ADB506A4573E44ABD /* d1_both.cc */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = d1_both.cc; path = Sources/CNIOBoringSSL/ssl/d1_both.cc; sourceTree = "<group>"; };
-		0C6346963AAC929CC583707CAF7FC378 /* MtsTestView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MtsTestView.swift; sourceTree = "<group>"; };
 		0C7F40BF74577E9A6EA0D8F26B5BFA00 /* sha512-x86_64.mac.x86_64.S */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.asm; name = "sha512-x86_64.mac.x86_64.S"; path = "Sources/CNIOBoringSSL/crypto/fipsmodule/sha512-x86_64.mac.x86_64.S"; sourceTree = "<group>"; };
 		0C811BBECA7B3BCF02A46262643188E0 /* CNIOBoringSSL_base.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CNIOBoringSSL_base.h; path = Sources/CNIOBoringSSL/include/CNIOBoringSSL_base.h; sourceTree = "<group>"; };
 		0CB13CC8680AF59D7D5B80FA05D379C5 /* CNIOWindows.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CNIOWindows.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -4002,15 +4000,6 @@
 			path = SnapKit;
 			sourceTree = "<group>";
 		};
-		BA5EBC02CD068125B11051E0E641D067 /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				0C6346963AAC929CC583707CAF7FC378 /* MtsTestView.swift */,
-			);
-			name = UI;
-			path = MtsInvestGrpcService/Classes/UI;
-			sourceTree = "<group>";
-		};
 		C1E6F1D20DEE50AFBEF98889A0E004F3 /* CNIOAtomics */ = {
 			isa = PBXGroup;
 			children = (
@@ -4552,7 +4541,6 @@
 				4F48731D46F31EEC8B07A3DEA36B09A4 /* GRPC */,
 				ED689D470592B8A72FDBC67724F1FE58 /* Pod */,
 				D45EDC44DE5805FA04439A0E4D515AE9 /* Support Files */,
-				BA5EBC02CD068125B11051E0E641D067 /* UI */,
 			);
 			name = MtsInvestGrpcService;
 			path = ../..;
@@ -7444,7 +7432,6 @@
 				D235286626AFF84F0045860B /* INVInstrument.swift in Sources */,
 				D2FE07A426A5D4310093BED4 /* INVError.swift in Sources */,
 				D2FE07A826A7176F0093BED4 /* INVStreamType.swift in Sources */,
-				2AEE34B8B86E3A9653FCD6AD45D41148 /* MtsTestView.swift in Sources */,
 				D235284826A9696C0045860B /* instruments-common.pb.swift in Sources */,
 				D2FE07A626A7154D0093BED4 /* Observable.swift in Sources */,
 				D235285A26A9A9B20045860B /* InstrumentService.swift in Sources */,
