@@ -5,7 +5,7 @@
 //  Created by Юрий Султанов on 16.07.2021.
 //
 
-public struct BrokerPortfolio {
+public struct INVBrokerPortfolio {
     /// идентификатор портфеля
     let name: String
     /// цена ликвидации

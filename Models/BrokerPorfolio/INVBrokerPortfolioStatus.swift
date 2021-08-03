@@ -5,7 +5,7 @@
 //  Created by Юрий Султанов on 16.07.2021.
 //
 
-public enum BrokerPortfolioStatus {
+public enum INVBrokerPortfolioStatus {
     case exists, error, notExists
     case UNRECOGNIZED(Int)
     

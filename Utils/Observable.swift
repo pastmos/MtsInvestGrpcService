@@ -7,9 +7,9 @@
 
 protocol ObservableDelegate: AnyObject {
     func subscriptonsDidChange(
-        at streamType: StreamType,
+        at streamType: INVStreamType,
         hasSubscribers: Bool)
-    func shouldRefresh(streamType: StreamType)
+    func shouldRefresh(streamType: INVStreamType)
 }
 
 final class Observable<Element: Equatable> {
@@ -36,10 +36,10 @@ final class Observable<Element: Equatable> {
         }
     }
     private(set) var value: Element?
-    private let streamType: StreamType
+    private let streamType: INVStreamType
     
     //MARK: - Initialization
-    init(streamType: StreamType) {
+    init(streamType: INVStreamType) {
         value = nil
         subscriptions = [ObserverWrapper]()
         self.streamType = streamType

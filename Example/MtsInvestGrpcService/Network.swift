@@ -15,6 +15,9 @@ final class NetworkService {
     
     let grpc = MtsGRPCClass(
         host: "broker.sistema-capital.com",
-        port: 9010)
-    
+        port: 9000)
 }
+
+
+// broker.sistema-capital.com:9000
+// broker.sistema-capital.com:9010

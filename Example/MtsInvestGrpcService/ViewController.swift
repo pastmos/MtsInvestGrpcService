@@ -15,11 +15,12 @@ final class ViewController: UIViewController {
         guard let token = tokenTextField.text else { return }
         grpcClass
             .setToken(token)
-        fetchPortfolio()
+        fetch()
+//        fetchPortfolio()
     }
     
     @IBAction private func stop() {
-        grpcClass.unsubscribe(self, from: .brokerPorfolio)
+        grpcClass.unsubscribe(self, from: INVStreamType.allCases)
     }
     
     private lazy var grpcClass = NetworkService.instance.grpc
@@ -28,18 +29,89 @@ final class ViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    private func fetchPortfolio() {
-        grpcClass.subscribeBrokerPorfolio(self) { result in
+    private func fetch() {
+        grpcClass.subscribeInstruments(
+            self,
+            for: ["LKOH", "SBER", "GAZP", "GMKN"]) { result in
             switch result {
-            case .success(let response):
-                print(response)
+            case .success(let instrumentBrief):
+                print(instrumentBrief)
             case .failure(let error):
-                if case .unauthenticated = error {
-                    print(error)
-                    // stashed token -> set new
-                    //                    grpcClass.setToken("")
-                }
+                print(error)
             }
         }
+        
+        
+//        grpcClass.getInstrumentsList { result in
+//            switch result {
+//            case .success(let instruments):
+//                print(instruments.count)
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//                if case .unauthenticated = error {
+//                    // stashed token -> update -> set new
+//                    // grpcClass.setToken("")
+//                }
+//            }
+//        }
+//        DispatchQueue.global().asyncAfter(deadline: .now() + 3) {
+//            self.grpcClass.getInstrumet(instrumentID: "LKOH") { result in
+//                switch result {
+//                case .success(let instrument):
+//                    print(instrument)
+//                case .failure(let error):
+//                    print(error.localizedDescription)
+//                }
+//            }
+//        }
+//
+//        DispatchQueue.global().asyncAfter(deadline: .now() + 4) {
+//            self.grpcClass.getExchangeStatus(instrumentID: "LKOH") { result in
+//                switch result {
+//                case .success(let exchangeStatus):
+//                    print(exchangeStatus)
+//                case .failure(let error):
+//                    print(error.localizedDescription)
+//                }
+//            }
+//        }
+//        grpcClass.subscribeTradeOperation(self) { result in
+//            switch result {
+//            case .success(let order):
+//                print(order)
+//            case .failure(let error):
+//                if case .unauthenticated = error {
+//                    /* update token */
+//                }
+//                print(error)
+//            }
+//        }
+//
+//        let request = INVTradingWatchRequest(instrumentId: "LKOH")
+//        grpcClass.subscribeWatchSinglePrice(
+//            self,
+//            request: request) { result in
+//            switch result {
+//            case .success(let watchPrice):
+//                print(watchPrice)
+//            case .failure(let error):
+//                if case .unauthenticated = error {
+//                    /* update token */
+//                }
+//                print(error)
+//            }
+//        }
+//        grpcClass.subscribeBrokerPorfolio(self) { result in
+//            switch result {
+//            case .success(let response):
+//                print(response)
+//            case .failure(let error):
+//                if case .unauthenticated = error {
+//                    print(error)
+//                    // stashed token -> set new
+//                    //                    grpcClass.setToken("")
+//                }
+//            }
+//        }
     }
 }

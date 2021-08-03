@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MtsInvestGrpcService
 
 class ViewController0: UIViewController {
     private lazy var grpcClass = NetworkService.instance.grpc
@@ -37,6 +38,8 @@ class ViewController0: UIViewController {
     }
     
     deinit {
-        grpcClass.unsubscribe(self, from: .brokerPorfolio)
+        grpcClass.unsubscribe(
+            self,
+            from: INVStreamType.allCases)
     }
 }

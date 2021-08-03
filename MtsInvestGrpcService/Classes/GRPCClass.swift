@@ -14,10 +14,9 @@ open class MtsGRPCClass {
     private let host: String
     private let port: Int
     private var callOptions = CallOptions()
-    private var brokerService: BrokerPorfolioService?
-    
-    // MARK: BrokerPorfolio
-    private var brokerPortfolioObservers: Observable<BrokerPortfolioResponse>
+    private var brokerService: AnyBrokerPorfolioService?
+    private var instrumentsService: AnyInstrumentService?
+    private var tradeService: AnyTradeService?
     
     // MARK: - Lifecycle
     public init(
@@ -25,34 +24,6 @@ open class MtsGRPCClass {
         port: Int) {
         self.host = host
         self.port = port
-        
-        brokerPortfolioObservers = .init(streamType: .brokerPorfolio)
-    }
-    
-    // MARK: - Private methods
-    // MARK: BrokerPorfolio
-    private func startBrokerPortfolioStream() {
-        if brokerService == nil {
-            brokerService = BrokerPorfolioService(
-                host: host,
-                port: port)
-        }
-        
-        brokerService?.restartStream(
-            for: .allTime,
-            callOptions: callOptions) { [weak self] result in
-            switch result {
-            case .success(let brokerPortfolio):
-                self?.brokerPortfolioObservers.onNext(brokerPortfolio)
-            case .failure(let error):
-                self?.brokerPortfolioObservers.onError(error)
-            }
-        }
-    }
-    
-    private func closeBrokerPortfolioStream() {
-        brokerService?.stopStream()
-        brokerService = nil
     }
     
     // MARK: - Public methods
@@ -65,42 +36,131 @@ open class MtsGRPCClass {
         return self
     }
     
-    // MARK: Subscribe
-    public func subscribeBrokerPorfolio(
-        _ object: AnyObject,
-        event: @escaping (Result<BrokerPortfolioResponse?, INVError>) -> Void) {
-        brokerPortfolioObservers.delegate = self
-        brokerPortfolioObservers.subscribe(
-            object,
-            event: event)
-    }
-    
+    // MARK: Streams
     public func unsubscribe(
         _ object: AnyObject,
-        from streamType: StreamType) {
-        switch streamType {
-        case .brokerPorfolio:
-            brokerPortfolioObservers.unSubscribe(object)
+        from streamType: [INVStreamType]) {
+        streamType.forEach {
+            switch $0 {
+            case .brokerPorfolio:
+                brokerService?.unsubscribe(object: object)
+            case .tradeOperation,
+                 .watchSingle:
+                tradeService?.unsubscribe(
+                    object: object,
+                    from: $0)
+            case .instumentBrief:
+                break
+            }
         }
     }
 }
 
-
-extension MtsGRPCClass: ObservableDelegate {
-    func subscriptonsDidChange(
-        at streamType: StreamType,
-        hasSubscribers: Bool) {
-        switch streamType {
-        case .brokerPorfolio:
-            hasSubscribers ? startBrokerPortfolioStream() : closeBrokerPortfolioStream()
-        
+// MARK: Broker porfolio stream
+extension MtsGRPCClass {
+    public func subscribeBrokerPorfolio(
+        _ object: AnyObject,
+        event: @escaping (Result<INVBrokerPortfolioResponse?, INVError>) -> Void) {
+        if brokerService == nil {
+            brokerService = BrokerPorfolioService(
+                host: host,
+                port: port)
         }
+        brokerService?.subscribe(
+            object: object,
+            for: .allTime,
+            callOptions: callOptions,
+            completion: event)
+    }
+}
+
+// MARK: Instruments
+extension MtsGRPCClass {
+    private func makeInstrumentsService() {
+        instrumentsService = InstrumentService(
+            host: host,
+            port: port)
     }
     
-    func shouldRefresh(streamType: StreamType) {
-        switch streamType {
-        case .brokerPorfolio:
-            startBrokerPortfolioStream()
-        }
+    public func subscribeInstruments(
+        _ object: AnyObject,
+        for tikers: [String],
+        completion: @escaping (Result<INVInstrumentBrief?, INVError>) -> Void) {
+        if instrumentsService == nil { makeInstrumentsService() }
+        instrumentsService?.subscribeInstrumentBrief(
+            object,
+            for: tikers,
+            callOptions: callOptions,
+            completion: completion)
+    }
+    
+    public func getInstrumentsList(completion: @escaping (Result<[INVInstrumentBrief], INVError>) -> Void) {
+        if instrumentsService == nil { makeInstrumentsService() }
+        instrumentsService?.getInstrumentsList(
+            callOptions: callOptions,
+            completion: completion)
+    }
+    
+    public func getInstrumet(
+        instrumentID: String,
+        completion: @escaping (Result<INVInstrument, INVError>) -> Void) {
+        if instrumentsService == nil { makeInstrumentsService() }
+        instrumentsService?.getInstrument(
+            instrumentID: instrumentID,
+            callOptions: callOptions,
+            completion: completion)
+    }
+    
+    public func getExchangeStatus(
+        instrumentID: String,
+        completion: @escaping (Result<INVExchangeStatus, INVError>) -> Void) {
+        if instrumentsService == nil { makeInstrumentsService() }
+        instrumentsService?.getExchangeStatus(
+            instrumentID: instrumentID,
+            callOptions: callOptions,
+            completion: completion)
+    }
+}
+
+// MARK: Trade
+extension MtsGRPCClass {
+    private func makeTradeService() {
+        tradeService = TradeService(
+            host: host,
+            port: port)
+    }
+    
+    public func subscribeTradeOperation(
+        _ object: AnyObject,
+        event: @escaping (Result<INVTradingOrder?, INVError>) -> Void) {
+        if tradeService == nil { makeTradeService() }
+        tradeService?.subscribeOperation(
+            object: object,
+            callOptions: callOptions,
+            completion: event)
+    }
+    
+    public func subscribeWatchSinglePrice(
+        _ object: AnyObject,
+        request: INVTradingWatchRequest,
+        event: @escaping (Result<INVTradingWatchPrice?, INVError>) -> Void) {
+        if tradeService == nil { makeTradeService() }
+        tradeService?.subscribeWatchSingle(
+            object: object,
+            request: request,
+            callOptions: callOptions,
+            completion: event)
+    }
+    
+    /// - Parameters:
+    ///     - ids: Array of order id to hide
+    ///     - completion: Backend response empty, just check it for error. If error doesnt exists - ok.
+    public func hideOrder(
+        ids: [Int],
+        completion: @escaping (INVError?) -> Void) {
+        if tradeService == nil { makeTradeService() }
+        tradeService?.hideOrder(
+            ids: ids,
+            completion: completion)
     }
 }
