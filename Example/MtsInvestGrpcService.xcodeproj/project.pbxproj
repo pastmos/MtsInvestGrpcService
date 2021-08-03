@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		AF17BECD46B8F709451C3FC1 /* Pods_MtsInvestGrpcService_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8539385A4BD2B74EEBFC69 /* Pods_MtsInvestGrpcService_Tests.framework */; };
+		D2FE07AA26A7223B0093BED4 /* ViewController0.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FE07A926A7223B0093BED4 /* ViewController0.swift */; };
+		D2FE07AC26A7226F0093BED4 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FE07AB26A7226F0093BED4 /* Network.swift */; };
 		FC959D6443729E24F992FB3D /* Pods_MtsInvestGrpcService_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ECF53DC2943456FA17D3755 /* Pods_MtsInvestGrpcService_Example.framework */; };
 		FE6E3191268F3BEC005B002D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6E3190268F3BEC005B002D /* AppDelegate.swift */; };
 		FE6E3195268F3BEC005B002D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6E3194268F3BEC005B002D /* ViewController.swift */; };
@@ -32,6 +34,8 @@
 		9B8539385A4BD2B74EEBFC69 /* Pods_MtsInvestGrpcService_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MtsInvestGrpcService_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ECF53DC2943456FA17D3755 /* Pods_MtsInvestGrpcService_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MtsInvestGrpcService_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9BA855D0126456A7A7D57D7 /* MtsInvestGrpcService.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MtsInvestGrpcService.podspec; path = ../MtsInvestGrpcService.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		D2FE07A926A7223B0093BED4 /* ViewController0.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController0.swift; sourceTree = "<group>"; };
+		D2FE07AB26A7226F0093BED4 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		FE6E318E268F3BEC005B002D /* MtsInvestGrpcService_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MtsInvestGrpcService_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE6E3190268F3BEC005B002D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE6E3194268F3BEC005B002D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +144,8 @@
 				FE6E319B268F3BED005B002D /* LaunchScreen.storyboard */,
 				FE6E3196268F3BEC005B002D /* Main.storyboard */,
 				FE6E3194268F3BEC005B002D /* ViewController.swift */,
+				D2FE07A926A7223B0093BED4 /* ViewController0.swift */,
+				D2FE07AB26A7226F0093BED4 /* Network.swift */,
 			);
 			path = MtsInvestGrpcService;
 			sourceTree = "<group>";
@@ -287,7 +293,6 @@
 				"${BUILT_PRODUCTS_DIR}/CNIOWindows/CNIOWindows.framework",
 				"${BUILT_PRODUCTS_DIR}/Logging/Logging.framework",
 				"${BUILT_PRODUCTS_DIR}/MtsInvestGrpcService/MtsInvestGrpcService.framework",
-				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftNIO/NIO.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftNIOConcurrencyHelpers/NIOConcurrencyHelpers.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftNIOExtras/NIOExtras.framework",
@@ -313,7 +318,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CNIOWindows.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Logging.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MtsInvestGrpcService.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NIO.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NIOConcurrencyHelpers.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NIOExtras.framework",
@@ -369,7 +373,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2FE07AA26A7223B0093BED4 /* ViewController0.swift in Sources */,
 				FE6E3195268F3BEC005B002D /* ViewController.swift in Sources */,
+				D2FE07AC26A7226F0093BED4 /* Network.swift in Sources */,
 				FE6E3191268F3BEC005B002D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

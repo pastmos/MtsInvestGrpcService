@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MtsInvestGrpcService'
-  s.version          = '0.1.16'
+  s.version          = '0.1.21'
   s.summary          = 'MTS Investments GRPC Core library'
 
 # This description is used to generate tags and improve search results.
@@ -40,5 +40,4 @@ Pod::Spec.new do |s|
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
   s.dependency 'gRPC-Swift'
-  s.dependency 'SnapKit'
 end
