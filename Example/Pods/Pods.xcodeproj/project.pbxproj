@@ -964,56 +964,15 @@
 		D235285526A96E5B0045860B /* GoogleTypeDate.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = D235285426A96E5A0045860B /* GoogleTypeDate.pb.swift */; };
 		D235285726A96ED00045860B /* GoogleRpcStatus.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = D235285626A96ED00045860B /* GoogleRpcStatus.pb.swift */; };
 		D235285A26A9A9B20045860B /* InstrumentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D235285926A9A9B20045860B /* InstrumentService.swift */; };
-		D235285D26AAD8420045860B /* INVInstrumentBrief.swift in Sources */ = {isa = PBXBuildFile; fileRef = D235285C26AAD8420045860B /* INVInstrumentBrief.swift */; };
-		D235285F26AAE8460045860B /* GoogleTypeDate + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D235285E26AAE8460045860B /* GoogleTypeDate + Ext.swift */; };
-		D235286226AAEA190045860B /* GRPCOptionalDate + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D235286126AAEA190045860B /* GRPCOptionalDate + Ext.swift */; };
-		D235286426AAF4970045860B /* IticapitalApiMtsTypeFloat + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D235286326AAF4970045860B /* IticapitalApiMtsTypeFloat + Ext.swift */; };
-		D235286626AFF84F0045860B /* INVInstrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = D235286526AFF84F0045860B /* INVInstrument.swift */; };
-		D235286826B021CA0045860B /* INVInstrumentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D235286726B021CA0045860B /* INVInstrumentState.swift */; };
-		D235286A26B023B30045860B /* INVInstrumentBookbuilding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D235286926B023B30045860B /* INVInstrumentBookbuilding.swift */; };
-		D235286D26B029AB0045860B /* INVRangeCoupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D235286C26B029AB0045860B /* INVRangeCoupon.swift */; };
-		D235286F26B02ADA0045860B /* INVFixCoupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D235286E26B02ADA0045860B /* INVFixCoupon.swift */; };
-		D235287126B02C230045860B /* INVCouponType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D235287026B02C230045860B /* INVCouponType.swift */; };
-		D235287326B02E040045860B /* INVYieldPerAnnumRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = D235287226B02E040045860B /* INVYieldPerAnnumRange.swift */; };
-		D235287626B032C30045860B /* INVYieldPerAnnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D235287526B032C30045860B /* INVYieldPerAnnum.swift */; };
-		D235287826B035ED0045860B /* GRPCDateTime + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D235287726B035ED0045860B /* GRPCDateTime + Ext.swift */; };
-		D235287C26B057150045860B /* INVExchangeStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D235287B26B057150045860B /* INVExchangeStatus.swift */; };
-		D235287E26B059600045860B /* INVExchangeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D235287D26B059600045860B /* INVExchangeState.swift */; };
 		D235288226B1627C0045860B /* trade.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = D235288026B1627C0045860B /* trade.pb.swift */; };
 		D235288326B1627C0045860B /* trade.grpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = D235288126B1627C0045860B /* trade.grpc.swift */; };
 		D235288526B162B40045860B /* TradeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D235288426B162B40045860B /* TradeService.swift */; };
 		D235288826B2B27D0045860B /* AnyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D235288726B2B27D0045860B /* AnyService.swift */; };
-		D235288B26B2C6210045860B /* INVTradeExecuteOperationIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D235288A26B2C6210045860B /* INVTradeExecuteOperationIntent.swift */; };
-		D235288D26B2C8150045860B /* Ru_Mts_Trading_Trade_Price + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D235288C26B2C8150045860B /* Ru_Mts_Trading_Trade_Price + Ext.swift */; };
-		D235288F26B2C8550045860B /* Double + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D235288E26B2C8550045860B /* Double + Ext.swift */; };
-		D235289126B2CEA30045860B /* INVTradeOperationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D235289026B2CEA30045860B /* INVTradeOperationType.swift */; };
-		D235289326B2DFB10045860B /* INVTradeCancelOperationIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D235289226B2DFB10045860B /* INVTradeCancelOperationIntent.swift */; };
-		D235289526B2E0E30045860B /* INVOperationID.swift in Sources */ = {isa = PBXBuildFile; fileRef = D235289426B2E0E30045860B /* INVOperationID.swift */; };
-		D235289726B2E2320045860B /* INVTradeOperationIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D235289626B2E2320045860B /* INVTradeOperationIntent.swift */; };
-		D235289926B2EBC30045860B /* INVTradeOperationIntentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D235289826B2EBC30045860B /* INVTradeOperationIntentType.swift */; };
-		D27CC89926B7D31000F65E75 /* INVTradingOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27CC89826B7D31000F65E75 /* INVTradingOperation.swift */; };
-		D27CC89B26B7D87800F65E75 /* INVTradingOperationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27CC89A26B7D87800F65E75 /* INVTradingOperationType.swift */; };
-		D27CC89D26B7DAAA00F65E75 /* INVTradingOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27CC89C26B7DAAA00F65E75 /* INVTradingOrder.swift */; };
-		D27CC89F26B7DD2C00F65E75 /* INVTradingOrderStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27CC89E26B7DD2C00F65E75 /* INVTradingOrderStatus.swift */; };
-		D27CC8A426B7EA8E00F65E75 /* INVTradingWatchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27CC8A326B7EA8E00F65E75 /* INVTradingWatchRequest.swift */; };
-		D27CC8A626B7EC1000F65E75 /* INVTradingWatchPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27CC8A526B7EC1000F65E75 /* INVTradingWatchPrice.swift */; };
 		D2A1F6E44C0898D0A7BA0238817A57D2 /* a_mbstr.c in Sources */ = {isa = PBXBuildFile; fileRef = BAA69EF6049EBE9FA30B718A354CDF3F /* a_mbstr.c */; };
 		D2BB142693C747A8C0F025C18C79765C /* NIOCloseOnErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1303353222AFDAB88F74CF9DCA5B6B17 /* NIOCloseOnErrorHandler.swift */; };
 		D2D5AD21B5E4CA8904615181002EEC70 /* Google_Protobuf_NullValue+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4803665FFA07894FBA4163403C8EA479 /* Google_Protobuf_NullValue+Extensions.swift */; };
 		D2D99F8865293A0C4806B4ECF8BB9124 /* lock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDFB7F316B69BF05C57E0F182598FD6 /* lock.swift */; };
 		D2FE078826A02DB20093BED4 /* BrokerPorfolioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FE078726A02DB20093BED4 /* BrokerPorfolioService.swift */; };
-		D2FE078C26A19FE00093BED4 /* INVBrokerPortfolio.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FE078B26A19FE00093BED4 /* INVBrokerPortfolio.swift */; };
-		D2FE078F26A1A2FC0093BED4 /* GRPCDate + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FE078E26A1A2FC0093BED4 /* GRPCDate + Ext.swift */; };
-		D2FE079226A1DC430093BED4 /* INVBrokerPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FE079126A1DC430093BED4 /* INVBrokerPosition.swift */; };
-		D2FE079426A1E44D0093BED4 /* INVBrokerPortfolioResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FE079326A1E44D0093BED4 /* INVBrokerPortfolioResponse.swift */; };
-		D2FE079626A1E4AC0093BED4 /* INVBrokerPortfolioStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FE079526A1E4AC0093BED4 /* INVBrokerPortfolioStatus.swift */; };
-		D2FE079826A55E0A0093BED4 /* INVBrokerPositionGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FE079726A55E0A0093BED4 /* INVBrokerPositionGroup.swift */; };
-		D2FE079B26A55FC20093BED4 /* INVCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FE079A26A55FC20093BED4 /* INVCurrency.swift */; };
-		D2FE079D26A561310093BED4 /* INVInstrumentCommonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FE079C26A561310093BED4 /* INVInstrumentCommonType.swift */; };
-		D2FE079F26A5626B0093BED4 /* INVBrokerPositionLifecycleStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FE079E26A5626B0093BED4 /* INVBrokerPositionLifecycleStage.swift */; };
-		D2FE07A426A5D4310093BED4 /* INVError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FE07A326A5D4310093BED4 /* INVError.swift */; };
-		D2FE07A626A7154D0093BED4 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FE07A526A7154D0093BED4 /* Observable.swift */; };
-		D2FE07A826A7176F0093BED4 /* INVStreamType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FE07A726A7176F0093BED4 /* INVStreamType.swift */; };
 		D352A789A0441BA02AAAE4859B6A0EAF /* Ref.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF655C72ABA65B1D8A1A44E6D4161EC /* Ref.swift */; };
 		D35709591044235A154BDE2D77B2673B /* ChannelOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFECE7C9A4711095772A010191A8716 /* ChannelOption.swift */; };
 		D36D83C26AF32556F80824A4765AA691 /* x_x509.c in Sources */ = {isa = PBXBuildFile; fileRef = 3CC21D81B3BAE618B64933FE87B235C9 /* x_x509.c */; };
@@ -1204,6 +1163,48 @@
 		FDFFF8150FC8152F8FEAF0BE75BD2B3E /* broker-portfolio-public.grpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ED07E26CC12772B18E2428A8C46540 /* broker-portfolio-public.grpc.swift */; };
 		FE6A8351B9A55CE80C65A5A9A7C6603A /* CGRPCZlib-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE2A8E9D1B5148244A1D1E293EEDFAE /* CGRPCZlib-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FE9D9F8010D2D7EDA962034033363019 /* p_x25519_asn1.c in Sources */ = {isa = PBXBuildFile; fileRef = AFAA7083DCB5EA8D996FE95C99451122 /* p_x25519_asn1.c */; };
+		FE9EF2E326B981C90006912E /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EF2A926B981C90006912E /* AppError.swift */; };
+		FE9EF2E426B981C90006912E /* INVStreamType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EF2AB26B981C90006912E /* INVStreamType.swift */; };
+		FE9EF2E526B981C90006912E /* INVInstrumentCommonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EF2AD26B981C90006912E /* INVInstrumentCommonType.swift */; };
+		FE9EF2E626B981C90006912E /* INVCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EF2AE26B981C90006912E /* INVCurrency.swift */; };
+		FE9EF2E726B981C90006912E /* INVTradeCancelOperationIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EF2B126B981C90006912E /* INVTradeCancelOperationIntent.swift */; };
+		FE9EF2E826B981C90006912E /* INVTradeOperationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EF2B226B981C90006912E /* INVTradeOperationType.swift */; };
+		FE9EF2E926B981C90006912E /* INVOperationID.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EF2B326B981C90006912E /* INVOperationID.swift */; };
+		FE9EF2EA26B981C90006912E /* INVTradeOperationIntentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EF2B426B981C90006912E /* INVTradeOperationIntentType.swift */; };
+		FE9EF2EB26B981C90006912E /* INVTradeExecuteOperationIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EF2B526B981C90006912E /* INVTradeExecuteOperationIntent.swift */; };
+		FE9EF2EC26B981C90006912E /* INVTradeOperationIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EF2B626B981C90006912E /* INVTradeOperationIntent.swift */; };
+		FE9EF2ED26B981C90006912E /* INVTradingOperationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EF2B926B981C90006912E /* INVTradingOperationType.swift */; };
+		FE9EF2EE26B981C90006912E /* INVTradingOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EF2BA26B981C90006912E /* INVTradingOperation.swift */; };
+		FE9EF2EF26B981C90006912E /* INVTradingOrderStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EF2BC26B981C90006912E /* INVTradingOrderStatus.swift */; };
+		FE9EF2F026B981C90006912E /* INVTradingOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EF2BD26B981C90006912E /* INVTradingOrder.swift */; };
+		FE9EF2F126B981C90006912E /* INVTradingWatchPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EF2BF26B981C90006912E /* INVTradingWatchPrice.swift */; };
+		FE9EF2F226B981C90006912E /* INVTradingWatchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EF2C026B981C90006912E /* INVTradingWatchRequest.swift */; };
+		FE9EF2F326B981C90006912E /* INVBrokerPositionGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EF2C226B981C90006912E /* INVBrokerPositionGroup.swift */; };
+		FE9EF2F426B981C90006912E /* INVBrokerPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EF2C326B981C90006912E /* INVBrokerPosition.swift */; };
+		FE9EF2F526B981C90006912E /* INVBrokerPortfolio.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EF2C426B981C90006912E /* INVBrokerPortfolio.swift */; };
+		FE9EF2F626B981C90006912E /* INVBrokerPositionLifecycleStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EF2C526B981C90006912E /* INVBrokerPositionLifecycleStage.swift */; };
+		FE9EF2F726B981C90006912E /* INVBrokerPortfolioStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EF2C626B981C90006912E /* INVBrokerPortfolioStatus.swift */; };
+		FE9EF2F826B981C90006912E /* INVBrokerPortfolioResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EF2C726B981C90006912E /* INVBrokerPortfolioResponse.swift */; };
+		FE9EF2F926B981C90006912E /* INVInstrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EF2C926B981C90006912E /* INVInstrument.swift */; };
+		FE9EF2FA26B981C90006912E /* INVInstrumentBrief.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EF2CA26B981C90006912E /* INVInstrumentBrief.swift */; };
+		FE9EF2FB26B981C90006912E /* INVInstrumentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EF2CB26B981C90006912E /* INVInstrumentState.swift */; };
+		FE9EF2FC26B981C90006912E /* INVFixCoupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EF2CD26B981C90006912E /* INVFixCoupon.swift */; };
+		FE9EF2FD26B981C90006912E /* INVCouponType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EF2CE26B981C90006912E /* INVCouponType.swift */; };
+		FE9EF2FE26B981C90006912E /* INVRangeCoupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EF2CF26B981C90006912E /* INVRangeCoupon.swift */; };
+		FE9EF2FF26B981C90006912E /* INVInstrumentBookbuilding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EF2D026B981C90006912E /* INVInstrumentBookbuilding.swift */; };
+		FE9EF30026B981C90006912E /* INVExchangeStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EF2D226B981C90006912E /* INVExchangeStatus.swift */; };
+		FE9EF30126B981C90006912E /* INVExchangeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EF2D326B981C90006912E /* INVExchangeState.swift */; };
+		FE9EF30226B981C90006912E /* INVYieldPerAnnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EF2D526B981C90006912E /* INVYieldPerAnnum.swift */; };
+		FE9EF30326B981C90006912E /* INVYieldPerAnnumRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EF2D626B981C90006912E /* INVYieldPerAnnumRange.swift */; };
+		FE9EF30426B981C90006912E /* INVError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EF2D726B981C90006912E /* INVError.swift */; };
+		FE9EF30526B981C90006912E /* GRPCDate + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EF2DB26B981C90006912E /* GRPCDate + Ext.swift */; };
+		FE9EF30626B981C90006912E /* GRPCOptionalDate + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EF2DC26B981C90006912E /* GRPCOptionalDate + Ext.swift */; };
+		FE9EF30726B981C90006912E /* GRPCDateTime + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EF2DD26B981C90006912E /* GRPCDateTime + Ext.swift */; };
+		FE9EF30826B981C90006912E /* GoogleTypeDate + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EF2DE26B981C90006912E /* GoogleTypeDate + Ext.swift */; };
+		FE9EF30926B981C90006912E /* Double + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EF2DF26B981C90006912E /* Double + Ext.swift */; };
+		FE9EF30A26B981C90006912E /* IticapitalApiMtsTypeFloat + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EF2E026B981C90006912E /* IticapitalApiMtsTypeFloat + Ext.swift */; };
+		FE9EF30B26B981C90006912E /* Ru_Mts_Trading_Trade_Price + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EF2E126B981C90006912E /* Ru_Mts_Trading_Trade_Price + Ext.swift */; };
+		FE9EF30C26B981C90006912E /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EF2E226B981C90006912E /* Observable.swift */; };
 		FF2068CBCECC006E4027D961B2363AD4 /* internal.h in Headers */ = {isa = PBXBuildFile; fileRef = DC9DCC6A56161717CF2A76B962621781 /* internal.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		FF5E4FA7CBE4B6DF9471AF269821D513 /* err.c in Sources */ = {isa = PBXBuildFile; fileRef = 8B788516E3A9FBA23698B0E55B57CC82 /* err.c */; };
 		FF698B3D3B250EEB8A53439B94441111 /* NIOTSNetworkEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801AE70E67E10265343F76B4931637DA /* NIOTSNetworkEvents.swift */; };
@@ -2710,56 +2711,15 @@
 		D235285426A96E5A0045860B /* GoogleTypeDate.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleTypeDate.pb.swift; sourceTree = "<group>"; };
 		D235285626A96ED00045860B /* GoogleRpcStatus.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleRpcStatus.pb.swift; sourceTree = "<group>"; };
 		D235285926A9A9B20045860B /* InstrumentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstrumentService.swift; sourceTree = "<group>"; };
-		D235285C26AAD8420045860B /* INVInstrumentBrief.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INVInstrumentBrief.swift; sourceTree = "<group>"; };
-		D235285E26AAE8460045860B /* GoogleTypeDate + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GoogleTypeDate + Ext.swift"; sourceTree = "<group>"; };
-		D235286126AAEA190045860B /* GRPCOptionalDate + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GRPCOptionalDate + Ext.swift"; sourceTree = "<group>"; };
-		D235286326AAF4970045860B /* IticapitalApiMtsTypeFloat + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IticapitalApiMtsTypeFloat + Ext.swift"; sourceTree = "<group>"; };
-		D235286526AFF84F0045860B /* INVInstrument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INVInstrument.swift; sourceTree = "<group>"; };
-		D235286726B021CA0045860B /* INVInstrumentState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INVInstrumentState.swift; sourceTree = "<group>"; };
-		D235286926B023B30045860B /* INVInstrumentBookbuilding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INVInstrumentBookbuilding.swift; sourceTree = "<group>"; };
-		D235286C26B029AB0045860B /* INVRangeCoupon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INVRangeCoupon.swift; sourceTree = "<group>"; };
-		D235286E26B02ADA0045860B /* INVFixCoupon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INVFixCoupon.swift; sourceTree = "<group>"; };
-		D235287026B02C230045860B /* INVCouponType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INVCouponType.swift; sourceTree = "<group>"; };
-		D235287226B02E040045860B /* INVYieldPerAnnumRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INVYieldPerAnnumRange.swift; sourceTree = "<group>"; };
-		D235287526B032C30045860B /* INVYieldPerAnnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INVYieldPerAnnum.swift; sourceTree = "<group>"; };
-		D235287726B035ED0045860B /* GRPCDateTime + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GRPCDateTime + Ext.swift"; sourceTree = "<group>"; };
-		D235287B26B057150045860B /* INVExchangeStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INVExchangeStatus.swift; sourceTree = "<group>"; };
-		D235287D26B059600045860B /* INVExchangeState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INVExchangeState.swift; sourceTree = "<group>"; };
 		D235288026B1627C0045860B /* trade.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = trade.pb.swift; sourceTree = "<group>"; };
 		D235288126B1627C0045860B /* trade.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = trade.grpc.swift; sourceTree = "<group>"; };
 		D235288426B162B40045860B /* TradeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeService.swift; sourceTree = "<group>"; };
 		D235288726B2B27D0045860B /* AnyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyService.swift; sourceTree = "<group>"; };
-		D235288A26B2C6210045860B /* INVTradeExecuteOperationIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INVTradeExecuteOperationIntent.swift; sourceTree = "<group>"; };
-		D235288C26B2C8150045860B /* Ru_Mts_Trading_Trade_Price + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ru_Mts_Trading_Trade_Price + Ext.swift"; sourceTree = "<group>"; };
-		D235288E26B2C8550045860B /* Double + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double + Ext.swift"; sourceTree = "<group>"; };
-		D235289026B2CEA30045860B /* INVTradeOperationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INVTradeOperationType.swift; sourceTree = "<group>"; };
-		D235289226B2DFB10045860B /* INVTradeCancelOperationIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INVTradeCancelOperationIntent.swift; sourceTree = "<group>"; };
-		D235289426B2E0E30045860B /* INVOperationID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INVOperationID.swift; sourceTree = "<group>"; };
-		D235289626B2E2320045860B /* INVTradeOperationIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INVTradeOperationIntent.swift; sourceTree = "<group>"; };
-		D235289826B2EBC30045860B /* INVTradeOperationIntentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INVTradeOperationIntentType.swift; sourceTree = "<group>"; };
-		D27CC89826B7D31000F65E75 /* INVTradingOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INVTradingOperation.swift; sourceTree = "<group>"; };
-		D27CC89A26B7D87800F65E75 /* INVTradingOperationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INVTradingOperationType.swift; sourceTree = "<group>"; };
-		D27CC89C26B7DAAA00F65E75 /* INVTradingOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INVTradingOrder.swift; sourceTree = "<group>"; };
-		D27CC89E26B7DD2C00F65E75 /* INVTradingOrderStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INVTradingOrderStatus.swift; sourceTree = "<group>"; };
-		D27CC8A326B7EA8E00F65E75 /* INVTradingWatchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INVTradingWatchRequest.swift; sourceTree = "<group>"; };
-		D27CC8A526B7EC1000F65E75 /* INVTradingWatchPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INVTradingWatchPrice.swift; sourceTree = "<group>"; };
 		D2AF979B331DD4AE253C73BC23D654C9 /* p_rsa.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = p_rsa.c; path = Sources/CNIOBoringSSL/crypto/evp/p_rsa.c; sourceTree = "<group>"; };
 		D2BDE3E29D92F90173326AACDECC00A5 /* gRPC-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "gRPC-Swift.release.xcconfig"; sourceTree = "<group>"; };
 		D2C6EDE94412134BD26571C779C8BCE7 /* StreamMap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StreamMap.swift; path = Sources/NIOHTTP2/StreamMap.swift; sourceTree = "<group>"; };
 		D2FA6F143BCF5DE0D1C8ECE09F031A6D /* Logging.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Logging.debug.xcconfig; sourceTree = "<group>"; };
 		D2FE078726A02DB20093BED4 /* BrokerPorfolioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrokerPorfolioService.swift; sourceTree = "<group>"; };
-		D2FE078B26A19FE00093BED4 /* INVBrokerPortfolio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INVBrokerPortfolio.swift; sourceTree = "<group>"; };
-		D2FE078E26A1A2FC0093BED4 /* GRPCDate + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GRPCDate + Ext.swift"; sourceTree = "<group>"; };
-		D2FE079126A1DC430093BED4 /* INVBrokerPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INVBrokerPosition.swift; sourceTree = "<group>"; };
-		D2FE079326A1E44D0093BED4 /* INVBrokerPortfolioResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INVBrokerPortfolioResponse.swift; sourceTree = "<group>"; };
-		D2FE079526A1E4AC0093BED4 /* INVBrokerPortfolioStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INVBrokerPortfolioStatus.swift; sourceTree = "<group>"; };
-		D2FE079726A55E0A0093BED4 /* INVBrokerPositionGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INVBrokerPositionGroup.swift; sourceTree = "<group>"; };
-		D2FE079A26A55FC20093BED4 /* INVCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INVCurrency.swift; sourceTree = "<group>"; };
-		D2FE079C26A561310093BED4 /* INVInstrumentCommonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INVInstrumentCommonType.swift; sourceTree = "<group>"; };
-		D2FE079E26A5626B0093BED4 /* INVBrokerPositionLifecycleStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INVBrokerPositionLifecycleStage.swift; sourceTree = "<group>"; };
-		D2FE07A326A5D4310093BED4 /* INVError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INVError.swift; sourceTree = "<group>"; };
-		D2FE07A526A7154D0093BED4 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
-		D2FE07A726A7176F0093BED4 /* INVStreamType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INVStreamType.swift; sourceTree = "<group>"; };
 		D344A49837C629B9C7F4F848513BD7BE /* SwiftNIOExtras.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftNIOExtras.release.xcconfig; sourceTree = "<group>"; };
 		D34D2A558219EB21C8B5E8DF5780DB29 /* GRPCWebToHTTP2ServerCodec.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GRPCWebToHTTP2ServerCodec.swift; path = Sources/GRPC/GRPCWebToHTTP2ServerCodec.swift; sourceTree = "<group>"; };
 		D37E3E8908A05D1084ED731C4A31A751 /* hexdump.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = hexdump.c; path = Sources/CNIOBoringSSL/crypto/bio/hexdump.c; sourceTree = "<group>"; };
@@ -2966,6 +2926,48 @@
 		FD455AD8F442FC310586BCEFE03FE796 /* Message+JSONArrayAdditions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Message+JSONArrayAdditions.swift"; path = "Sources/SwiftProtobuf/Message+JSONArrayAdditions.swift"; sourceTree = "<group>"; };
 		FE219D13389B2CF349100B42746B482E /* CNIOBoringSSLShims.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CNIOBoringSSLShims.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE21FDC3D3D0679AAEF39DC92B947CAC /* System.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = System.swift; path = Sources/NIO/System.swift; sourceTree = "<group>"; };
+		FE9EF2A926B981C90006912E /* AppError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		FE9EF2AB26B981C90006912E /* INVStreamType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INVStreamType.swift; sourceTree = "<group>"; };
+		FE9EF2AD26B981C90006912E /* INVInstrumentCommonType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INVInstrumentCommonType.swift; sourceTree = "<group>"; };
+		FE9EF2AE26B981C90006912E /* INVCurrency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INVCurrency.swift; sourceTree = "<group>"; };
+		FE9EF2B126B981C90006912E /* INVTradeCancelOperationIntent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INVTradeCancelOperationIntent.swift; sourceTree = "<group>"; };
+		FE9EF2B226B981C90006912E /* INVTradeOperationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INVTradeOperationType.swift; sourceTree = "<group>"; };
+		FE9EF2B326B981C90006912E /* INVOperationID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INVOperationID.swift; sourceTree = "<group>"; };
+		FE9EF2B426B981C90006912E /* INVTradeOperationIntentType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INVTradeOperationIntentType.swift; sourceTree = "<group>"; };
+		FE9EF2B526B981C90006912E /* INVTradeExecuteOperationIntent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INVTradeExecuteOperationIntent.swift; sourceTree = "<group>"; };
+		FE9EF2B626B981C90006912E /* INVTradeOperationIntent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INVTradeOperationIntent.swift; sourceTree = "<group>"; };
+		FE9EF2B926B981C90006912E /* INVTradingOperationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INVTradingOperationType.swift; sourceTree = "<group>"; };
+		FE9EF2BA26B981C90006912E /* INVTradingOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INVTradingOperation.swift; sourceTree = "<group>"; };
+		FE9EF2BC26B981C90006912E /* INVTradingOrderStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INVTradingOrderStatus.swift; sourceTree = "<group>"; };
+		FE9EF2BD26B981C90006912E /* INVTradingOrder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INVTradingOrder.swift; sourceTree = "<group>"; };
+		FE9EF2BF26B981C90006912E /* INVTradingWatchPrice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INVTradingWatchPrice.swift; sourceTree = "<group>"; };
+		FE9EF2C026B981C90006912E /* INVTradingWatchRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INVTradingWatchRequest.swift; sourceTree = "<group>"; };
+		FE9EF2C226B981C90006912E /* INVBrokerPositionGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INVBrokerPositionGroup.swift; sourceTree = "<group>"; };
+		FE9EF2C326B981C90006912E /* INVBrokerPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INVBrokerPosition.swift; sourceTree = "<group>"; };
+		FE9EF2C426B981C90006912E /* INVBrokerPortfolio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INVBrokerPortfolio.swift; sourceTree = "<group>"; };
+		FE9EF2C526B981C90006912E /* INVBrokerPositionLifecycleStage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INVBrokerPositionLifecycleStage.swift; sourceTree = "<group>"; };
+		FE9EF2C626B981C90006912E /* INVBrokerPortfolioStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INVBrokerPortfolioStatus.swift; sourceTree = "<group>"; };
+		FE9EF2C726B981C90006912E /* INVBrokerPortfolioResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INVBrokerPortfolioResponse.swift; sourceTree = "<group>"; };
+		FE9EF2C926B981C90006912E /* INVInstrument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INVInstrument.swift; sourceTree = "<group>"; };
+		FE9EF2CA26B981C90006912E /* INVInstrumentBrief.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INVInstrumentBrief.swift; sourceTree = "<group>"; };
+		FE9EF2CB26B981C90006912E /* INVInstrumentState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INVInstrumentState.swift; sourceTree = "<group>"; };
+		FE9EF2CD26B981C90006912E /* INVFixCoupon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INVFixCoupon.swift; sourceTree = "<group>"; };
+		FE9EF2CE26B981C90006912E /* INVCouponType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INVCouponType.swift; sourceTree = "<group>"; };
+		FE9EF2CF26B981C90006912E /* INVRangeCoupon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INVRangeCoupon.swift; sourceTree = "<group>"; };
+		FE9EF2D026B981C90006912E /* INVInstrumentBookbuilding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INVInstrumentBookbuilding.swift; sourceTree = "<group>"; };
+		FE9EF2D226B981C90006912E /* INVExchangeStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INVExchangeStatus.swift; sourceTree = "<group>"; };
+		FE9EF2D326B981C90006912E /* INVExchangeState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INVExchangeState.swift; sourceTree = "<group>"; };
+		FE9EF2D526B981C90006912E /* INVYieldPerAnnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INVYieldPerAnnum.swift; sourceTree = "<group>"; };
+		FE9EF2D626B981C90006912E /* INVYieldPerAnnumRange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INVYieldPerAnnumRange.swift; sourceTree = "<group>"; };
+		FE9EF2D726B981C90006912E /* INVError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INVError.swift; sourceTree = "<group>"; };
+		FE9EF2DB26B981C90006912E /* GRPCDate + Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GRPCDate + Ext.swift"; sourceTree = "<group>"; };
+		FE9EF2DC26B981C90006912E /* GRPCOptionalDate + Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GRPCOptionalDate + Ext.swift"; sourceTree = "<group>"; };
+		FE9EF2DD26B981C90006912E /* GRPCDateTime + Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GRPCDateTime + Ext.swift"; sourceTree = "<group>"; };
+		FE9EF2DE26B981C90006912E /* GoogleTypeDate + Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GoogleTypeDate + Ext.swift"; sourceTree = "<group>"; };
+		FE9EF2DF26B981C90006912E /* Double + Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double + Ext.swift"; sourceTree = "<group>"; };
+		FE9EF2E026B981C90006912E /* IticapitalApiMtsTypeFloat + Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IticapitalApiMtsTypeFloat + Ext.swift"; sourceTree = "<group>"; };
+		FE9EF2E126B981C90006912E /* Ru_Mts_Trading_Trade_Price + Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Ru_Mts_Trading_Trade_Price + Ext.swift"; sourceTree = "<group>"; };
+		FE9EF2E226B981C90006912E /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		FEE7D40726E6288F15998D9DC68FCCFC /* felem.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = felem.c; path = Sources/CNIOBoringSSL/crypto/fipsmodule/ec/felem.c; sourceTree = "<group>"; };
 		FF0B229B55EDF78F24797CA1C359F3F4 /* Pods-MtsInvestGrpcService_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MtsInvestGrpcService_Example-umbrella.h"; sourceTree = "<group>"; };
 		FF0E627C10D10E93F4BC736319334E18 /* ConnectionPool+Waiter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConnectionPool+Waiter.swift"; path = "Sources/GRPC/ConnectionPool/ConnectionPool+Waiter.swift"; sourceTree = "<group>"; };
@@ -4177,70 +4179,6 @@
 			path = Google;
 			sourceTree = "<group>";
 		};
-		D235285B26AAD82C0045860B /* Instruments */ = {
-			isa = PBXGroup;
-			children = (
-				D235287A26B056F30045860B /* ExchangeStatus */,
-				D235287426B02E150045860B /* Yields */,
-				D235286B26B0299F0045860B /* Coupons */,
-				D235285C26AAD8420045860B /* INVInstrumentBrief.swift */,
-				D235286526AFF84F0045860B /* INVInstrument.swift */,
-				D235286726B021CA0045860B /* INVInstrumentState.swift */,
-				D235286926B023B30045860B /* INVInstrumentBookbuilding.swift */,
-			);
-			path = Instruments;
-			sourceTree = "<group>";
-		};
-		D235286026AAEA040045860B /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				D235287926B035FD0045860B /* Dates */,
-				D235286326AAF4970045860B /* IticapitalApiMtsTypeFloat + Ext.swift */,
-				D235288C26B2C8150045860B /* Ru_Mts_Trading_Trade_Price + Ext.swift */,
-				D235288E26B2C8550045860B /* Double + Ext.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		D235286B26B0299F0045860B /* Coupons */ = {
-			isa = PBXGroup;
-			children = (
-				D235286C26B029AB0045860B /* INVRangeCoupon.swift */,
-				D235286E26B02ADA0045860B /* INVFixCoupon.swift */,
-				D235287026B02C230045860B /* INVCouponType.swift */,
-			);
-			path = Coupons;
-			sourceTree = "<group>";
-		};
-		D235287426B02E150045860B /* Yields */ = {
-			isa = PBXGroup;
-			children = (
-				D235287226B02E040045860B /* INVYieldPerAnnumRange.swift */,
-				D235287526B032C30045860B /* INVYieldPerAnnum.swift */,
-			);
-			path = Yields;
-			sourceTree = "<group>";
-		};
-		D235287926B035FD0045860B /* Dates */ = {
-			isa = PBXGroup;
-			children = (
-				D2FE078E26A1A2FC0093BED4 /* GRPCDate + Ext.swift */,
-				D235285E26AAE8460045860B /* GoogleTypeDate + Ext.swift */,
-				D235286126AAEA190045860B /* GRPCOptionalDate + Ext.swift */,
-				D235287726B035ED0045860B /* GRPCDateTime + Ext.swift */,
-			);
-			path = Dates;
-			sourceTree = "<group>";
-		};
-		D235287A26B056F30045860B /* ExchangeStatus */ = {
-			isa = PBXGroup;
-			children = (
-				D235287B26B057150045860B /* INVExchangeStatus.swift */,
-				D235287D26B059600045860B /* INVExchangeState.swift */,
-			);
-			path = ExchangeStatus;
-			sourceTree = "<group>";
-		};
 		D235287F26B1626F0045860B /* Trade */ = {
 			isa = PBXGroup;
 			children = (
@@ -4256,65 +4194,6 @@
 				D235288726B2B27D0045860B /* AnyService.swift */,
 			);
 			path = Abstractions;
-			sourceTree = "<group>";
-		};
-		D235288926B2C60B0045860B /* Trade */ = {
-			isa = PBXGroup;
-			children = (
-				D27CC89526B7D2DE00F65E75 /* Trading */,
-				D27CC89426B41F4B00F65E75 /* TradingApi */,
-			);
-			path = Trade;
-			sourceTree = "<group>";
-		};
-		D27CC89426B41F4B00F65E75 /* TradingApi */ = {
-			isa = PBXGroup;
-			children = (
-				D235288A26B2C6210045860B /* INVTradeExecuteOperationIntent.swift */,
-				D235289226B2DFB10045860B /* INVTradeCancelOperationIntent.swift */,
-				D235289026B2CEA30045860B /* INVTradeOperationType.swift */,
-				D235289426B2E0E30045860B /* INVOperationID.swift */,
-				D235289626B2E2320045860B /* INVTradeOperationIntent.swift */,
-				D235289826B2EBC30045860B /* INVTradeOperationIntentType.swift */,
-			);
-			path = TradingApi;
-			sourceTree = "<group>";
-		};
-		D27CC89526B7D2DE00F65E75 /* Trading */ = {
-			isa = PBXGroup;
-			children = (
-				D27CC8A226B7EA7700F65E75 /* Watch */,
-				D27CC8A026B7EA5100F65E75 /* Operation */,
-				D27CC8A126B7EA5A00F65E75 /* Order */,
-			);
-			path = Trading;
-			sourceTree = "<group>";
-		};
-		D27CC8A026B7EA5100F65E75 /* Operation */ = {
-			isa = PBXGroup;
-			children = (
-				D27CC89826B7D31000F65E75 /* INVTradingOperation.swift */,
-				D27CC89A26B7D87800F65E75 /* INVTradingOperationType.swift */,
-			);
-			path = Operation;
-			sourceTree = "<group>";
-		};
-		D27CC8A126B7EA5A00F65E75 /* Order */ = {
-			isa = PBXGroup;
-			children = (
-				D27CC89C26B7DAAA00F65E75 /* INVTradingOrder.swift */,
-				D27CC89E26B7DD2C00F65E75 /* INVTradingOrderStatus.swift */,
-			);
-			path = Order;
-			sourceTree = "<group>";
-		};
-		D27CC8A226B7EA7700F65E75 /* Watch */ = {
-			isa = PBXGroup;
-			children = (
-				D27CC8A326B7EA8E00F65E75 /* INVTradingWatchRequest.swift */,
-				D27CC8A526B7EC1000F65E75 /* INVTradingWatchPrice.swift */,
-			);
-			path = Watch;
 			sourceTree = "<group>";
 		};
 		D2FE078526A020E10093BED4 /* BrokerPorfolio */ = {
@@ -4335,50 +4214,6 @@
 				D235288426B162B40045860B /* TradeService.swift */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		D2FE078926A19FB40093BED4 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				D235288926B2C60B0045860B /* Trade */,
-				D235285B26AAD82C0045860B /* Instruments */,
-				D2FE079926A55F1F0093BED4 /* Commons */,
-				D2FE079026A1DC180093BED4 /* BrokerPorfolio */,
-				D2FE07A326A5D4310093BED4 /* INVError.swift */,
-				D2FE07A726A7176F0093BED4 /* INVStreamType.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		D2FE078D26A1A2E70093BED4 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				D235286026AAEA040045860B /* Extensions */,
-				D2FE07A526A7154D0093BED4 /* Observable.swift */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
-		D2FE079026A1DC180093BED4 /* BrokerPorfolio */ = {
-			isa = PBXGroup;
-			children = (
-				D2FE078B26A19FE00093BED4 /* INVBrokerPortfolio.swift */,
-				D2FE079126A1DC430093BED4 /* INVBrokerPosition.swift */,
-				D2FE079326A1E44D0093BED4 /* INVBrokerPortfolioResponse.swift */,
-				D2FE079526A1E4AC0093BED4 /* INVBrokerPortfolioStatus.swift */,
-				D2FE079726A55E0A0093BED4 /* INVBrokerPositionGroup.swift */,
-				D2FE079E26A5626B0093BED4 /* INVBrokerPositionLifecycleStage.swift */,
-			);
-			path = BrokerPorfolio;
-			sourceTree = "<group>";
-		};
-		D2FE079926A55F1F0093BED4 /* Commons */ = {
-			isa = PBXGroup;
-			children = (
-				D2FE079A26A55FC20093BED4 /* INVCurrency.swift */,
-				D2FE079C26A561310093BED4 /* INVInstrumentCommonType.swift */,
-			);
-			path = Commons;
 			sourceTree = "<group>";
 		};
 		D45EDC44DE5805FA04439A0E4D515AE9 /* Support Files */ = {
@@ -4535,9 +4370,10 @@
 		F558046837EA67E13FBE3E4CDF61D20A /* MtsInvestGrpcService */ = {
 			isa = PBXGroup;
 			children = (
-				D2FE078D26A1A2E70093BED4 /* Utils */,
-				D2FE078926A19FB40093BED4 /* Models */,
 				1EE1CFE30F0EFDFA698BD5E4FFFC519D /* GRPCClass.swift */,
+				FE9EF2A826B981C90006912E /* Common */,
+				FE9EF2AA26B981C90006912E /* Models */,
+				FE9EF2D826B981C90006912E /* Utils */,
 				4F48731D46F31EEC8B07A3DEA36B09A4 /* GRPC */,
 				ED689D470592B8A72FDBC67724F1FE58 /* Pod */,
 				D45EDC44DE5805FA04439A0E4D515AE9 /* Support Files */,
@@ -5229,6 +5065,184 @@
 				12A7CDDAF10C0B3E44CCC7E34514FC9C /* Support Files */,
 			);
 			path = SwiftNIO;
+			sourceTree = "<group>";
+		};
+		FE9EF2A826B981C90006912E /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				FE9EF2A926B981C90006912E /* AppError.swift */,
+			);
+			name = Common;
+			path = MtsInvestGrpcService/Classes/Common;
+			sourceTree = "<group>";
+		};
+		FE9EF2AA26B981C90006912E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FE9EF2AB26B981C90006912E /* INVStreamType.swift */,
+				FE9EF2AC26B981C90006912E /* Commons */,
+				FE9EF2AF26B981C90006912E /* Trade */,
+				FE9EF2C126B981C90006912E /* BrokerPorfolio */,
+				FE9EF2C826B981C90006912E /* Instruments */,
+				FE9EF2D726B981C90006912E /* INVError.swift */,
+			);
+			name = Models;
+			path = MtsInvestGrpcService/Classes/Models;
+			sourceTree = "<group>";
+		};
+		FE9EF2AC26B981C90006912E /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				FE9EF2AD26B981C90006912E /* INVInstrumentCommonType.swift */,
+				FE9EF2AE26B981C90006912E /* INVCurrency.swift */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		FE9EF2AF26B981C90006912E /* Trade */ = {
+			isa = PBXGroup;
+			children = (
+				FE9EF2B026B981C90006912E /* TradingApi */,
+				FE9EF2B726B981C90006912E /* Trading */,
+			);
+			path = Trade;
+			sourceTree = "<group>";
+		};
+		FE9EF2B026B981C90006912E /* TradingApi */ = {
+			isa = PBXGroup;
+			children = (
+				FE9EF2B126B981C90006912E /* INVTradeCancelOperationIntent.swift */,
+				FE9EF2B226B981C90006912E /* INVTradeOperationType.swift */,
+				FE9EF2B326B981C90006912E /* INVOperationID.swift */,
+				FE9EF2B426B981C90006912E /* INVTradeOperationIntentType.swift */,
+				FE9EF2B526B981C90006912E /* INVTradeExecuteOperationIntent.swift */,
+				FE9EF2B626B981C90006912E /* INVTradeOperationIntent.swift */,
+			);
+			path = TradingApi;
+			sourceTree = "<group>";
+		};
+		FE9EF2B726B981C90006912E /* Trading */ = {
+			isa = PBXGroup;
+			children = (
+				FE9EF2B826B981C90006912E /* Operation */,
+				FE9EF2BB26B981C90006912E /* Order */,
+				FE9EF2BE26B981C90006912E /* Watch */,
+			);
+			path = Trading;
+			sourceTree = "<group>";
+		};
+		FE9EF2B826B981C90006912E /* Operation */ = {
+			isa = PBXGroup;
+			children = (
+				FE9EF2B926B981C90006912E /* INVTradingOperationType.swift */,
+				FE9EF2BA26B981C90006912E /* INVTradingOperation.swift */,
+			);
+			path = Operation;
+			sourceTree = "<group>";
+		};
+		FE9EF2BB26B981C90006912E /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				FE9EF2BC26B981C90006912E /* INVTradingOrderStatus.swift */,
+				FE9EF2BD26B981C90006912E /* INVTradingOrder.swift */,
+			);
+			path = Order;
+			sourceTree = "<group>";
+		};
+		FE9EF2BE26B981C90006912E /* Watch */ = {
+			isa = PBXGroup;
+			children = (
+				FE9EF2BF26B981C90006912E /* INVTradingWatchPrice.swift */,
+				FE9EF2C026B981C90006912E /* INVTradingWatchRequest.swift */,
+			);
+			path = Watch;
+			sourceTree = "<group>";
+		};
+		FE9EF2C126B981C90006912E /* BrokerPorfolio */ = {
+			isa = PBXGroup;
+			children = (
+				FE9EF2C226B981C90006912E /* INVBrokerPositionGroup.swift */,
+				FE9EF2C326B981C90006912E /* INVBrokerPosition.swift */,
+				FE9EF2C426B981C90006912E /* INVBrokerPortfolio.swift */,
+				FE9EF2C526B981C90006912E /* INVBrokerPositionLifecycleStage.swift */,
+				FE9EF2C626B981C90006912E /* INVBrokerPortfolioStatus.swift */,
+				FE9EF2C726B981C90006912E /* INVBrokerPortfolioResponse.swift */,
+			);
+			path = BrokerPorfolio;
+			sourceTree = "<group>";
+		};
+		FE9EF2C826B981C90006912E /* Instruments */ = {
+			isa = PBXGroup;
+			children = (
+				FE9EF2C926B981C90006912E /* INVInstrument.swift */,
+				FE9EF2CA26B981C90006912E /* INVInstrumentBrief.swift */,
+				FE9EF2CB26B981C90006912E /* INVInstrumentState.swift */,
+				FE9EF2CC26B981C90006912E /* Coupons */,
+				FE9EF2D026B981C90006912E /* INVInstrumentBookbuilding.swift */,
+				FE9EF2D126B981C90006912E /* ExchangeStatus */,
+				FE9EF2D426B981C90006912E /* Yields */,
+			);
+			path = Instruments;
+			sourceTree = "<group>";
+		};
+		FE9EF2CC26B981C90006912E /* Coupons */ = {
+			isa = PBXGroup;
+			children = (
+				FE9EF2CD26B981C90006912E /* INVFixCoupon.swift */,
+				FE9EF2CE26B981C90006912E /* INVCouponType.swift */,
+				FE9EF2CF26B981C90006912E /* INVRangeCoupon.swift */,
+			);
+			path = Coupons;
+			sourceTree = "<group>";
+		};
+		FE9EF2D126B981C90006912E /* ExchangeStatus */ = {
+			isa = PBXGroup;
+			children = (
+				FE9EF2D226B981C90006912E /* INVExchangeStatus.swift */,
+				FE9EF2D326B981C90006912E /* INVExchangeState.swift */,
+			);
+			path = ExchangeStatus;
+			sourceTree = "<group>";
+		};
+		FE9EF2D426B981C90006912E /* Yields */ = {
+			isa = PBXGroup;
+			children = (
+				FE9EF2D526B981C90006912E /* INVYieldPerAnnum.swift */,
+				FE9EF2D626B981C90006912E /* INVYieldPerAnnumRange.swift */,
+			);
+			path = Yields;
+			sourceTree = "<group>";
+		};
+		FE9EF2D826B981C90006912E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				FE9EF2D926B981C90006912E /* Extensions */,
+				FE9EF2E226B981C90006912E /* Observable.swift */,
+			);
+			name = Utils;
+			path = MtsInvestGrpcService/Classes/Utils;
+			sourceTree = "<group>";
+		};
+		FE9EF2D926B981C90006912E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FE9EF2DA26B981C90006912E /* Dates */,
+				FE9EF2DF26B981C90006912E /* Double + Ext.swift */,
+				FE9EF2E026B981C90006912E /* IticapitalApiMtsTypeFloat + Ext.swift */,
+				FE9EF2E126B981C90006912E /* Ru_Mts_Trading_Trade_Price + Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FE9EF2DA26B981C90006912E /* Dates */ = {
+			isa = PBXGroup;
+			children = (
+				FE9EF2DB26B981C90006912E /* GRPCDate + Ext.swift */,
+				FE9EF2DC26B981C90006912E /* GRPCOptionalDate + Ext.swift */,
+				FE9EF2DD26B981C90006912E /* GRPCDateTime + Ext.swift */,
+				FE9EF2DE26B981C90006912E /* GoogleTypeDate + Ext.swift */,
+			);
+			path = Dates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -7403,70 +7417,71 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D235289726B2E2320045860B /* INVTradeOperationIntent.swift in Sources */,
+				FE9EF2EB26B981C90006912E /* INVTradeExecuteOperationIntent.swift in Sources */,
+				FE9EF2EA26B981C90006912E /* INVTradeOperationIntentType.swift in Sources */,
+				FE9EF2F226B981C90006912E /* INVTradingWatchRequest.swift in Sources */,
+				FE9EF2F526B981C90006912E /* INVBrokerPortfolio.swift in Sources */,
 				18A164A192BEF8E1884BEF813592DA2A /* broker-portfolio-commons.pb.swift in Sources */,
+				FE9EF2E526B981C90006912E /* INVInstrumentCommonType.swift in Sources */,
 				D235285726A96ED00045860B /* GoogleRpcStatus.pb.swift in Sources */,
+				FE9EF2ED26B981C90006912E /* INVTradingOperationType.swift in Sources */,
 				FDFFF8150FC8152F8FEAF0BE75BD2B3E /* broker-portfolio-public.grpc.swift in Sources */,
+				FE9EF30526B981C90006912E /* GRPCDate + Ext.swift in Sources */,
+				FE9EF2FD26B981C90006912E /* INVCouponType.swift in Sources */,
+				FE9EF30026B981C90006912E /* INVExchangeStatus.swift in Sources */,
+				FE9EF2E726B981C90006912E /* INVTradeCancelOperationIntent.swift in Sources */,
+				FE9EF2FA26B981C90006912E /* INVInstrumentBrief.swift in Sources */,
 				D235288826B2B27D0045860B /* AnyService.swift in Sources */,
-				D235288F26B2C8550045860B /* Double + Ext.swift in Sources */,
+				FE9EF2F026B981C90006912E /* INVTradingOrder.swift in Sources */,
+				FE9EF30626B981C90006912E /* GRPCOptionalDate + Ext.swift in Sources */,
+				FE9EF2E326B981C90006912E /* AppError.swift in Sources */,
+				FE9EF30A26B981C90006912E /* IticapitalApiMtsTypeFloat + Ext.swift in Sources */,
 				D235284526A968E80045860B /* instruments-v2-public.pb.swift in Sources */,
+				FE9EF2EE26B981C90006912E /* INVTradingOperation.swift in Sources */,
+				FE9EF30726B981C90006912E /* GRPCDateTime + Ext.swift in Sources */,
+				FE9EF2FE26B981C90006912E /* INVRangeCoupon.swift in Sources */,
 				F56FE4E3CBE5AE73CF008D0BCA425F1B /* broker-portfolio-public.pb.swift in Sources */,
 				D235285126A96DEC0045860B /* float.pb.swift in Sources */,
+				FE9EF2F726B981C90006912E /* INVBrokerPortfolioStatus.swift in Sources */,
+				FE9EF2EF26B981C90006912E /* INVTradingOrderStatus.swift in Sources */,
+				FE9EF30826B981C90006912E /* GoogleTypeDate + Ext.swift in Sources */,
 				D235284E26A96DB30045860B /* security.pb.swift in Sources */,
 				D235288326B1627C0045860B /* trade.grpc.swift in Sources */,
-				D235286D26B029AB0045860B /* INVRangeCoupon.swift in Sources */,
-				D27CC8A626B7EC1000F65E75 /* INVTradingWatchPrice.swift in Sources */,
 				D235285526A96E5B0045860B /* GoogleTypeDate.pb.swift in Sources */,
-				D235286226AAEA190045860B /* GRPCOptionalDate + Ext.swift in Sources */,
-				D235288D26B2C8150045860B /* Ru_Mts_Trading_Trade_Price + Ext.swift in Sources */,
+				FE9EF30126B981C90006912E /* INVExchangeState.swift in Sources */,
+				FE9EF2FF26B981C90006912E /* INVInstrumentBookbuilding.swift in Sources */,
+				FE9EF2E826B981C90006912E /* INVTradeOperationType.swift in Sources */,
+				FE9EF30B26B981C90006912E /* Ru_Mts_Trading_Trade_Price + Ext.swift in Sources */,
+				FE9EF2F426B981C90006912E /* INVBrokerPosition.swift in Sources */,
 				744CE0CC154F287B566A0D9FBE93846E /* date.pb.swift in Sources */,
-				D2FE078C26A19FE00093BED4 /* INVBrokerPortfolio.swift in Sources */,
+				FE9EF2FB26B981C90006912E /* INVInstrumentState.swift in Sources */,
+				FE9EF30926B981C90006912E /* Double + Ext.swift in Sources */,
 				5F032FE0F22B5847F075C3B45DD252EB /* GRPCClass.swift in Sources */,
-				D235289526B2E0E30045860B /* INVOperationID.swift in Sources */,
-				D235287C26B057150045860B /* INVExchangeStatus.swift in Sources */,
-				D235285D26AAD8420045860B /* INVInstrumentBrief.swift in Sources */,
+				FE9EF30326B981C90006912E /* INVYieldPerAnnumRange.swift in Sources */,
+				FE9EF2F826B981C90006912E /* INVBrokerPortfolioResponse.swift in Sources */,
+				FE9EF2E626B981C90006912E /* INVCurrency.swift in Sources */,
+				FE9EF2FC26B981C90006912E /* INVFixCoupon.swift in Sources */,
 				DF00214AD6FC3A450FD5C888C568211B /* mts_common.pb.swift in Sources */,
+				FE9EF2EC26B981C90006912E /* INVTradeOperationIntent.swift in Sources */,
+				FE9EF2E426B981C90006912E /* INVStreamType.swift in Sources */,
+				FE9EF30C26B981C90006912E /* Observable.swift in Sources */,
 				EC1620B6E52B05BF4F9D268FC41AB75C /* MtsInvestGrpcService-dummy.m in Sources */,
-				D27CC89F26B7DD2C00F65E75 /* INVTradingOrderStatus.swift in Sources */,
-				D27CC89B26B7D87800F65E75 /* INVTradingOperationType.swift in Sources */,
-				D235286626AFF84F0045860B /* INVInstrument.swift in Sources */,
-				D2FE07A426A5D4310093BED4 /* INVError.swift in Sources */,
-				D2FE07A826A7176F0093BED4 /* INVStreamType.swift in Sources */,
+				FE9EF30426B981C90006912E /* INVError.swift in Sources */,
 				D235284826A9696C0045860B /* instruments-common.pb.swift in Sources */,
-				D2FE07A626A7154D0093BED4 /* Observable.swift in Sources */,
 				D235285A26A9A9B20045860B /* InstrumentService.swift in Sources */,
-				D235289326B2DFB10045860B /* INVTradeCancelOperationIntent.swift in Sources */,
-				D2FE078F26A1A2FC0093BED4 /* GRPCDate + Ext.swift in Sources */,
-				D235286F26B02ADA0045860B /* INVFixCoupon.swift in Sources */,
-				D27CC89D26B7DAAA00F65E75 /* INVTradingOrder.swift in Sources */,
-				D235287126B02C230045860B /* INVCouponType.swift in Sources */,
 				C44ED2B1DFB580B74467923FC4D8944E /* number.pb.swift in Sources */,
-				D2FE079826A55E0A0093BED4 /* INVBrokerPositionGroup.swift in Sources */,
-				D235289926B2EBC30045860B /* INVTradeOperationIntentType.swift in Sources */,
-				D235286426AAF4970045860B /* IticapitalApiMtsTypeFloat + Ext.swift in Sources */,
-				D235286826B021CA0045860B /* INVInstrumentState.swift in Sources */,
-				D27CC89926B7D31000F65E75 /* INVTradingOperation.swift in Sources */,
 				D235283F26A968BF0045860B /* instruments.pb.swift in Sources */,
-				D235287326B02E040045860B /* INVYieldPerAnnumRange.swift in Sources */,
-				D2FE079226A1DC430093BED4 /* INVBrokerPosition.swift in Sources */,
-				D235286A26B023B30045860B /* INVInstrumentBookbuilding.swift in Sources */,
-				D2FE079B26A55FC20093BED4 /* INVCurrency.swift in Sources */,
-				D235287826B035ED0045860B /* GRPCDateTime + Ext.swift in Sources */,
-				D235285F26AAE8460045860B /* GoogleTypeDate + Ext.swift in Sources */,
+				FE9EF2F926B981C90006912E /* INVInstrument.swift in Sources */,
 				D235284D26A96DB30045860B /* security.grpc.swift in Sources */,
-				D27CC8A426B7EA8E00F65E75 /* INVTradingWatchRequest.swift in Sources */,
-				D235287626B032C30045860B /* INVYieldPerAnnum.swift in Sources */,
-				D235288B26B2C6210045860B /* INVTradeExecuteOperationIntent.swift in Sources */,
-				D235287E26B059600045860B /* INVExchangeState.swift in Sources */,
 				D235288226B1627C0045860B /* trade.pb.swift in Sources */,
-				D2FE079626A1E4AC0093BED4 /* INVBrokerPortfolioStatus.swift in Sources */,
-				D2FE079F26A5626B0093BED4 /* INVBrokerPositionLifecycleStage.swift in Sources */,
+				FE9EF2E926B981C90006912E /* INVOperationID.swift in Sources */,
 				D2FE078826A02DB20093BED4 /* BrokerPorfolioService.swift in Sources */,
+				FE9EF2F626B981C90006912E /* INVBrokerPositionLifecycleStage.swift in Sources */,
 				D235288526B162B40045860B /* TradeService.swift in Sources */,
-				D2FE079426A1E44D0093BED4 /* INVBrokerPortfolioResponse.swift in Sources */,
+				FE9EF2F326B981C90006912E /* INVBrokerPositionGroup.swift in Sources */,
 				D235284626A968E80045860B /* instruments-v2-common.pb.swift in Sources */,
-				D2FE079D26A561310093BED4 /* INVInstrumentCommonType.swift in Sources */,
-				D235289126B2CEA30045860B /* INVTradeOperationType.swift in Sources */,
+				FE9EF2F126B981C90006912E /* INVTradingWatchPrice.swift in Sources */,
+				FE9EF30226B981C90006912E /* INVYieldPerAnnum.swift in Sources */,
 				D235284426A968E80045860B /* instruments-v2-public.grpc.swift in Sources */,
 				D235284026A968BF0045860B /* instruments.grpc.swift in Sources */,
 			);
