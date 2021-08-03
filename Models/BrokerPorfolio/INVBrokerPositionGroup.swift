@@ -5,7 +5,7 @@
 //  Created by Юрий Султанов on 19.07.2021.
 //
 
-public enum BrokerPositionGroup {
+public enum INVBrokerPositionGroup {
     case stock, bond, currency, other
     case UNRECOGNIZED(Int)
     

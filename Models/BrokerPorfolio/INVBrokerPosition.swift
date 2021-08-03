@@ -5,7 +5,7 @@
 //  Created by Юрий Султанов on 16.07.2021.
 //
 
-public struct BrokerPosition {
+public struct INVBrokerPosition {
     let id: String
     /// идентификатор инструмента
     let name: String
@@ -28,11 +28,11 @@ public struct BrokerPosition {
     /// показатель сортировки
     let sort: Int
     /// группа бумаг
-    let group: BrokerPositionGroup
+    let group: INVBrokerPositionGroup
     /// валюта
-    let currency: Currency
+    let currency: INVCurrency
     /// новый тип бумаги
-    let instrumentCommonType: InstrumentCommonType
+    let instrumentCommonType: INVInstrumentCommonType
     /// дата погашения
     let maturityDate: Date
     /// погашена ли
@@ -50,10 +50,10 @@ public struct BrokerPosition {
     /// стредства в пути
     let moneyFlowAmount: Double
     /// этап жизненного цикла позиции
-    let lifecycleStage: BrokerPositionLifecycleStage
+    let lifecycleStage: INVBrokerPositionLifecycleStage
 }
 
-extension BrokerPosition {
+extension INVBrokerPosition {
     init(from grpcModel: Ru_Mts_Trading_Broker_Commons_Position) {
         self.id = grpcModel.id
         self.name = grpcModel.name
@@ -67,8 +67,8 @@ extension BrokerPosition {
         self.isFavorite = grpcModel.isFavorite
         self.sort = Int(grpcModel.sort.value) ?? -1
         self.group = .init(rawValue: grpcModel.group.rawValue)
-        self.currency = .init(grpcCurrency: grpcModel.currency)
-        self.instrumentCommonType = .init(with: grpcModel.instrumentCommonType)
+        self.currency = .init(from: grpcModel.currency)
+        self.instrumentCommonType = INVInstrumentCommonType(from: grpcModel.instrumentCommonType)
         self.maturityDate = Date(timeIntervalSinceReferenceDate: grpcModel.maturityDate.timeIntervalSince1970)
         self.isMaturity = grpcModel.isMaturity
         self.amountRub = Double(grpcModel.amountRub.value) ?? 0.0

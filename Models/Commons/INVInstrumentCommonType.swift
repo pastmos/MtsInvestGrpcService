@@ -5,7 +5,7 @@
 //  Created by Юрий Султанов on 19.07.2021.
 //
 
-public enum InstrumentCommonType {
+public enum INVInstrumentCommonType {
     case other
     case stock
     case bond
@@ -14,7 +14,7 @@ public enum InstrumentCommonType {
     case foreignStock
     case foreginBond
     
-    init(with instrumentType: GrpcInstrumentCommonType) {
+    init(from instrumentType: GrpcInstrumentCommonType) {
         switch instrumentType {
         case .other:
             self = .other

@@ -8,25 +8,36 @@
 import GRPC
 import NIO
 
-final class BrokerPorfolioService/*<Service, Response>*/ {
+protocol AnyBrokerPorfolioService {
+    func subscribe(
+        object: AnyObject,
+        for period: Ru_Mts_Trading_Broker_Commons_Period,
+        callOptions: CallOptions,
+        completion: @escaping (Result<INVBrokerPortfolioResponse?, INVError>) -> Void)
+    func unsubscribe(object: AnyObject)
+    func stopStream()
+}
+
+final class BrokerPorfolioService: AnyService {
     typealias ServiceClient = Ru_Mts_Trading_Broker_BrokerPortfolioServiceClient
     
     // MARK: Private properties
-    private let eventLoopGroup = PlatformSupport.makeEventLoopGroup(loopCount: 1)
+    private var eventLoopGroup: EventLoopGroup?
     private var service: ServiceClient?
     private var channel: ClientConnection?
-    private var stream: ServerStreamingCall<Ru_Mts_Trading_Broker_PortfolioRequest,
-                                            Ru_Mts_Trading_Broker_Commons_PortfolioResponse>?
-//    private var some: GRPCClient?
+    private var callOptions: CallOptions?
+    private var brokerPortfolioObservers: Observable<INVBrokerPortfolioResponse>
+    
+    private var (host, port): (String, Int)
     
     // MARK: Lifecycle
     init(
         host: String,
-        port: Int,
-        callOptions: CallOptions) {
-        configureService(
-            host: host,
-            port: port)
+        port: Int) {
+        (self.host, self.port) = (host, port)
+        brokerPortfolioObservers = .init(streamType: .brokerPorfolio)
+        brokerPortfolioObservers.delegate = self
+        configureService()
     }
     
     deinit {
@@ -34,55 +45,78 @@ final class BrokerPorfolioService/*<Service, Response>*/ {
     }
     
     // MARK: Private methods
-    private func configureService(
-        host: String,
-        port: Int) {
+    private func configureService() {
+        eventLoopGroup = PlatformSupport.makeEventLoopGroup(loopCount: 1)
         channel = ClientConnection
-            .usingPlatformAppropriateTLS(for: eventLoopGroup)
+            .usingPlatformAppropriateTLS(for: eventLoopGroup!)
             .connect(
                 host: host,
                 port: port)
         guard let channel = channel else { return }
-//        some = ServiceClient(channel: channel)
         service = ServiceClient(channel: channel)
     }
     
-    // MARK: Public methods
-    public func stopStream() {
-        _ = channel?.close()
-        try? eventLoopGroup.syncShutdownGracefully()
-        print("🛑🛑 \(ServiceClient.self) stopped 🛑🛑")
-    }
-    public func getBrokerPorfolio(
-        for period: Ru_Mts_Trading_Broker_Commons_Period = .oneDay,
-        callOptions: CallOptions,
-        completion: @escaping (Result<BrokerPortfolioResponse, INVError>) -> Void) {
+    private func getBrokerPorfolio(
+        for period: Ru_Mts_Trading_Broker_Commons_Period = .allTime) {
         guard let service = service else { return }
         DispatchQueue.global().async {
-            self.stream = service
+            let stream = service
                 .getStreamV2(
                     .with { $0.period = period },
-                    callOptions: callOptions) { response in
-                    completion(.success(BrokerPortfolioResponse(from: response)))
+                    callOptions: self.callOptions) { [weak self] response in
+                    self?.brokerPortfolioObservers.onNext(INVBrokerPortfolioResponse(from: response))
                 }
             
-            self.stream?.status.whenSuccess { status in
-                switch status.code {
-                case .ok,
-                     .cancelled,
-                     .unknown,
-                     .deadlineExceeded,
-                     .unavailable:
-                    break
+            stream.status.whenComplete { [weak self] result in
+                guard
+                    let self = self,
+                    let error = self.parseStatus(from: result)
+                else { return }
+                switch error {
+                case .unavailable:
+                    self.configureService()
                 default:
-                    completion(.failure(INVError(from: status.code)))
+                    self.brokerPortfolioObservers.onError(error)
                 }
-            }
-            
-            self.stream?.status.whenFailure {
-                print("‼️‼️ \($0.localizedDescription) ‼️‼️")
-                completion(.failure(INVError(from: $0.localizedDescription)))
             }
         }
+    }
+}
+
+// MARK: - AnyBrokerPorfolioService
+extension BrokerPorfolioService: AnyBrokerPorfolioService {
+    func subscribe(
+        object: AnyObject,
+        for period: Ru_Mts_Trading_Broker_Commons_Period = .allTime,
+        callOptions: CallOptions,
+        completion: @escaping (Result<INVBrokerPortfolioResponse?, INVError>) -> Void) {
+        self.callOptions = callOptions
+        brokerPortfolioObservers.subscribe(
+            object,
+            event: completion)
+        getBrokerPorfolio(for: period)
+    }
+    
+    func unsubscribe(object: AnyObject) {
+        brokerPortfolioObservers.unSubscribe(object)
+    }
+    
+    func stopStream() {
+        _ = channel?.close()
+        try? eventLoopGroup?.syncShutdownGracefully()
+        print("🛑🛑 \(ServiceClient.self) stopped 🛑🛑")
+    }
+}
+
+// MARK: - ObservableDelegate
+extension BrokerPorfolioService: ObservableDelegate {
+    func subscriptonsDidChange(
+        at streamType: INVStreamType,
+        hasSubscribers: Bool) {
+        hasSubscribers ? getBrokerPorfolio() : stopStream()
+    }
+    
+    func shouldRefresh(streamType: INVStreamType) {
+        getBrokerPorfolio()
     }
 }

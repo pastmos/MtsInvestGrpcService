@@ -35,6 +35,14 @@
                                     <action selector="stop" destination="BYZ-38-t0r" eventType="touchUpInside" id="ovT-We-sBG"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LM3-pV-LQI">
+                                <rect key="frame" x="188" y="600" width="39" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="NEXT"/>
+                                <connections>
+                                    <segue destination="k66-4e-PkR" kind="presentation" modalPresentationStyle="automatic" id="SFE-2c-pN4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -57,6 +65,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="139" y="49"/>
+        </scene>
+        <!--View Controller0-->
+        <scene sceneID="zU0-Wr-as9">
+            <objects>
+                <viewController id="k66-4e-PkR" customClass="ViewController0" customModule="MtsInvestGrpcService_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SQb-t3-fWx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="QxG-cw-d47"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="99K-EH-AI6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zis-cG-3es" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="912" y="54"/>
         </scene>
     </scenes>
     <resources>
