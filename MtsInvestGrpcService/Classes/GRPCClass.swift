@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import SnapKit
 import GRPC
 
 open class MtsGRPCClass {
