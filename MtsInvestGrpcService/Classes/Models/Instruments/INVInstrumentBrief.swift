@@ -6,20 +6,20 @@
 //
 
 public struct INVInstrumentBrief {
-    let instrumentID: String
-    let description: String
-    let price: Double
-    let currency: INVCurrency
-    let dayChange: Double
-    let weekChange: Double
-    let monthChange: Double
-    let threeMonthsChange: Double
-    let yearChange: Double
-    let threeYearsChange: Double
-    let allTimeChange: Double
-    let lotSize: Int
-    let maturityDate: Date?
-    let commonType: INVInstrumentCommonType
+    public let instrumentID: String
+    public let description: String
+    public let price: Double
+    public let currency: INVCurrency
+    public let dayChange: Double
+    public let weekChange: Double
+    public let monthChange: Double
+    public let threeMonthsChange: Double
+    public let yearChange: Double
+    public let threeYearsChange: Double
+    public let allTimeChange: Double
+    public let lotSize: Int
+    public let maturityDate: Date?
+    public let commonType: INVInstrumentCommonType
 }
 
 extension INVInstrumentBrief: Equatable {

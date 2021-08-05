@@ -6,9 +6,9 @@
 //
 
 public struct INVBrokerPortfolioResponse {
-    let portfolio: INVBrokerPortfolio
-    let positions: [INVBrokerPosition]
-    let status: INVBrokerPortfolioStatus
+    public let portfolio: INVBrokerPortfolio
+    public let positions: [INVBrokerPosition]
+    public let status: INVBrokerPortfolioStatus
 }
 
 extension INVBrokerPortfolioResponse {

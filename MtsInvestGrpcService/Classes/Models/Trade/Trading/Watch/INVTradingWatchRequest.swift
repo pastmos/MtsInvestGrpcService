@@ -6,9 +6,9 @@
 //
 
 public struct INVTradingWatchRequest {
-    let type: INVTradingOperationType
-    let quantity: Int
-    let securityName: String
+    public let type: INVTradingOperationType
+    public let quantity: Int
+    public let securityName: String
 }
 
 extension INVTradingWatchRequest {

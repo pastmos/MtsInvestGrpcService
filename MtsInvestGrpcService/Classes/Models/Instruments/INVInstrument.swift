@@ -6,40 +6,40 @@
 //
 
 public struct INVInstrument {
-    let instrumentID: String
+    public let instrumentID: String
     ///характеризует биржу, на которой торгуется инструмент
-    let classCode: String
+    public let classCode: String
     ///обобщенный тип инструмента(акция, облигация, ETF, валюта)
-    let type: INVInstrumentCommonType
-    let isin: String
+    public let type: INVInstrumentCommonType
+    public let isin: String
     ///не уникальный ключ, видимый пользователю
-    let ticker: String
+    public let ticker: String
     ///название
-    let name: String
+    public let name: String
     ///подробное описание
-    let description: String
+    public let description: String
     ///размер лота
-    let lotSize: Int
+    public let lotSize: Int
     ///номинал в валюте
-    let faceValue: Double
+    public let faceValue: Double
     ///дата погашения
-    let maturityDate: Date?
+    public let maturityDate: Date?
     ///валюта
-    let currency: INVCurrency
+    public let currency: INVCurrency
     ///минимальный шаг изменения цены при выставлении заявки
-    let minStep: Double
+    public let minStep: Double
     ///количество знаков после запятой в цене
-    let decimals: Int
+    public let decimals: Int
     //ставка купона [облигации]
-    let coupon: Double
+    public let coupon: Double
     ///дата выплаты следующего купона [облигации]
-    let nextCoupon: Date?
+    public let nextCoupon: Date?
     ///НКД [облигации]
-    let accruedInterest: Double
-    let state: INVInstrumentState
-    let bookBuilding: INVInstrumentBookbuilding
+    public let accruedInterest: Double
+    public let state: INVInstrumentState
+    public let bookBuilding: INVInstrumentBookbuilding
     ///идентификатор расписания торгов инструмента
-    let scheduleID: String
+    public let scheduleID: String
 }
 
 extension INVInstrument {

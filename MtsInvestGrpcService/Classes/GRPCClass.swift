@@ -16,6 +16,7 @@ open class MtsGRPCClass {
     private var brokerService: AnyBrokerPorfolioService?
     private var instrumentsService: AnyInstrumentService?
     private var tradeService: AnyTradeService?
+    private var marketDataService: AnyMarketDataService?
     
     // MARK: - Lifecycle
     public init(
@@ -50,6 +51,8 @@ open class MtsGRPCClass {
                     from: $0)
             case .instumentBrief:
                 break
+            case .marketData:
+                marketDataService?.unsubscribe(object: object)
             }
         }
     }
@@ -160,6 +163,53 @@ extension MtsGRPCClass {
         if tradeService == nil { makeTradeService() }
         tradeService?.hideOrder(
             ids: ids,
+            callOptions: callOptions,
             completion: completion)
+    }
+}
+
+// MARK: Market data
+extension MtsGRPCClass {
+    private func makeMarketDataService() {
+        marketDataService = MarketdataService(
+            host: host,
+            port: port)
+    }
+    
+    public func subscribeMarketData(
+        _ object: AnyObject,
+        instumentID: String,
+        period: INVTimeBox = .month,
+        event: @escaping (Result<INVMarketDataResponse?, INVError>) -> Void) {
+        if marketDataService == nil { makeMarketDataService() }
+        marketDataService?.subscribe(
+            object,
+            instrumentID: instumentID,
+            period: period,
+            callOptions: callOptions,
+            event: event)
+    }
+    
+    public func setMDPeriod(_ period: INVTimeBox) {
+        guard marketDataService != nil else { return }
+        marketDataService?.setPeriod(period)
+    }
+    
+    public func getIndicators(
+        instrumentID: String,
+        completion: @escaping (Result<INVIndicatorsResponse?, INVError>) -> Void) {
+        if marketDataService == nil { makeMarketDataService() }
+        marketDataService?.getInstrumentIndicators(
+            instrumentID: instrumentID,
+            callOptions: callOptions,
+            completion: completion)
+    }
+    
+    public func getMDForPeriod(
+        request: INVMDForPeriodRequest) {
+        if marketDataService == nil { makeMarketDataService() }
+        marketDataService?.fetchMDForPeriod(
+            request: request,
+            callOptions: callOptions)
     }
 }

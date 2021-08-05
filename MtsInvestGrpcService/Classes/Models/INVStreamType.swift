@@ -10,4 +10,5 @@ public enum INVStreamType: CaseIterable {
     case tradeOperation
     case watchSingle
     case instumentBrief
+    case marketData
 }
