@@ -38,12 +38,6 @@ final class MarketdataService: AnyService {
     private var (host, port): (String, Int)
     private var instrumentID: String = ""
     private var period: INVTimeBox = .month
-//    {
-//        didSet {
-//            guard oldValue.grpcModel() != period.grpcModel() else { return }
-//            getMarketData()
-//        }
-//    }
     private let marketdataObservers: Observable<INVMarketDataResponse>
     
     // MARK: Lifecycle
