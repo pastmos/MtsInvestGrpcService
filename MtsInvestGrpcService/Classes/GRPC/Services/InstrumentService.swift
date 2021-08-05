@@ -92,7 +92,13 @@ final class InstrumentService: AnyService {
                     let self = self,
                     let error = self.parseStatus(from: result)
                 else { return }
-                completion(.failure(error))
+                switch error {
+                case .unavailable:
+                    self.configureService()
+                    self.getInstrumentsList(completion: completion)
+                default:
+                    completion(.failure(error))
+                }
             }
         }
     }
@@ -121,6 +127,7 @@ final class InstrumentService: AnyService {
                 switch error {
                 case .unavailable:
                     self.configureService()
+                    self.getInstrumentBriedStream(tikers: tikers)
                 default:
                     self.instrumentsObservers.onError(error)
                 }   
@@ -156,8 +163,15 @@ final class InstrumentService: AnyService {
                     let self = self,
                     let error = self.parseStatus(from: result)
                 else { return }
-                completion(.failure(error))
-                
+                switch error {
+                case .unavailable:
+                    self.configureService()
+                    self.getInstrumentInfo(
+                        instrumentID: instrumentID,
+                        completion: completion)
+                default:
+                    completion(.failure(error))
+                }
             }
         }
     }
@@ -179,6 +193,22 @@ final class InstrumentService: AnyService {
             }
         } catch {
             completion(.failure(.error(error.localizedDescription)))
+        }
+        
+        instrumentCall?.status.whenComplete { [weak self] result in
+            guard
+                let self = self,
+                let error = self.parseStatus(from: result)
+            else { return }
+            switch error {
+            case .unavailable:
+                self.configureService()
+                self.getExchangeStatus(
+                    instrumentID: instrumentID,
+                    completion: completion)
+            default:
+                completion(.failure(error))
+            }
         }
     }
 }

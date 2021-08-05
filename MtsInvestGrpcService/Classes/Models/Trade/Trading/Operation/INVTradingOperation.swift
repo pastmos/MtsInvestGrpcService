@@ -6,18 +6,18 @@
 //
 
 public struct INVTradingOperation {
-    let type: INVTradingOperationType
+    public let type: INVTradingOperationType
     /// how many do you want to buy/sell?
-    let quantity: Int
+    public let quantity: Int
     /// security name
-    let securityName: String
+    public let securityName: String
     /// only for cancel operation
-    let orderID: Int
+    public let orderID: Int
     /// this field will help you with order's context
-    let localID: Int
+    public let localID: Int
     /// limit price
-    let price: Double
-    let priceValue: Double
+    public let price: Double
+    public let priceValue: Double
 }
 
 extension INVTradingOperation {

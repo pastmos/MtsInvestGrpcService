@@ -23,23 +23,66 @@ final class ViewController: UIViewController {
         grpcClass.unsubscribe(self, from: INVStreamType.allCases)
     }
     
+    @IBAction private func someButton() {
+        marketData = []
+        grpcClass.setMDPeriod(.day)
+    }
+    
     private lazy var grpcClass = NetworkService.instance.grpc
+    
+    private var marketData = [INVMarketDataResponse]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    /// дозагрузка точек графика при обновлении, предварительная подписка обязательна
+    private func updateMD() {
+        let request = INVMDForPeriodRequest(
+            instrumentID: "LKOh",
+            period: .day,
+            from: marketData.last?.startTime ?? 0.0,
+            to: Date().timeIntervalSince1970 * 1000)
+        grpcClass.getMDForPeriod(request: request)
+    }
+    
     private func fetch() {
-        grpcClass.subscribeInstruments(
-            self,
-            for: ["LKOH", "SBER", "GAZP", "GMKN"]) { result in
+        marketData = []
+        grpcClass.getIndicators(instrumentID: "LKOH") { result in
             switch result {
-            case .success(let instrumentBrief):
-                print(instrumentBrief)
+            case .success(let indicators):
+                print(indicators)
             case .failure(let error):
                 print(error)
             }
         }
+        
+        grpcClass.subscribeMarketData(
+            self,
+            instumentID: "LKOH",
+            period: .day) { [weak self] result in
+            switch result {
+            case .success(let marketDataResponse):
+                guard
+                    let self = self,
+                    let marketDataResponse = marketDataResponse
+                else { return }
+                self.marketData.append(marketDataResponse)
+                print(self.marketData.count)
+            case .failure(let error):
+                print(error)
+            }
+        }
+//        grpcClass.subscribeInstruments(
+//            self,
+//            for: ["LKOH", "SBER", "GAZP", "GMKN"]) { result in
+//            switch result {
+//            case .success(let instrumentBrief):
+//                print(instrumentBrief)
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
         
         
 //        grpcClass.getInstrumentsList { result in

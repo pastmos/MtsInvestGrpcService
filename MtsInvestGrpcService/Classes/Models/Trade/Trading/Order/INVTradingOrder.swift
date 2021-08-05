@@ -7,26 +7,26 @@
 
 public struct INVTradingOrder {
     /// real order id
-    let orderID: Int
+    public let orderID: Int
     /// LocalId is field that could be any, and may be setted by the API's user
-    let localID: Int
-    let type: INVTradingOperationType
+    public let localID: Int
+    public let type: INVTradingOperationType
     /// security name
-    let securityName: String
+    public let securityName: String
     /// limit price
-    let price: Double
+    public let price: Double
     /// current status
-    let status: INVTradingOrderStatus
+    public let status: INVTradingOrderStatus
     /// Exists only when order is PartiallyFilled or Closed, otherwise it is zero
-    let realPrice: Double
+    public let realPrice: Double
     /// lots
-    let lots: Int
+    public let lots: Int
     /// message associated with order
-    let message: String
+    public let message: String
     /// amount of excuted lots at the moment
-    let executedLots: Int
+    public let executedLots: Int
     /// sends once after hide
-    let hidden: Bool
+    public let hidden: Bool
 }
 
 extension INVTradingOrder: Equatable {

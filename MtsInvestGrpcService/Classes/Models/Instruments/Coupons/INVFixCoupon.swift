@@ -6,8 +6,8 @@
 //
 
 public struct INVFixCoupon {
-    let coupon: Double
-    let previousCoupon: Double?
+    public let coupon: Double
+    public let previousCoupon: Double?
 }
 
 extension INVFixCoupon: Equatable { }

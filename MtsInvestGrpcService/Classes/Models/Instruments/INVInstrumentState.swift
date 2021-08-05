@@ -5,7 +5,7 @@
 //  Created by Юрий Султанов on 27.07.2021.
 //
 
-enum INVInstrumentState {
+public enum INVInstrumentState {
     ///бумага не активна, используется как дефолтное значение при добавлении новых значений статусов
     case notActive
     ///бумага активна (торгуется на бирже)

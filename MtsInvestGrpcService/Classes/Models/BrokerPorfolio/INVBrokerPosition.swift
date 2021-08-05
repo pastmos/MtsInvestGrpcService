@@ -6,51 +6,51 @@
 //
 
 public struct INVBrokerPosition {
-    let id: String
+    public let id: String
     /// идентификатор инструмента
-    let name: String
+    public let name: String
     /// описание
-    let subTitle: String
+    public let subTitle: String
     /// сумма
-    let amount: Double
+    public let amount: Double
     /// средняя цена
-    let averagePrice: Double
+    public let averagePrice: Double
     /// доходность
-    let yield: Double
+    public let yield: Double
     /// доход
-    let income: Double
+    public let income: Double
     /// доходность в годовых
-    let yieldPerAnnum: Double
+    public let yieldPerAnnum: Double
     /// дата приобретения
-    let purchaseDate: Date
+    public let purchaseDate: Date
     /// отмечен ли как избранный
-    let isFavorite: Bool
+    public let isFavorite: Bool
     /// показатель сортировки
-    let sort: Int
+    public let sort: Int
     /// группа бумаг
-    let group: INVBrokerPositionGroup
+    public let group: INVBrokerPositionGroup
     /// валюта
-    let currency: INVCurrency
+    public let currency: INVCurrency
     /// новый тип бумаги
-    let instrumentCommonType: INVInstrumentCommonType
+    public let instrumentCommonType: INVInstrumentCommonType
     /// дата погашения
-    let maturityDate: Date
+    public let maturityDate: Date
     /// погашена ли
-    let isMaturity: Bool
+    public let isMaturity: Bool
     /// сумма в рублях
-    let amountRub: Double
+    public let amountRub: Double
     /// доходность в рублях
-    let yieldRub: Double
+    public let yieldRub: Double
     /// доход в рублях
-    let incomeRub: Double
+    public let incomeRub: Double
     /// доходность в годовых в рублях
-    let yieldPerAnnumRub: Double
+    public let yieldPerAnnumRub: Double
     /// количество активов
-    let quantity: Double
+    public let quantity: Double
     /// стредства в пути
-    let moneyFlowAmount: Double
+    public let moneyFlowAmount: Double
     /// этап жизненного цикла позиции
-    let lifecycleStage: INVBrokerPositionLifecycleStage
+    public let lifecycleStage: INVBrokerPositionLifecycleStage
 }
 
 extension INVBrokerPosition {
