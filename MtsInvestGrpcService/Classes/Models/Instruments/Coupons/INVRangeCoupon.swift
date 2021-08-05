@@ -6,12 +6,12 @@
 //
 
 public struct INVRangeCoupon {
-    let couponMin: Double
-    let couponMax: Double
+    public let couponMin: Double
+    public let couponMax: Double
     ///предыдущее значение, если оно было изменено
-    let previousCouponMin: Double?
-    let previousCouponMax: Double?
-    let couponStep: Double
+    public let previousCouponMin: Double?
+    public let previousCouponMax: Double?
+    public let couponStep: Double
 }
 
 extension INVRangeCoupon: Equatable { }

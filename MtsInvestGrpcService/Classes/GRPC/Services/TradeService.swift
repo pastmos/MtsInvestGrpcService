@@ -21,6 +21,7 @@ protocol AnyTradeService {
     func send(_ operation: INVTradingOperation)
     func hideOrder(
         ids: [Int],
+        callOptions: CallOptions,
         completion: @escaping (INVError?) -> Void)
     func unsubscribe(
         object: AnyObject,
@@ -93,6 +94,7 @@ final class TradeService: AnyService {
                 switch error {
                 case .unavailable:
                     self.configureService()
+                    self.operationsStreamConnect()
                 default:
                     self.tradeOperationObservers.onError(error)
                 }
@@ -122,6 +124,7 @@ final class TradeService: AnyService {
                 switch error {
                 case .unavailable:
                     self.configureService()
+                    self.watchSingleStreamConnect(request: request)
                 default:
                     self.watchSinglePriceObservers.onError(error)
                 }
@@ -139,10 +142,10 @@ final class TradeService: AnyService {
         completion: @escaping (INVError?) -> Void) {
         guard let service = service else { return }
         DispatchQueue.global().async {
-            let orderIDs = orderIDs.map { UInt64($0) }
+            let uintOrderIDs = orderIDs.map { UInt64($0) }
             let request = Ru_Mts_Trading_Trade_HideRequest
                 .with {
-                    $0.orderIds = orderIDs
+                    $0.orderIds = uintOrderIDs
                 }
             let call = service.hide(
                 request,
@@ -159,7 +162,15 @@ final class TradeService: AnyService {
                     let self = self,
                     let error = self.parseStatus(from: result)
                 else { return }
-                completion(error)
+                switch error {
+                case .unavailable:
+                    self.configureService()
+                    self.hideOrders(
+                        orderIDs: orderIDs,
+                        completion: completion)
+                default:
+                    self.watchSinglePriceObservers.onError(error)
+                }
             }
         }
     }
@@ -197,7 +208,9 @@ extension TradeService: AnyTradeService {
     
     func hideOrder(
         ids: [Int],
+        callOptions: CallOptions,
         completion: @escaping (INVError?) -> Void) {
+        self.callOptions = callOptions
         hideOrders(orderIDs: ids, completion: completion)
     }
     

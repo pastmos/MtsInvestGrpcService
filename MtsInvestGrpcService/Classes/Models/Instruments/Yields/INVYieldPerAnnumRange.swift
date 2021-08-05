@@ -6,8 +6,8 @@
 //
 
 public struct INVYieldPerAnnumRange {
-    var min: Double
-    var max: Double
+    public var min: Double
+    public var max: Double
 }
 
 extension INVYieldPerAnnumRange: Equatable { }

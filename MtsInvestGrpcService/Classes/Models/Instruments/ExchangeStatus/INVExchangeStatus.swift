@@ -7,9 +7,9 @@
 
 public struct INVExchangeStatus {
     ///статус биржи
-    let exchangeState: INVExchangeState
+    public let exchangeState: INVExchangeState
     ///время до смены статуса в мсек.
-    let millisecondsToStatusChange: Int
+    public let millisecondsToStatusChange: Int
 }
 
 extension INVExchangeStatus {

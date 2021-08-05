@@ -6,25 +6,25 @@
 //
 
 public struct INVInstrumentBookbuilding {
-    let type: INVCouponType?
-    let couponRangeType: INVRangeCoupon
-    let couponFixType: INVFixCoupon
-    let minLotCount: Int
-    let maxLotCount: Int
+    public let type: INVCouponType?
+    public let couponRangeType: INVRangeCoupon
+    public let couponFixType: INVFixCoupon
+    public let minLotCount: Int
+    public let maxLotCount: Int
     ///Старт приёма заявок (дата и время в UTC)
-    let bookBuildingStart: Date
+    public let bookBuildingStart: Date
     ///Окончание приёма заявок (дата и время в UTC)
-    let bookBuildingFinish: Date
+    public let bookBuildingFinish: Date
     ///размер комиссии в процентах
-    let feePercent: Double
+    public let feePercent: Double
     ///ожидаемая доходность в % годовых
-    let yieldPerAnnum: INVYieldPerAnnum?
+    public let yieldPerAnnum: INVYieldPerAnnum?
     ///точное значение (например, для фиксированного купона)
-    let yieldPerAnnumValue: Double
+    public let yieldPerAnnumValue: Double
     ///диапазон (например, для диапазона купона)
-    let yieldPerAnnumRange: INVYieldPerAnnumRange
-    let price: Double
-    let contraBroker: String
+    public let yieldPerAnnumRange: INVYieldPerAnnumRange
+    public let price: Double
+    public let contraBroker: String
 }
 
 extension INVInstrumentBookbuilding {

@@ -18,7 +18,7 @@ PODS:
     - SwiftNIOTransportServices (< 2.0.0, >= 1.6.0)
     - SwiftProtobuf (< 2.0.0, >= 1.9.0)
   - Logging (1.4.0)
-  - MtsInvestGrpcService (0.1.20):
+  - MtsInvestGrpcService (0.1.21):
     - gRPC-Swift
   - SwiftNIO (2.30.0):
     - CNIODarwin (= 2.30.0)
@@ -103,7 +103,7 @@ SPEC CHECKSUMS:
   CNIOWindows: 8f14a2ec959cd0fd6ee102384ca4d09b1cff9b4e
   gRPC-Swift: f7a248c42cc639c7a66422e40b6e2797881095d1
   Logging: beeb016c9c80cf77042d62e83495816847ef108b
-  MtsInvestGrpcService: 1e4efa290b187f6b5e5ac9ba5cc809d077b61450
+  MtsInvestGrpcService: ba73243d6a55b954840a7cb28139a37b21f2ef86
   SwiftNIO: f8ba4a53a934bf5ef6cd84ba9133903c9c760874
   SwiftNIOConcurrencyHelpers: 8b2657b5574ff83b8d82377d410e9272e0e16c79
   SwiftNIOExtras: 12c3902de56e7ff1e13b503f25f91f6241e6c070

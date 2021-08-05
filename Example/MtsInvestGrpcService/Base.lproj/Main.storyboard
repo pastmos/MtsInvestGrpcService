@@ -32,7 +32,7 @@
                                 <rect key="frame" x="191" y="547" width="32" height="30"/>
                                 <state key="normal" title="Stop"/>
                                 <connections>
-                                    <action selector="stop" destination="BYZ-38-t0r" eventType="touchUpInside" id="ovT-We-sBG"/>
+                                    <action selector="stop" destination="BYZ-38-t0r" eventType="touchUpInside" id="d2R-QQ-bhY"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LM3-pV-LQI">
@@ -40,7 +40,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="NEXT"/>
                                 <connections>
-                                    <segue destination="k66-4e-PkR" kind="presentation" modalPresentationStyle="automatic" id="SFE-2c-pN4"/>
+                                    <action selector="someButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="RiH-Qu-Sia"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -71,7 +71,7 @@
             <objects>
                 <viewController id="k66-4e-PkR" customClass="ViewController0" customModule="MtsInvestGrpcService_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SQb-t3-fWx">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="QxG-cw-d47"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

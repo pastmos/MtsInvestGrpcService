@@ -75,6 +75,7 @@ final class BrokerPorfolioService: AnyService {
                 switch error {
                 case .unavailable:
                     self.configureService()
+                    self.getBrokerPorfolio(for: period)
                 default:
                     self.brokerPortfolioObservers.onError(error)
                 }

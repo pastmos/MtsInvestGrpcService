@@ -7,27 +7,27 @@
 
 public struct INVBrokerPortfolio {
     /// идентификатор портфеля
-    let name: String
+    public let name: String
     /// цена ликвидации
-    let liquidationValue: Double
+    public let liquidationValue: Double
     /// сумма по инмтрументам
-    let assetsValue: Double
+    public let assetsValue: Double
     /// свободные средства
-    let freeValue: Double
+    public let freeValue: Double
     /// зарезирвированные (заблокированные) средства (freeValue - availableWithdrawAmount)
-    let reservedValue: Double
+    public let reservedValue: Double
     /// доходность
-    let yield: Double
+    public let yield: Double
     /// доход
-    let income: Double
+    public let income: Double
     /// доходность в годовых
-    let yieldPerAnnum: Double
+    public let yieldPerAnnum: Double
     /// номер договора
-    let contractID: String
+    public let contractID: String
     /// сумма доступная к выводу
-    let availableWithdrawAmount: Double
+    public let availableWithdrawAmount: Double
     /// Максимальная дата, когда будет разблокировано reservedValue. Опционально, заполняется, только если reservedValue > 0
-    let reservedUntil: Date?
+    public let reservedUntil: Date?
     
     init(from commonPortfolio: Ru_Mts_Trading_Broker_Commons_Portfolio) {
         self.name = commonPortfolio.name

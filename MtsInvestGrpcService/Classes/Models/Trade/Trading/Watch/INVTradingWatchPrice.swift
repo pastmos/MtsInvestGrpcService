@@ -6,12 +6,12 @@
 //
 
 public struct INVTradingWatchPrice {
-    let type: INVTradingOperationType
-    let securityName: String
-    let quantity: Int
-    let price: Double
-    let bid: Double
-    let ask: Double
+    public let type: INVTradingOperationType
+    public let securityName: String
+    public let quantity: Int
+    public let price: Double
+    public let bid: Double
+    public let ask: Double
 }
 
 extension INVTradingWatchPrice: Equatable {
